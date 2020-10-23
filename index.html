@@ -92,6 +92,21 @@ div{
 <a href="https://www.youtube.com/channel/UCBoIwUqYt5TtC-hXk_J8Raw" class="fa fa-youtube" target="_blank" rel="noopener noreferrer"></a><br><br>
 </center> 
     </div>
-  </div> 
+  </div>
+  <SCRIPT language=JavaScript>
+document.oncontextmenu = function(){return false}
+if(document.layers) 
+{
+	window.captureEvents(Event.MOUSEDOWN);
+	window.onrightmousedown = function(e)
+	{
+	if(e.target==document)return false;
+	}
+}
+else 
+{
+	document.onrightmousedown = function(){return false}
+}
+</SCRIPT>
 </body>
 </html>
