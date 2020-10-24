@@ -71,6 +71,46 @@ div{
 .fa:hover {
     opacity: 0.3;
 }
+*{
+	font-family:sans-serif;
+  text-align:center;
+
+}
+#countdown_container{
+	border-radius: 1px;
+	text-align: center;
+	font-weight: bold;
+	background: #5d91d4;
+	border: 5px dashed #ffffff;
+	display: inline-block;
+  padding: 0 5px;
+ 
+}
+
+#countdown_timer>div{
+	float: left;
+	
+	background:#e7e7e7; /*white theme*/
+	padding:15px 20px;
+	margin:10px 5px;
+	text-align:center;
+  border-radius: 4px;
+  
+}
+
+#countdown_timer>div>div:first-child{
+	font-size:28px;
+	background-color:#e7e7e7;
+	color:#16c2ec; /*white theme*/
+  text-shadow: 0px 1px 0px #12b0d8; /*white theme*/
+}
+
+#countdown_timer>div>div:last-child{
+	text-transform: capitalize;
+	font-size:14px;
+	background-color:#e7e7e7;
+	color:rgb(49, 160, 211); /*white theme*/
+}
 
 
 </style>
@@ -89,10 +129,15 @@ div{
 <h1>Hakkımda</h1>
 <strong><p>Ben Bedirhan Aktaş youtube kanalımda çektiğim oyun videolarını yayınlamaktayım.Bu sitede de videoların gelme tarihleri ve içeriklerinden bahsedeceğim.Beni desteklemek için kanalıma aşağıdak linkten gidip abone olmayı ve videoları izleyip beğenmeyi unutmayınız.</p></strong>
 <a href="https://www.youtube.com/channel/UCBoIwUqYt5TtC-hXk_J8Raw" style="color:red">YouTube kanalım</a><br><br>
-<a href="https://www.youtube.com/channel/UCBoIwUqYt5TtC-hXk_J8Raw" class="fa fa-youtube" target="_blank" rel="noopener noreferrer"></a><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</center> 
-    </div>
+<a href="https://www.youtube.com/channel/UCBoIwUqYt5TtC-hXk_J8Raw" class="fa fa-youtube" target="_blank" rel="noopener noreferrer"></a>    
+  <h1>Diğer Videoya Son</h1>
+  <div id="countdown_container">
+  <div id="countdown_timer"></div>
+  <div style="clear:both"></div>
+  </div><br><br><br><br><br><br><br>
+  </center>
   </div>
+  <!--mouse tıklandığında öğeyi incele iptal-->
   <SCRIPT language=JavaScript>
 document.oncontextmenu = function(){return false}
 if(document.layers) 
@@ -108,5 +153,34 @@ else
 	document.onrightmousedown = function(){return false}
 }
 </SCRIPT>
+<!--videoya kalan süre-->
+ <script>
+    var countDownDate = new Date("2020/10/25 14:30:00").getTime(); //geri sayılacak ileri zamanki bir tarihi milisaniye cinsinden elde ediyoruz
+      var dayText	= "Gün";
+      var hourText	= "Saat";
+      var minuteText	= "Dakika";
+      var secondText	= "Saniye";
+      if (countDownDate){ //tarih var ise
+        var x = setInterval(function() { //sayacı belirli aralıklarla yenile
+          var now = new Date().getTime(); //şimdiki zamanı al
+          var distance = countDownDate - now; //geri sayılacak tarih ile şimdiki tarih arasındaki zaman farkını al
+          if (distance < 0) { //zaman farkı yok ise belirtilen zamanı geçti
+            clearInterval(x); //sayacı sil
+            $("#countdown_timer").html("Geri sayım yapılacak ileri bir tarih yoktur");
+          }else { //zaman farkı var ise
+            //aradaki zaman farkını gün,saat,dakika,saniye olarak böl
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24)),
+              hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+              minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+              seconds = Math.floor((distance % (1000 * 60)) / 1000),
+              days = (days?'<div><div>'+days+'</div><div>'+dayText+'</div></div>':''), //gun varsa gun degerini yaz
+              hours = (hours?'<div><div>'+hours+'</div><div>'+hourText+'</div></div>':''), //saat varsa saat degerini yaz
+              minutes = (minutes?'<div><div>'+minutes+'</div><div>'+minuteText+'</div></div>':''), //dakika varsa dakika degerini yaz
+              seconds = (seconds?'<div><div>'+seconds+'</div><div>'+secondText+'</div></div>':''); //saniye varsa saniye degerini yaz
+            document.getElementById("countdown_timer").innerHTML = days + hours + minutes + seconds; //yazdır
+          }
+        }, 1000); //1 saniyede bir sayaç güncellenecek
+      } </script>
+      
 </body>
 </html>
