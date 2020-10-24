@@ -84,10 +84,10 @@ input[type=submit] {
      <li><a href="iletisim.html">İletişim</a></li>
     </ul><br><br>
     <h2>Aşağıda kanalımda istediğiniz video türlerini ve web sitem hakkında görüşlerinizi belirte bilirsiniz </h2>
-   <form action="">
-   <input type="text" placeholder="Adınız"><br>
-   <input type="email"placeholder="Görüşünüz"><br>
-   <input type="submit" onclick=><br><br>
+    <form action="https://formspree.io/f/mdopgbbk" method="POST" name=forum2>
+   <input type="text" placeholder="Adınız"name=isim><br>
+   <input type="text"placeholder="Görüşünüz"name=görüş><br>
+   <input type="submit" name=gönder /><br><br>
    </form><br><br><br><br><br><br><br><br><br><br><br><br>
  
     </center>  
@@ -108,5 +108,26 @@ else
 	document.onrightmousedown = function(){return false}
 }
 </SCRIPT>
+<script>
+  "use strict";
+    var formGiris = document.forms["forum2"];  // form seçimi
+    var eposta = formGiris.eposta;   // eposta alanı seçimi
+    var sifre = formGiris["isim"];  // sifre alanı seçimi
+    var text = formGiris["görüş"];  //e-posta veya telefon
+
+    formGiris.onsubmit = function() {
+      if (sifre.value.length > 2) {
+        
+      } else {
+        alert("Lütfen adınızı doğru giriniz!");
+        return false;  // form gönderimini iptal et
+      }
+    if (text.value.length > 12) {
+    }else{
+      alert("Görüşünüzü giriniz!")
+      return false; //form gönderimini iptal et
+    }
+    }
+  </script>
  </body>
 </html>
