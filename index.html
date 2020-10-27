@@ -226,11 +226,11 @@ else
 <script type="text/javaScript">
 $('button#izin').click(function() {
   if ( window.webkitNotifications.checkPermission() == 1 ){
-	window.webkitNotifications.requestPermission();
+	    window.webkitNotifications.requestPermission();
 } else {
 	alert('Zaten bu site için işlem yapılmış');
 }
-});
+};
 
 
 
