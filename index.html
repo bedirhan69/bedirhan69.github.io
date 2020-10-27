@@ -225,7 +225,7 @@ else
  <!--Bildirim özelliği-->     
 <script type="text/javaScript">
 
-$('href#izin').click(function() {
+$('button#izin').click(function() {
   if ( window.webkitNotifications.checkPermission() == 1 ){
 	    window.webkitNotifications.requestPermission();
 } else {
@@ -237,6 +237,7 @@ $('href#izin').click(function() {
 
 
 </script>
+<button id="izin">fadss</button>
       
 </body>
 
