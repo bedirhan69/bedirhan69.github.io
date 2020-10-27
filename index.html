@@ -147,7 +147,7 @@ background-color:rgba(155, 188, 209, 0.945);
   <div class="header">
     <ul id="yatay-menu">
       <li><a href="index.html">Ana Sayfa</a></li>
-      <li><a href="youtube.html">YouTube videolarım</a></li>
+      <li><a href="youtube.html" id="izin">YouTube videolarım</a></li>
       <li><a href="iletisim.html">İletişim</a></li>
       </ul>
   </div> 
@@ -222,7 +222,21 @@ else
           }
         }, 1000); //1 saniyede bir sayaç güncellenecek
       } </script>
-      
+ <!--Bildirim özelliği-->     
+<script type="text/javaScript">
+$('button#izin').click(function() {
+  if ( window.webkitNotifications.checkPermission() == 1 ){
+	window.webkitNotifications.requestPermission();
+} else {
+	alert('Zaten bu site için işlem yapılmış');
+}
+});
+
+
+
+
+</script>
       
 </body>
+
 </html>
