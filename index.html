@@ -226,7 +226,7 @@ else
 <button id="izin">izin</button>
 <button id="test">test</button>
  <!--Bildirim özelliği-->     
- <script type=”text/javascript”>
+ <script type="text/javascript">
 
    $('button#izin').click(function(){
    if(window.webkitNotifications.checkPermission() == 1){
@@ -235,7 +235,7 @@ else
    alert('Bu site için izin işlemi daha önceden yapılmıştır');
    }});
    $('button#test').click(function(){
-  var test = window.webkitNotifications.createNotification('http://www.omerkadiroruc.com/avatar.jpg',
+  var test = window.webkitNotifications.createNotification('https://raw.githubusercontent.com/bedirhan99/bedirhan99.github.io/Master/mat.jpg',
    'Ömer Kadir Oruç','Merhaba');
     test.ondisplay = function(){
    alert('bildirim göründü');
