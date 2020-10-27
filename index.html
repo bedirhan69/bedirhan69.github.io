@@ -230,13 +230,14 @@ else
 
    $('button#izin').click(function(){
    if(window.webkitNotifications.checkPermission() == 1){
-   window.webkitNotifications.requestPermission();
+     window.webkitNotifications.requestPermission();
    }else{
    alert('Bu site için izin işlemi daha önceden yapılmıştır');
    }});
+
    $('button#test').click(function(){
   var test = window.webkitNotifications.createNotification('https://raw.githubusercontent.com/bedirhan99/bedirhan99.github.io/Master/mat.jpg',
-   'Ömer Kadir Oruç','Merhaba');
+   'Bedirhan Aktaş','Merhaba');
     test.ondisplay = function(){
    alert('bildirim göründü');
    }
