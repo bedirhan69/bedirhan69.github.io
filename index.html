@@ -223,28 +223,32 @@ else
         }, 1000); //1 saniyede bir sayaç güncellenecek
       } </script>
 
-<button id="al">izin</button>
+<button id="izin">izin</button>
 <button id="test">test</button>
  <!--Bildirim özelliği-->     
  <script type="text/javascript">
 
-   $('button#al').click(function(){
-   if(window.webkitNotifications.checkPermission() == 1){
-     window.webkitNotifications.requestPermission();
-   }else{
-   alert('Bu site için izin işlemi daha önceden yapılmıştır');
-   }});
+   $('button#izin').click(function(){
+    if ( window.webkitNotifications.checkPermission() == 1 ){
+	window.webkitNotifications.requestPermission();
+} else {
+	alert('Zaten bu site için işlem yapılmış');
+}
+   });
 
    $('button#test').click(function(){
-  var test = window.webkitNotifications.createNotification('https://raw.githubusercontent.com/bedirhan99/bedirhan99.github.io/Master/mat.jpg',
-   'Bedirhan Aktaş','Merhaba');
-    test.ondisplay = function(){
-   alert('bildirim göründü');
-   }
-   test.onclose = function(){
-   alert('bildirim kapatıldı');
-   }
-   test.show();
+    var test = window.webkitNotifications.createNotification(
+	'http://www.gravatar.com/avatar/be2da7976e64ff4211a4ff7b22b10b58',
+	'Tayfun Erbilen',
+	'Bu bir test içeriğidir..'
+);
+test.show();
+test.ondisplay = function(){
+	alert('bildirim göründü');
+}
+test.onclose = function(){
+	alert('bildirim kapatıldı!');
+}
    });
   </script>
 </body>
