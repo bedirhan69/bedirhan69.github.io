@@ -83,10 +83,17 @@ div{
 .fa:hover {
     opacity: 0.3;
 }  
+.footer {
+    height:165px;
 
+    margin-top:10px;
+
+    background-color:#5fb1c5;
+}
 </style>
 </head>
 <body>
+  <center>
     <div class="header">
         <ul id="yatay-menu">
           <li><a href="index.html">Ana Sayfa</a></li>
@@ -97,11 +104,42 @@ div{
       </div> 
 <div class="card">
 <div class="example">
-    
-    
+ <br><br><br><br><br><br>   
+ <!--sitenin alt oluşturmak-->
+ <div class="footer"><br>
+   <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" id=bmk /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+  <small>© Tüm haklar BedirhanandGames 'e aittir.</small>
+</center>   
 </div>
 </div>
-
+<!--sifreli sayfa-->
+<SCRIPT language="JavaScript">
+    var admin;
+    var password;
+    var ad="123";
+    var pass1="html";
+    admin=prompt('Sayfayi görebilmek icin lütfen Kullanıcı adını giriniz!','');
+    password=prompt('Sayfayi görebilmek icin lütfen şifreyi giriniz!','');
+    if(admin==ad){alert('Anlayışınız için teşekkürler');}
+    if (password==pass1){;}
+    else{window.location="502.html";}
+    </SCRIPT>
+<!--mouse tıklandığında öğeyi incele iptal-->
+<SCRIPT language=JavaScript>
+    document.oncontextmenu = function(){return false}
+    if(document.layers) 
+    {
+        window.captureEvents(Event.MOUSEDOWN);
+        window.onrightmousedown = function(e)
+        {
+        if(e.target==document)return false;
+        }
+    }
+    else 
+    {
+        document.onrightmousedown = function(){return false}
+    }
+    </SCRIPT>
 
 </body>
 </html>
