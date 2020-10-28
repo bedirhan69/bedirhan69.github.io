@@ -226,31 +226,73 @@ else
 <button id="izin">izin</button>
 <button id="test">test</button>
  <!--Bildirim özelliği-->     
- <script type="text/javascript">
+ <script>
 
-   $('button#izin').click(function(){
-    if ( window.webkitNotifications.checkPermission() == 1 ){
-	window.webkitNotifications.requestPermission();
-} else {
-	alert('Zaten bu site için işlem yapılmış');
-}
-   });
+ window.OneSignal = window.OneSignal || [];
 
-   $('button#test').click(function(){
-    var test = window.webkitNotifications.createNotification(
-	'http://www.gravatar.com/avatar/be2da7976e64ff4211a4ff7b22b10b58',
-	'Tayfun Erbilen',
-	'Bu bir test içeriğidir..'
-);
-test.show();
-test.ondisplay = function(){
-	alert('bildirim göründü');
-}
-test.onclose = function(){
-	alert('bildirim kapatıldı!');
-}
-   });
-  </script>
+ OneSignal.push( function() {
+   OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+   OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+   OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+   OneSignal.setDefaultNotificationUrl("https://www.derszamani.net");
+   var oneSignal_options = {};
+   window._oneSignalInitOptions = oneSignal_options;
+
+   oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '264a375d-d3d9-4794-b0aa-2da3d1660ebd';
+oneSignal_options['autoRegister'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['disable'] = true;
+oneSignal_options['path'] = "https://www.derszamani.net/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['promptOptions']['actionMessage'] = 'Önemli Yazı ve Haberlerden Bildirim Almak İster misiniz?';
+oneSignal_options['promptOptions']['exampleNotificationTitleDesktop'] = 'Bu bir örnek bildirim';
+oneSignal_options['promptOptions']['exampleNotificationMessageDesktop'] = 'Bildirimler masaüstünüzde görüntülenecek';
+oneSignal_options['promptOptions']['exampleNotificationCaption'] = 'Aboneliğinizi istediğiniz zaman iptal edebilirsiniz';
+oneSignal_options['promptOptions']['acceptButtonText'] = 'Evet';
+oneSignal_options['promptOptions']['cancelButtonText'] = 'Daha Sonra';
+oneSignal_options['promptOptions']['siteName'] = 'ders';
+oneSignal_options['promptOptions']['autoAcceptTitle'] = 'İzin Ver';
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-right';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'medium';
+oneSignal_options['notifyButton']['prenotify'] = true;
+oneSignal_options['notifyButton']['showCredit'] = true;
+oneSignal_options['notifyButton']['text'] = {};
+oneSignal_options['notifyButton']['text']['message.prenotify'] = 'Bildirimlere Abone Olun';
+oneSignal_options['notifyButton']['text']['tip.state.unsubscribed'] = 'Bildirimlere abone ol!';
+oneSignal_options['notifyButton']['text']['tip.state.subscribed'] = 'Bildirimlere abone oldunuz';
+oneSignal_options['notifyButton']['text']['tip.state.blocked'] = 'Bildirimleri engellediniz';
+oneSignal_options['notifyButton']['text']['message.action.subscribed'] = 'Teşekkürler bildirimlere abone oldunuz!';
+oneSignal_options['notifyButton']['text']['message.action.resubscribed'] = 'Bildirimlere abone oldunuz';
+oneSignal_options['notifyButton']['text']['message.action.unsubscribed'] = 'Tekrar bildirim almayacaksınız';
+oneSignal_options['notifyButton']['text']['dialog.main.title'] = 'Site bildirimlerini yönet';
+oneSignal_options['notifyButton']['text']['dialog.main.button.subscribe'] = 'ABONE OL';
+oneSignal_options['notifyButton']['text']['dialog.main.button.unsubscribe'] = 'ABONE OLMA';
+oneSignal_options['notifyButton']['text']['dialog.blocked.title'] = 'Bildirim engelini kaldır';
+oneSignal_options['notifyButton']['text']['dialog.blocked.message'] = 'bildirimlere izin vermek için bu talimatları izleyin:';
+         OneSignal.init(window._oneSignalInitOptions);
+               });
+
+ function documentInitOneSignal() {
+   var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+   var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+     oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+ }
+
+ if (document.readyState === 'complete') {
+      documentInitOneSignal();
+ }
+ else {
+      window.addEventListener("load", function(event){
+          documentInitOneSignal();
+     });
+ }
+</script>
 </body>
 
 </html>
