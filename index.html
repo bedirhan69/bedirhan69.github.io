@@ -225,7 +225,9 @@ else
 
 <button id="izin">izin</button>
 <button id="test">test</button>
- <!--Bildirim özelliği-->     
+ <!--Bildirim özelliği-->            <link rel="manifest"
+            href="https://www.derszamani.net/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/manifest.json.php?gcm_sender_id="/>
+            <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>   
  <script>
 
  window.OneSignal = window.OneSignal || [];
@@ -235,7 +237,7 @@ else
    OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
    OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
 
-   OneSignal.setDefaultNotificationUrl("https://www.derszamani.net");
+   OneSignal.setDefaultNotificationUrl("https://bedirhan69.github.io");
    var oneSignal_options = {};
    window._oneSignalInitOptions = oneSignal_options;
 
