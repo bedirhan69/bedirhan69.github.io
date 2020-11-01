@@ -90,21 +90,83 @@ div{
 
     background-color:#5fb1c5;
 }
+body {
+    margin: 0;
+}
+ 
+#content{
+    margin-top:70px;
+    height:2000px;
+}
+ 
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #4e91b8;
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+    top: 0;
+   z-index:222 ; 
+}
+ 
+ul li {
+    float:left;
+    border-bottom: 3px solid #65d1b6;
+}
+ 
+ul li.menu-right {
+    float: center;
+}
+ 
+ul li a {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+ 
+ul li.active {
+    background-color:#387188 ;
+    border-bottom: 3px solid #dd9d27;
+}
+
+ul li:hover:not(.active) {
+    background-color: #068587;
+    border-bottom: 3px solid #d89c2e;
+}
+
 </style>
 </head>
 <body>
   <center>
-    <div class="header">
-        <ul id="yatay-menu">
-          <li><a href="index.html">Ana Sayfa</a></li>
-          <li><a href="youtube.html">YouTube videolarım</a></li>
-          <li><a href="iletisim.html">İletişim</a></li>
-          <li><a href="sifreli-sayfa.html">GİZLİ</a></li>
-          </ul>
-      </div> 
-<div class="card">
+
+      <div id="menu" div style="position:absolute;" >
+        <ul>
+            <li>
+                <a href="index.html">Anasayfa</a>
+            </li>
+            <li>
+                <a href="youtube.html">YouTube videolarım</a>
+            </li>
+            <li>
+                <a href="iletisim.html">İletişim</a>
+            </li>
+            <li  class="active">
+                <a href="sifreli-sayfa.html">GİZLİ</a>
+            </li>
+
+        </ul>
+    </div>
+
+<br><br><br><div class="card">
 <div class="example">
- <br><br><br><br><br><br>   
+ <br><br>
+ <script type="text/javascript" src="https://form.jotform.com/jsform/203054495211952"></script>
+ 
+ <br><br><br><br>   
  <!--sitenin alt oluşturmak-->
  <div class="footer"><br>
    <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" id=bmk /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
