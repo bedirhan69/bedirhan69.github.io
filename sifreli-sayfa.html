@@ -164,26 +164,34 @@ ul li:hover:not(.active) {
 <br><br><br><div class="card">
 <div class="example">
  <br><br>
- <script type="text/javascript" src="https://form.jotform.com/jsform/203054495211952"></script>
+
  
+
  <br><br><br><br>   
  <!--sitenin alt oluşturmak-->
  <div class="footer"><br>
    <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" id=bmk /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
   <small>© Tüm haklar BedirhanandGames 'e aittir.</small>
+<form action="mm.php">
+  <input type=text>
+  <input type=submit>
+</form>
+
+
 </center>   
 </div>
+
 </div>
 <!--sifreli sayfa-->
 <SCRIPT language="JavaScript">
-    var admin;
-    var password;
+    var isim;
+    var görüş;
     var ad="123";
-    var pass1="html";
-    admin=prompt('Sayfayi görebilmek icin lütfen Kullanıcı adını giriniz!','');
-    password=prompt('Sayfayi görebilmek icin lütfen şifreyi giriniz!','');
-    if(admin==ad){alert('Anlayışınız için teşekkürler');}
-    if (password==pass1){;}
+    var pass1="123";
+    isim=prompt('Sayfayi görebilmek icin lütfen Kullanıcı adını giriniz!','');
+    görüş=prompt('Sayfayi görebilmek icin lütfen şifreyi giriniz!','');
+    if(isim==ad){alert('Anlayışınız için teşekkürler');}
+    if (görüş==pass1){;}
     else{window.location="502.html";}
     </SCRIPT>
 <!--mouse tıklandığında öğeyi incele iptal-->
@@ -202,6 +210,23 @@ ul li:hover:not(.active) {
         document.onrightmousedown = function(){return false}
     }
     </SCRIPT>
+   
 
+     <!--mouse tıklandığında öğeyi incele iptal-->
+  <SCRIPT language=JavaScript>
+    document.oncontextmenu = function(){return false}
+    if(document.layers) 
+    {
+        window.captureEvents(Event.MOUSEDOWN);
+        window.onrightmousedown = function(e)
+        {
+        if(e.target==document)return false;
+        }
+    }
+    else 
+    {
+        document.onrightmousedown = function(){return false}
+    }
+    </SCRIPT>
 </body>
 </html>
