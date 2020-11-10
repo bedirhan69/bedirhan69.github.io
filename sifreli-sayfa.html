@@ -205,6 +205,257 @@ ol{
     }
 
 </script>
+<script>
+    
+    
+    function temizle(){
+                       document.getElementById("turkcedogru").value = 20;
+               document.getElementById("turkcenet").value = 20;
+               document.getElementById("turkceynls").value = 0;
+      
+                       document.getElementById("matematikdogru").value = 20;
+               document.getElementById("matematiknet").value = 20;
+               document.getElementById("matematikynls").value = 0;
+     
+                       document.getElementById("fendogru").value = 20;
+               document.getElementById("fennet").value = 20;
+               document.getElementById("fenynls").value = 0;
+     
+                       document.getElementById("dindogru").value = 10;
+               document.getElementById("dinnet").value = 10;
+               document.getElementById("dinynls").value = 0;
+                       
+                       document.getElementById("ingilizcedogru").value = 10;
+               document.getElementById("ingilizcenet").value = 10;
+               document.getElementById("ingilizceynls").value = 0;
+    
+                       document.getElementById("tarihdogru").value = 10;
+               document.getElementById("tarihnet").value = 10;
+               document.getElementById("tarihynls").value = 0;
+    
+                       document.getElementById("puan").value = 0;
+    }
+    function hesaplama()
+    {
+         dogrusayisi(0);
+         dogrusayisi(1); 
+         dogrusayisi(2); 
+         dogrusayisi(3);
+         dogrusayisi(4);
+         dogrusayisi(5);
+    
+         var maxpuan = 500;
+         var turkce = 20;
+         var mat = 20;
+         var fen = 20;
+         var din = 10;
+         var ing = 10;
+         var tarih = 10;
+         turkce -= document.getElementById("turkcenet").value;
+         turkce -= document.getElementById("turkceynls").value;
+         mat -= document.getElementById("matematiknet").value;
+         mat -= document.getElementById("matematikynls").value;
+         fen -= document.getElementById("fennet").value;
+         fen -= document.getElementById("fenynls").value;
+         din -= document.getElementById("dinnet").value;
+         din -= document.getElementById("dinynls").value;
+         ing -= document.getElementById("ingilizcenet").value;
+         ing -= document.getElementById("ingilizceynls").value;
+         tarih -= document.getElementById("tarihnet").value;
+         tarih -= document.getElementById("tarihynls").value;
+         if(turkce < 0)
+         {
+            alert("Türkçe toplam boş ve yanlış sayısı 20 soruyu geçemez! " + turkce); 
+         }
+        else if(mat < 0)
+         {
+            alert("Matematik toplam boş ve yanlış sayısı 20 soruyu geçemez!"); 
+         }
+        else if(fen < 0)
+         {
+            alert("Fen Bilimleri toplam boş ve yanlış sayısı 20 soruyu geçemez!"); 
+         }
+        else if( din < 0)
+         {
+            alert("Din Kültürü toplam boş ve yanlış sayısı 10 soruyu geçemez!"); 
+         }
+        else if(ing < 0)
+         {
+            alert("İngilizce toplam boş ve yanlış sayısı 10 soruyu geçemez!"); 
+         }
+        else if(tarih < 0)
+         {
+            alert("Tarih toplam boş ve yanlış sayısı 10 soruyu geçemez!"); 
+         }	 
+        else
+        {
+           maxpuan -= (document.getElementById("turkcenet").value*3.6709) + (document.getElementById("turkceynls").value * 4.8948);
+           maxpuan -= (document.getElementById("matematiknet").value*4.9522) + (document.getElementById("matematikynls").value * 6.6031);
+           maxpuan -= (document.getElementById("fennet").value*4.0721) + (document.getElementById("fenynls").value * 5.4296);
+           maxpuan -= (document.getElementById("dinnet").value*1.9404) + (document.getElementById("dinynls").value * 2.5873);
+           maxpuan -= (document.getElementById("ingilizcenet").value*1.6315) + (document.getElementById("ingilizceynls").value * 2.1756);
+           maxpuan -= (document.getElementById("tarihnet").value*1.6846) + (document.getElementById("tarihynls").value * 2.2463);
+         document.getElementById("puan").value = maxpuan;
+        }
+         
+    
+    
+    }
+    
+    function dogrusayisi(a)
+    {
+    
+       if(a == 0)
+       {
+          var dogruss = 20;
+          dogruss -= document.getElementById("turkcedogru").value;
+          dogruss -= document.getElementById("turkceynls").value;
+          if(dogruss >= 0 && dogruss <= 20)
+            {
+               document.getElementById("turkcenet").value = dogruss;
+            }
+          else
+          {
+               alert("Girilen Yanlış ve Boş Sayısı Soru Sayısından Fazla! Lütfen kontrol ediniz.");
+               document.getElementById("turkcedogru").value = 20;
+               document.getElementById("turkcenet").value = 0;
+               document.getElementById("turkceynls").value = 0;
+          }	  
+       }
+       else if(a == 1)
+       {
+       var dogruss = 20;
+          dogruss -= document.getElementById("matematikdogru").value;
+          dogruss -= document.getElementById("matematikynls").value;
+          if(dogruss >= 0 && dogruss <= 20)
+            {
+               document.getElementById("matematiknet").value = dogruss;
+            }
+          else
+          {
+               alert("Girilen Yanlış ve Boş Sayısı Soru Sayısından Fazla! Lütfen kontrol ediniz.");
+               document.getElementById("matematikdogru").value = 20;
+               document.getElementById("matematiknet").value = 0;
+               document.getElementById("matematikynls").value = 0;
+          }	
+       }
+       else if(a == 2)
+       {
+       var dogruss = 20;
+          dogruss -= document.getElementById("fendogru").value;
+          dogruss -= document.getElementById("fenynls").value;
+          if(dogruss >= 0 && dogruss <= 20)
+            {
+               document.getElementById("fennet").value = dogruss;
+            }
+          else
+          {
+               alert("Girilen Yanlış ve Boş Sayısı Soru Sayısından Fazla! Lütfen kontrol ediniz.");
+               document.getElementById("fendogru").value = 20;
+               document.getElementById("fennet").value = 0;
+               document.getElementById("fenynls").value = 0;
+          }	
+       }
+       else if(a == 3)
+       {
+       var dogruss = 10;
+          dogruss -= document.getElementById("dindogru").value;
+          dogruss -= document.getElementById("dinynls").value;
+          if(dogruss >= 0 && dogruss <= 10)
+            {
+               document.getElementById("dinnet").value = dogruss;
+            }
+          else
+          {
+               alert("Girilen Yanlış ve Boş Sayısı Soru Sayısından Fazla! Lütfen kontrol ediniz.");
+               document.getElementById("dindogru").value = 10;
+               document.getElementById("dinnet").value = 0;
+               document.getElementById("dinynls").value = 0;
+          }	
+       }
+       else if(a == 4)
+       {
+       var dogruss = 10;
+          dogruss -= document.getElementById("ingilizcedogru").value;
+          dogruss -= document.getElementById("ingilizceynls").value;
+          if(dogruss >= 0 && dogruss <= 10)
+            {
+               document.getElementById("ingilizcenet").value = dogruss;
+            }
+          else
+          {
+               alert("Girilen Yanlış ve Boş Sayısı Soru Sayısından Fazla! Lütfen kontrol ediniz.");
+               document.getElementById("ingilizcedogru").value = 10;
+               document.getElementById("ingilizcenet").value = 0;
+               document.getElementById("ingilizceynls").value = 0;
+          }	
+       }
+       else if(a == 5)
+       {
+       var dogruss = 10;
+          dogruss -= document.getElementById("tarihdogru").value;
+          dogruss -= document.getElementById("tarihynls").value;
+          if(dogruss >= 0 && dogruss <= 10)
+            {
+               document.getElementById("tarihnet").value = dogruss;
+            }
+          else
+          {
+               alert("Girilen Yanlış ve Boş Sayısı Soru Sayısından Fazla! Lütfen kontrol ediniz.");
+               document.getElementById("tarihdogru").value = 10;
+               document.getElementById("tarihnet").value = 0;
+               document.getElementById("tarihynls").value = 0;
+          }	
+       }
+       
+    
+    }
+    function normalcdf(X){   //HASTINGS.  MAX ERROR = .000001
+        var T=1/(1+.2316419*Math.abs(X));
+        var D=.3989423*Math.exp(-X*X/2);
+        var Prob=D*T*(.3193815+T*(-.3565638+T*(1.781478+T*(-1.821256+T*1.330274))));
+        if (X>0) {
+            Prob=1-Prob
+        }
+        return Prob
+    }   
+    
+    function compute() {
+        Z	=	eval(document.getElementById("puan").value)
+        M	=	298.87;
+        SD	= 78,73;
+        with (Math) {
+            if (SD<0) {
+                alert("The standard deviation must be nonnegative.")
+            } else if (SD==0) {
+                if (Z<M){
+                    Prob=0
+                } else {
+                    Prob=1
+                }
+            } else {
+                Prob=normalcdf((Z-M)/SD);
+                Prob=round(100000*Prob)/100000;
+            }
+        }
+    if(document.getElementById("puan").value == "500")
+    {
+    document.getElementById("yuzdedilim").value = "%0.01";
+    }
+    else
+    {
+    Prob = 100.0*(1.0-Prob)
+        Prob = round(Prob,4)
+        document.getElementById("yuzdedilim").value = "%" + Prob;
+    }
+    
+        
+    }
+    function round(value, precision) {
+        var multiplier = Math.pow(10, precision || 0);
+        return Math.round(value * multiplier) / multiplier;
+    }
+    </script>
 </head>
 <body>
   <center>
@@ -253,7 +504,73 @@ ol{
    </ol>
 
 </form>
- <br><br><br><br>   
+ <br><br>
+ <!--lgs hesaplama-->
+ <form action="javascript:hesaplama(); javascript:compute();">
+    <table id="tableid">
+<thead id="theadid">
+    <tr id = "trid">
+        <th id="thid"></th>
+        <th id="thid">Doğru Sayısı</th>
+        <th id="thid">Yanlış Sayısı</th>
+        <th id="thid">Boş Sayınız</th> 
+</thead>
+<tbody id="tbodyid">
+    </tr>
+    <tr id = "trid">
+<td id="tdid">Türkçe (20) </td>
+<td id="tdid"><input class="" min="0" max="20" type="number" id="turkcedogru" value="20" ></td>
+<td id="tdid"><input class="" min="0" max="20" onblur="dogrusayisi(0)" type="number" id="turkceynls" value="0" ></td>
+<td id="tdid"><input class="" min="0" max="20" onblur="dogrusayisi(0)" type="number" id="turkcenet" value="0" readonly ></td>
+</tr>
+<tr id = "trid">
+<td id="tdid">Matematik (20) </td>
+<td id="tdid"><input class="" min="0" max="20" type="number" id="matematikdogru" value="20" ></td>
+<td id="tdid"><input min="0" max="20" onblur="dogrusayisi(1)" type="number" id="matematikynls" value="0" ></td>
+<td id="tdid"><input min="0" max="20" onblur="dogrusayisi(1)" type="number" id="matematiknet" value="0" readonly></td>
+</tr>
+<tr id = "trid">
+<td id="tdid">Fen Bilimleri (20) </td>
+<td id="tdid"><input class="" min="0" max="20" type="number" id="fendogru" value="20" ></td>
+<td id="tdid"><input min="0" max="20" onblur="dogrusayisi(2)" type="number" id="fenynls" value="0" ></td>
+<td id="tdid"><input min="0" max="20" onblur="dogrusayisi(2)" type="number" id="fennet" value="0" readonly ></td>
+</tr>
+<tr id = "trid">
+<td id="tdid">Din Kültürü (10)</td>
+<td id="tdid"><input class="" min="0" max="20" type="number" id="dindogru" value="10" ></td>
+<td id="tdid"><input min="0" max="10" onblur="dogrusayisi(3)" type="number" id="dinynls" value="0" ></td>
+<td id="tdid"><input min="0" max="10" onblur="dogrusayisi(3)" type="number" id="dinnet" value="0" readonly ></td>
+</tr>
+<tr id = "trid">
+<td id="tdid">İngilizce (10)</td>
+<td id="tdid"><input class="" min="0" max="20" type="number" id="ingilizcedogru" value="10" ></td>
+<td id="tdid"><input min="0" max="10" onblur="dogrusayisi(4)" type="number" id="ingilizceynls" value="0" ></td>
+<td id="tdid"><input min="0" max="10" onblur="dogrusayisi(4)" type="number" id="ingilizcenet" value="0" readonly></td>
+</tr>
+<tr id = "trid">
+<td id="tdid">Inkılap Tarihi (10)</td>
+<td id="tdid"><input class="" min="0" max="20" type="number" id="tarihdogru" value="10" ></td>
+<td id="tdid"><input min="0" max="10" onblur="dogrusayisi(5)" type="number" id="tarihynls" value="0" ></td>
+<td id="tdid"><input min="0" max="10" onblur="dogrusayisi(5)" type="number" id="tarihnet" value="0" readonly></td>
+</tr>
+<tr id = "trid">
+<td id="tdid1">Puan: <input type="text" id="puan" value="0" readonly><br></td>
+<td id="tdid1"></td>
+<td id="tdid1"></td>
+</tr>
+<tr id = "trid">
+<td id="tdid1">Yüzdelik Dilim: <input type="text" id="yuzdedilim" value="0" readonly><br></td>
+<td id="tdid1"></td>
+<td id="tdid1"></td>
+</tr>
+</tbody>	</table>
+    <input style="font-size:16px;"  type="submit" name="btn" value="Hesapla">
+    <button  style="font-size:16px;background-color:red; " type="button" class="btn btn-danger"onclick="temizle()" >Temizle</button>
+  
+</form>
+ 
+ 
+ <br><br>   
  <!--sitenin alt oluşturmak-->
  <div class="footer"><br>
    <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" id=bmk /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
