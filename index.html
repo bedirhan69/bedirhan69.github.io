@@ -276,30 +276,7 @@ ul#alt li:hover ul, ul#alt li.over ul{
   }
 
 </script>
-<script language="JavaScript" type="text/javascript">
-  
-  function hesapla() {
-  var kilo = document.KitleForm.kilo.value
-  var boy = document.KitleForm.boy.value
-  if(kilo > 0 && boy > 0){  
-  var sonuc = kilo/(boy/100*boy/100)
-  document.KitleForm.endeks.value = sonuc
-  if(sonuc < 18.5){
-  document.KitleForm.islemsonucu.value = "Zayıfsınız"
-  }
-  if(sonuc > 18.5 && sonuc < 25){
-  document.KitleForm.islemsonucu.value = "Gayet Sağlıklı."
-  }
-  if(sonuc > 25){
-  document.KitleForm.islemsonucu.value = "Şişmansınız."
-  }
-  }
-  else{
-  alert("Böyle kilo,boy olmaz tekrar dene")
-  }
-  }
- 
-  </script>
+
 </head>
 <body>
     <div id="menu" div style="position:absolute;" >
