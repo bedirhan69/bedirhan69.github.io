@@ -249,6 +249,7 @@ input[name=txtharf] {
 
 }
 
+
 </style>
 
 <script type="text/javascript">
@@ -269,16 +270,16 @@ input[name=txtharf] {
 
       not1=(s1+s2+s3+s4+s5+s6+s7+s8+s9+s10+s11)/30.0;
      
-      if (s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11<=44 && s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11>=0)
-          harfnot='ZAYIF DERS VAR!';
-      else if (not1>=85 && not1<=100)
-          harfnot='Tebrikler! Taktir belgesini Hak kazandınız!';
+
+      if (not1>=85 && not1<=100)
+         harfnot='Tebrikler! Taktir belgesini Hak kazandınız!';
       else if (not1>=70 && not1<=84.99)
-          harfnot='Tebrikler! Teşekkür belgesini Hak kazandınız!';
+         harfnot='Tebrikler! Teşekkür belgesini Hak kazandınız!';
       else if (not1>=0 && not1<69.99)
-        harfnot='Malesef hiç bir belge kazanamadınız!';
-      
-          
+       harfnot='Malesef hiç bir belge kazanamadınız!';
+      if(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11<=44.9)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+
       document.getElementById('txtortalama').value=not1;
       document.getElementById('txtharf').value=harfnot;
   }
@@ -327,18 +328,18 @@ input[name=txtharf] {
     form.hnarac {margin:0;padding:0;color:#000000; } form.hnarac > fieldset{background-color:#FFFFFF;clear:both;min-width:inherit;padding:15px;margin:20px 0;border:1px solid #EEEEEE;border-radius:0px;} form.hnarac > fieldset > legend{background-color: #EEEEEE;color:#000000;border-radius:0px;line-height: 1;cursor:default;margin: 0 8px;padding:8px;font-weight:bold;} form.hnarac em {color: #ff0000;font-weight:bold;} form.hnarac > fieldset > ol{padding:0px;margin:0px;list-style-type: none;} form.hnarac > fieldset > ol > li{padding:7px;margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;	-ms-flex-wrap: wrap;flex-wrap: wrap;} form.hnarac > fieldset > ol > li > label{font-weight:bold;min-width:180px;white-space:nowrap;cursor:auto;} form.hnarac > fieldset > ol.narrowest > li > label{min-width:130px;} form.hnarac > fieldset > ol.narrower > li > label{min-width:150px;} form.hnarac > fieldset > ol.narrow > li > label{min-width:170px;} form.hnarac > fieldset > ol.wide > li > label{min-width:190px;} form.hnarac > fieldset > ol.wider > li > label{min-width:220px;} form.hnarac > fieldset > ol.widest > li > label{min-width:250px;} form.hnarac > fieldset > ol > li input[type=number], form.hnarac > fieldset > ol > li input[type=text], form.hnarac > fieldset > ol > li textarea, form.hnarac > fieldset > ol > li select {padding:6px;box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.08);border: 1px solid #aaaaaa;margin:0 5px;} form.hnarac > fieldset > ol > li input[type=radio] {width:13px;height:13px;cursor: pointer;} form.hnarac > fieldset > ol > li input[type=checkbox], form.hnarac > fieldset > ol > li label{cursor: pointer;} form.hnarac > fieldset > ol > li input[type=number] {-moz-appearance: textfield;} form.hnarac > fieldset > ol > li input[type=number]::-webkit-inner-spin-button, form.hnarac > fieldset > ol > li input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0} form.hnarac > fieldset > ol > li select {cursor:pointer;max-width:100%;} form.hnarac > fieldset > ol > li textarea {width:100%;height:200px;} form.hnarac > fieldset > ol > li > fieldset {margin:0 5px 0 0;padding:0;border:0;} form.hnarac > fieldset > ol > li > fieldset > label {padding: 7px 0;display:block;} form.hnarac > fieldset > ol > li > fieldset > label:first-child {padding-top:4px;} form.hnarac > fieldset > ol > li .illabel > label, form.hnarac > fieldset > ol > li .illabel > label :first-child {display:inline-block;padding:0;} form.hnarac > fieldset .buttons {display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack: distribute;justify-content:space-around;margin:20px 0;} form.hnarac > fieldset .buttons > button {position:relative;overflow:hidden;cursor:pointer;border:0;border-radius: 4px;padding: 15px 30px;font-size:18px;font-weight:bold; box-shadow: 2px 2px 7px #cccccc;} form.hnarac > fieldset .buttons > button[type=button] {background-color:#3B8CEE;color:#FFFFFF;} form.hnarac > fieldset .buttons > button[type=reset] {background-color:#318fbb;color:#000000;} form.hnarac > fieldset .notlar {margin: 8px;} form.hnarac > fieldset .embedlink {float: right;} form.hnarac > fieldset > ol > li .iw1{width:37px} form.hnarac > fieldset > ol > li .iw2{width:40px} form.hnarac > fieldset > ol > li .iw3{width:44px} form.hnarac > fieldset > ol > li .iw4{width:48px} form.hnarac > fieldset > ol > li .iw5{width:52px} form.hnarac > fieldset > ol > li .iw6{width:56px} form.hnarac > fieldset > ol > li .iw7{width:60px} form.hnarac > fieldset > ol > li .iw8{width:64px} form.hnarac > fieldset > ol > li .iw9{width:68px} form.hnarac > fieldset > ol > li .orn{padding-left: 4px;} form.hnarac > fieldset > ol > li .neg{color:#EF0000;font-weight:bold;} </style>
    <form class="hnarac">  <fieldset class="meb"> <legend>4. Sınıf Takdir Teşekkür Hesaplama Aracı</legend> <div class="notlar" id="not"><em>NOT:</em> Bu hesaplama aracı 2020 - 2021 eğitim yılınna uyumlu olarak hazırlanmıştır. Puanını boş bıraktığınız dersler için hesaplamalarda 0 puan kullanılacaktır.</div>
     <ol>
-     <li id="matematik"> <label for="matematikpuan"></label>Matematik :<input type="text" name="sinav1" id="sinav1"><br/></li>
-     <li id="turkce"> <label for="turkcepuan"></label>Türkçe :<input type="text" name="sinav2" id="sinav2"><br/></li>
-     <li id="ingilizce"> <label for="ingilizcepuan"></label>İngilizce :<input type="text" name="sinav3" id="sinav3"><br/></li>
-     <li id="fen"> <label for="fenveteknolojipuan"></label>Fen bilimleri :<input type="text" name="sinav4" id="sinav4"><br/></li>
-     <li id="sosyal"> <label for="sosyalbilgilerpuan"></label>Sosyal :<input type="text" name="sinav5" id="sinav5"><br/></li>
-     <li id="din"> <label for="dinkulturupuan"></label>Din kültürü :<input type="text" name="sinav6" id="sinav6"><br/></li>
-     <li id="trafik"> <label for="trafikpuan"></label>Trafik : <input type="text" name="sinav7" id="sinav7"><br/></li>
-     <li id="insan"> <label for="insanhaklariveyurtpuan"></label>İnsan Hakları<br/> ve yurttaşlık :<input type="text" name="sinav8" id="sinav8"><br/></li>
-     <li id="resim"> <label for="gorselsanatlarpuan"></label>Resim :<input type="text" name="sinav9" id="sinav9"><br/></li>
-     <li id="beden"> <label for="bedenegitimipuan"></label>Beden :<input type="text" name="sinav10" id="sinav10"><br/></li>
-     <li id="muzik"> <label for="muzikpuan"></label>Müzik :<input type="text" name="sinav11" id="sinav11"><br/></li>
-     <li id="sonuc"><label for="sonucpuan"></label>Ortalama :<input type="text" name="txtortalama" id="txtortalama"><br/></li>
+     <li id="matematik"> <label for="matematikpuan"></label>Matematik :<input type="text" name="sinav1" id="sinav1" maxlength="3"><br/></li>
+     <li id="turkce"> <label for="turkcepuan"></label>Türkçe :<input type="text" name="sinav2" id="sinav2" maxlength="3"><br/></li>
+     <li id="ingilizce"> <label for="ingilizcepuan"></label>İngilizce :<input type="text" name="sinav3" id="sinav3" maxlength="3"><br/></li>
+     <li id="fen"> <label for="fenveteknolojipuan"></label>Fen bilimleri :<input type="text" name="sinav4" id="sinav4" maxlength="3"><br/></li>
+     <li id="sosyal"> <label for="sosyalbilgilerpuan"></label>Sosyal :<input type="text" name="sinav5" id="sinav5" maxlength="3"><br/></li>
+     <li id="din"> <label for="dinkulturupuan"></label>Din kültürü :<input type="text" name="sinav6" id="sinav6" maxlength="3"><br/></li>
+     <li id="trafik"> <label for="trafikpuan"></label>Trafik : <input type="text" name="sinav7" id="sinav7" maxlength="3"><br/></li>
+     <li id="insan"> <label for="insanhaklariveyurtpuan"></label>İnsan Hakları<br/> ve yurttaşlık :<input type="text" name="sinav8" id="sinav8" maxlength="3"><br/></li>
+     <li id="resim"> <label for="gorselsanatlarpuan"></label>Resim :<input type="text" name="sinav9" id="sinav9" maxlength="3"><br/></li>
+     <li id="beden"> <label for="bedenegitimipuan"></label>Beden :<input type="text" name="sinav10" id="sinav10" maxlength="3"><br/></li>
+     <li id="muzik"> <label for="muzikpuan"></label>Müzik :<input type="text" name="sinav11" id="sinav11" maxlength="3"><br/></li>
+     <li id="sonuc"><label for="sonucpuan"></label>Ortalama :<input type="text" name="txtortalama" id="txtortalama" maxlength="8"><br/></li>
      <li id="sonuc"><label for="sonucpuan"></label>Belge :<input type="text" name="txtharf" id="txtharf"><br/></li>
      <input type="button" onclick="hesapla();" value="Hesapla"/>
      <input type="reset" />
