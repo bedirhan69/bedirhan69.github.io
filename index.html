@@ -263,14 +263,16 @@ ul#alt li:hover ul, ul#alt li.over ul{
 
       not1=(s1+s2+s3+s4+s5+s6+s7+s8+s9+s10+s11)/30.0;
      
-  
-      if (not1>=85 && not1<=100)
+      if (s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11<=44 && s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11>=0)
+          harfnot='ZAYIF DERS VAR!';
+      else if (not1>=85 && not1<=100)
           harfnot='Tebrikler! Taktir belgesini Hak kazandınız!';
       else if (not1>=70 && not1<=84.99)
           harfnot='Tebrikler! Teşekkür belgesini Hak kazandınız!';
       else if (not1>=0 && not1<69.99)
-          harfnot='Malesef hiç bir belge kazanamadınız!';
+        harfnot='Malesef hiç bir belge kazanamadınız!';
       
+          
       document.getElementById('txtortalama').value=not1;
       document.getElementById('txtharf').value=harfnot;
   }
