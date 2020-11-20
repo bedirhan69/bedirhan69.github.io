@@ -57,9 +57,10 @@
 						<!-- Types Information end -->
 						
 						<!-- Countdown start -->
-						<div class="countdown-timer-wrapper">
+						<div class="countdown-timer-wrapper" id="countdown_container">
 							<div class="timer" id="countdown"></div>
 						</div>
+
 						<!-- Countdown end -->
 						
 						<!-- Newsletter Form start -->
@@ -108,17 +109,19 @@
         $(document).ready(function (){
 			//var myDate = new Date("");
 			var myDate = new Date();
-			myDate.setDate(myDate.getDate() + 1);
+     		myDate.setDate(myDate.getDate() + 1);
             $("#countdown").countdown(myDate, function (event) {
-                $(this).html(
-                    event.strftime(
+               $(this).html(
+                  event.strftime(
                         '<div class="timer-wrapper"><div class="time">%D</div><span class="text">Gün</span></div><div class="timer-wrapper"><div class="time">%H</div><span class="text">Saat</span></div><div class="timer-wrapper"><div class="time">%M</div><span class="text">Dakika</span></div><div class="timer-wrapper"><div class="time">%S</div><span class="text">Saniye</span></div>'
                     )
                 );
             });
 
         });
-    </script>
+	</script>
+
+
 	<!-- Timer counter end -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
