@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <title>Bedirhan and Games</title>
+  <style>
+ul#yatay-menu {
+list-style: none;
+margin:0;
+padding:0;
+}
+ul#yatay-menu li {
+display: inline-block;
+padding:0 10px;
+border-bottom:2px solid white;
+margin:auto -2px;
+
+}
+ul#yatay-menu li a {
+color: white;
+display: inline-block;
+font: 17px/100% Arial, Helvetica, sans-serif;
+width:160px ;
+height: 40px;
+line-height: 36px;
+text-decoration: none;
+vertical-align: middle;
+padding: 0 10px;
+background-color: #1f82dff5; 
+}
+ul#yatay-menu li a:hover{
+color: white;
+background-color: #d16456 ; 
+}
+body{
+    background-image:url(mm.jpg);
+    
+  }
+  /*
+  .card{
+  max-height:2900px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  border: 0px solid white;
+  border-radius: 0px;
+  overflow: hidden;
+  margin: 4px;
+  background-color:white;
+  text-align: center;
+  position: relative; 
+  margin: auto;
+
+}
+.example {
+    width:700px;
+    margin:auto;
+    position: relative;
+    margin: auto;
+ 
+}
+*/
+div{
+     background-color:rgba(161, 189, 207, 0.945);
+     position: relative;
+     margin: auto;
+     max-width: 700px;
+   }
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #fa0000;
+}
+
+.fa:hover {
+    opacity: 0.3;
+}
+*{
+	font-family:sans-serif;
+  text-align:center;
+
+
+}
+#countdown_container{
+	border-radius: 2px;
+	text-align: center;
+	font-weight: bold;
+	background: #5d91d4;
+	border: 5px dashed #ffffff;
+	display: inline-block;
+  padding: 0 5px;
+ 
+}
+
+#countdown_timer>div{
+	float: left;
+	background:#e7e7e7; /*white theme*/
+	padding:15px 20px;
+	margin:10px 5px;
+	text-align:center;
+  border-radius: 4px;
+
+}
+
+#countdown_timer>div>div:first-child{
+	font-size:28px;
+  background-color:#e7e7e7;
+	color:#16c2ec; /*white theme*/
+  text-shadow: 0px 1px 0px #12b0d8; /*white theme*/
+}
+
+#countdown_timer>div>div:last-child{
+	text-transform: capitalize;
+	font-size:14px;
+	background-color:#e7e7e7;
+	color:rgb(49, 160, 211); /*white theme*/
+}
+.footer {
+    height:165px;
+
+    margin-top:10px;
+
+    background-color:#5fb1c5;
+}
+.bmk {
+  position:left;
+}
+
+body {
+    margin: 0;
+}
+ 
+#content{
+    margin-top:70px;
+    height:2000px;
+}
+ 
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #4e91b8;
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+    top: 0;
+   z-index:222 ;
+  
+   
+}
+ 
+ul li {
+    float:left;
+    border-bottom: 3px solid #65d1b6;
+}
+ 
+ul li.menu-right {
+    float: center;
+}
+ 
+ul li a {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+ 
+ul li.active {
+    background-color: #387188;
+    border-bottom: 3px solid #dd9d27;
+}
+
+ul li:hover:not(.active) {
+    background-color: #068587;
+    border-bottom: 3px solid #d89c2e;
+}
+input[type=text] {
+ width:140px;
+ height:21px;
+}
+
+
+div#not{
+
+    background-color:white;
+}
+input[type=button]{
+   background-color:red ;
+   color:#ffffff;
+   width:120px;
+   height:40px;
+   float:right;
+   border-radius:6px;
+   border:white;
+}
+input[type=reset] {
+    background-color:rgb(153, 221, 204) ;
+   color:#000000;
+   width:120px;
+   height:40px;
+   float:left;
+   border-radius:6px;
+   border:rgb(7, 7, 7);
+
+}
+
+ol{
+    background-color:rgb(192, 230, 255) ;
+}
+/*menu uzerinden başka kağlantıya gitmek*/
+ul#alt li {
+    float: center;
+    position: relative;
+   
+}
+ul#alt li ul {
+    display: none;
+    position: absolute;
+    top: 7px; /* yukseklik 15px + sonradan eklenecek paddingler 4px toplam 19px */
+    left: 0;
+}
+ul#alt li > ul {
+    top: auto;
+    left: auto;
+}
+
+
+ul#alt li:hover ul {
+  display: block;
+}
+ul#alt li:hover ul, ul#alt li.over ul{
+    display: block;
+  }
+
+input[name=txtharf] {
+ width:240px;
+ height:60px;
+
+}
+
+
+</style>
+
+<script type="text/javascript">
+  function hesapla(){
+      var not1, harfnot;
+      
+      s1 = parseFloat(document.getElementById('sinav1').value) * 5;//matematik
+      s2 = parseFloat(document.getElementById('sinav2').value) * 8;//turkce
+      s3 = parseFloat(document.getElementById('sinav3').value) * 2;//ingilizce
+      s4 = parseFloat(document.getElementById('sinav4').value) * 3;//fen
+      s5 = parseFloat(document.getElementById('sinav5').value) * 3;//sosyal
+      s6 = parseFloat(document.getElementById('sinav6').value) * 2;//din
+      s7 = parseFloat(document.getElementById('sinav7').value) * 1;//trafik
+      s8 = parseFloat(document.getElementById('sinav8').value) * 2;//insan
+      s9 = parseFloat(document.getElementById('sinav9').value) * 1;//resim
+      s10 = parseFloat(document.getElementById('sinav10').value) * 2;//beden 
+      s11 = parseFloat(document.getElementById('sinav11').value) * 1;//muzik
+
+      not1=(s1+s2+s3+s4+s5+s6+s7+s8+s9+s10+s11)/30.0;
+
+      if (not1>=85 && not1<=100)
+         harfnot='Tebrikler! Taktir belgesini Hak kazandınız!';
+      else if (not1>=70 && not1<=84.99)
+         harfnot='Tebrikler! Teşekkür belgesini Hak kazandınız!';
+      else if (not1>=0 && not1<69.99)
+       harfnot='Malesef hiç bir belge kazanamadınız!';
+
+         if(s1<44.9 && s1>0)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s2<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s3<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s4<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s5<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s6<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s7<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s8<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s9<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s10<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+         if(s11<44)
+         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+        // if(s1<44.0)
+        // harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
+        //100 den fazla
+        if(s9>100){
+         alert('Dersler 100 üzerinden Girin!!!');}
+      
+       
+         
+      document.getElementById('txtortalama').value=not1;
+      document.getElementById('txtharf').value=harfnot;
+  }
+
+</script>
+
+</head>
+<body>
+    <div id="menu" div style="position:absolute;" >
+        <ul id="alt">
+            <li class="active">
+                <a href="index1.html">Anasayfa</a>
+            </li>
+            <li>
+                <a href="youtube.html">YouTube videolarım</a>
+            </li>
+            <li>
+                <a href="iletisim.html">İletişim</a>
+            </li>
+            <li class="menu-right">
+                <a href="sifreli-sayfa.html">GİZLİ</a>
+              
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+  <center><br><br><br><br><br>
+  <div class="card">
+    <div class="example">
+<br>
+<img src="https://raw.githubusercontent.com/bedirhan99/bedirhan99.github.io/Master/mat.jpg"  width=200px; height=240px; border=1px; ></img>
+<br>
+<h1>Hakkımda</h1>
+<strong><p>Ben Bedirhan Aktaş youtube kanalımda çektiğim oyun videolarını yayınlamaktayım.Bu sitede de videoların gelme tarihleri ve içeriklerinden bahsedeceğim.Beni desteklemek için kanalıma aşağıdak linkten gidip abone olmayı ve videoları izleyip beğenmeyi unutmayınız.</p></strong>
+<a href="https://www.youtube.com/channel/UCBoIwUqYt5TtC-hXk_J8Raw" style="color:red">YouTube kanalım</a><br><br>
+<a href="https://www.youtube.com/channel/UCBoIwUqYt5TtC-hXk_J8Raw" class="fa fa-youtube" target="_blank" rel="noopener noreferrer"></a>    
+  <h1>Diğer Videoya Son</h1>
+  <div id="countdown_container">
+  <div id="countdown_timer"></div>
+  <div style="clear:both"></div>
+  </div><br>
+  <!--4.sınıf taktir teşekkür hesaplama-->
+  <style>
+    form.hnarac {margin:0;padding:0;color:#000000; } form.hnarac > fieldset{background-color:#FFFFFF;clear:both;min-width:inherit;padding:15px;margin:20px 0;border:1px solid #EEEEEE;border-radius:0px;} form.hnarac > fieldset > legend{background-color: #EEEEEE;color:#000000;border-radius:0px;line-height: 1;cursor:default;margin: 0 8px;padding:8px;font-weight:bold;} form.hnarac em {color: #ff0000;font-weight:bold;} form.hnarac > fieldset > ol{padding:0px;margin:0px;list-style-type: none;} form.hnarac > fieldset > ol > li{padding:7px;margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;	-ms-flex-wrap: wrap;flex-wrap: wrap;} form.hnarac > fieldset > ol > li > label{font-weight:bold;min-width:180px;white-space:nowrap;cursor:auto;} form.hnarac > fieldset > ol.narrowest > li > label{min-width:130px;} form.hnarac > fieldset > ol.narrower > li > label{min-width:150px;} form.hnarac > fieldset > ol.narrow > li > label{min-width:170px;} form.hnarac > fieldset > ol.wide > li > label{min-width:190px;} form.hnarac > fieldset > ol.wider > li > label{min-width:220px;} form.hnarac > fieldset > ol.widest > li > label{min-width:250px;} form.hnarac > fieldset > ol > li input[type=number], form.hnarac > fieldset > ol > li input[type=text], form.hnarac > fieldset > ol > li textarea, form.hnarac > fieldset > ol > li select {padding:6px;box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.08);border: 1px solid #aaaaaa;margin:0 5px;} form.hnarac > fieldset > ol > li input[type=radio] {width:13px;height:13px;cursor: pointer;} form.hnarac > fieldset > ol > li input[type=checkbox], form.hnarac > fieldset > ol > li label{cursor: pointer;} form.hnarac > fieldset > ol > li input[type=number] {-moz-appearance: textfield;} form.hnarac > fieldset > ol > li input[type=number]::-webkit-inner-spin-button, form.hnarac > fieldset > ol > li input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0} form.hnarac > fieldset > ol > li select {cursor:pointer;max-width:100%;} form.hnarac > fieldset > ol > li textarea {width:100%;height:200px;} form.hnarac > fieldset > ol > li > fieldset {margin:0 5px 0 0;padding:0;border:0;} form.hnarac > fieldset > ol > li > fieldset > label {padding: 7px 0;display:block;} form.hnarac > fieldset > ol > li > fieldset > label:first-child {padding-top:4px;} form.hnarac > fieldset > ol > li .illabel > label, form.hnarac > fieldset > ol > li .illabel > label :first-child {display:inline-block;padding:0;} form.hnarac > fieldset .buttons {display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack: distribute;justify-content:space-around;margin:20px 0;} form.hnarac > fieldset .buttons > button {position:relative;overflow:hidden;cursor:pointer;border:0;border-radius: 4px;padding: 15px 30px;font-size:18px;font-weight:bold; box-shadow: 2px 2px 7px #cccccc;} form.hnarac > fieldset .buttons > button[type=button] {background-color:#3B8CEE;color:#FFFFFF;} form.hnarac > fieldset .buttons > button[type=reset] {background-color:#318fbb;color:#000000;} form.hnarac > fieldset .notlar {margin: 8px;} form.hnarac > fieldset .embedlink {float: right;} form.hnarac > fieldset > ol > li .iw1{width:37px} form.hnarac > fieldset > ol > li .iw2{width:40px} form.hnarac > fieldset > ol > li .iw3{width:44px} form.hnarac > fieldset > ol > li .iw4{width:48px} form.hnarac > fieldset > ol > li .iw5{width:52px} form.hnarac > fieldset > ol > li .iw6{width:56px} form.hnarac > fieldset > ol > li .iw7{width:60px} form.hnarac > fieldset > ol > li .iw8{width:64px} form.hnarac > fieldset > ol > li .iw9{width:68px} form.hnarac > fieldset > ol > li .orn{padding-left: 4px;} form.hnarac > fieldset > ol > li .neg{color:#EF0000;font-weight:bold;} </style>
+   <form class="hnarac">  <fieldset class="meb"> <legend>4. Sınıf Takdir Teşekkür Hesaplama Aracı</legend> <div class="notlar" id="not"><em>NOT:</em> Bu hesaplama aracı 2020 - 2021 eğitim yılınna uyumlu olarak hazırlanmıştır. Puanını boş bıraktığınız dersler için hesaplamalarda 0 puan kullanılacaktır.</div>
+    <ol>
+     <li id="matematik"> <label for="matematikpuan"></label>Matematik :<input type="text" name="sinav1" id="sinav1" maxlength="5"><br/></li>
+     <li id="turkce"> <label for="turkcepuan"></label>Türkçe :<input type="text" name="sinav2" id="sinav2" maxlength="5"><br/></li>
+     <li id="ingilizce"> <label for="ingilizcepuan"></label>İngilizce :<input type="text" name="sinav3" id="sinav3" maxlength="5"><br/></li>
+     <li id="fen"> <label for="fenveteknolojipuan"></label>Fen bilimleri :<input type="text" name="sinav4" id="sinav4" maxlength="5"><br/></li>
+     <li id="sosyal"> <label for="sosyalbilgilerpuan"></label>Sosyal :<input type="text" name="sinav5" id="sinav5" maxlength="5"><br/></li>
+     <li id="din"> <label for="dinkulturupuan"></label>Din kültürü :<input type="text" name="sinav6" id="sinav6" maxlength="5"><br/></li>
+     <li id="trafik"> <label for="trafikpuan"></label>Trafik : <input type="text" name="sinav7" id="sinav7" maxlength="5"><br/></li>
+     <li id="insan"> <label for="insanhaklariveyurtpuan"></label>İnsan Hakları<br/> ve yurttaşlık :<input type="text" name="sinav8" id="sinav8" maxlength="5"><br/></li>
+     <li id="resim"> <label for="gorselsanatlarpuan"></label>Resim :<input type="text" name="sinav9" id="sinav9" maxlength="5"><br/></li>
+     <li id="beden"> <label for="bedenegitimipuan"></label>Beden :<input type="text" name="sinav10" id="sinav10" maxlength="5"><br/></li>
+     <li id="muzik"> <label for="muzikpuan"></label>Müzik :<input type="text" name="sinav11" id="sinav11" maxlength="5"><br/></li>
+     <li id="sonuc"><label for="sonucpuan"></label>Ortalama :<input type="text" name="txtortalama" id="txtortalama" maxlength="8"><br/></li>
+     <li id="sonuc"><label for="sonucpuan"></label>Belge :<input type="text" name="txtharf" id="txtharf"><br/></li>
+     <input type="button" onclick="hesapla();" value="Hesapla"/>
+     <input type="reset" />
+     </ol>
+
+  </form>
+
+  
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <!--sitenin alt oluşturmak-->
+  <div class="footer"><br>
+    <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" id=bmk /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+   <small>© Tüm haklar BedirhanandGames 'e aittir.</small>
+
+  </div>
+
+  </center>
+  </div>
+  <!--mouse tıklandığında öğeyi incele iptal-->
+  <SCRIPT language=JavaScript>
+document.oncontextmenu = function(){return false}
+if(document.layers) 
+{
+	window.captureEvents(Event.MOUSEDOWN);
+	window.onrightmousedown = function(e)
+	{
+	if(e.target==document)return false;
+	}
+}
+else 
+{
+	document.onrightmousedown = function(){return false}
+}
+</SCRIPT>
+<!--videoya kalan süre-->
+ <script>
+    var countDownDate = new Date("2020/12/02 16:00:00").getTime(); //geri sayılacak ileri zamanki bir tarihi milisaniye cinsinden elde ediyoruz
+      var dayText	= "Gün";
+      var hourText	= "Saat";
+      var minuteText	= "Dakika";
+      var secondText	= "Saniye";
+      if (countDownDate){ //tarih var ise
+        var x = setInterval(function() { //sayacı belirli aralıklarla yenile
+          var now = new Date().getTime(); //şimdiki zamanı al
+          var distance = countDownDate - now; //geri sayılacak tarih ile şimdiki tarih arasındaki zaman farkını al
+          if (distance < 0) { //zaman farkı yok ise belirtilen zamanı geçti
+            clearInterval(x); //sayacı sil
+            $("#countdown_timer").html("Geri sayım yapılacak ileri bir tarih yoktur");
+          }else { //zaman farkı var ise
+            //aradaki zaman farkını gün,saat,dakika,saniye olarak böl
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24)),
+              hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+              minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+              seconds = Math.floor((distance % (1000 * 60)) / 1000),
+              days = (days?'<div><div>'+days+'</div><div>'+dayText+'</div></div>':''), //gun varsa gun degerini yaz
+              hours = (hours?'<div><div>'+hours+'</div><div>'+hourText+'</div></div>':''), //saat varsa saat degerini yaz
+              minutes = (minutes?'<div><div>'+minutes+'</div><div>'+minuteText+'</div></div>':''), //dakika varsa dakika degerini yaz
+              seconds = (seconds?'<div><div>'+seconds+'</div><div>'+secondText+'</div></div>':''); //saniye varsa saniye degerini yaz
+            document.getElementById("countdown_timer").innerHTML = days + hours + minutes + seconds; //yazdır
+          }
+        }, 1000); //1 saniyede bir sayaç güncellenecek
+      } </script>
+
+
+
+  
+</body>
+
+</html>
