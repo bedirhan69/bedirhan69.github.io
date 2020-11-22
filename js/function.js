@@ -13,7 +13,7 @@
 	$('.typed-title').typed({
 		stringsElement: $('.typing-title'),
 		backDelay: 2000,
-		typeSpeed: 60,
+		typeSpeed: 60,//260
 		loop: true
 	});
 
