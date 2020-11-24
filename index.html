@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <title>Bedirhan and Games</title>
@@ -248,8 +248,66 @@ input[name=txtharf] {
  height:60px;
 
 }
-
-
+/*slider*/
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 600px;
+  position: relative;
+  margin: auto;
+}
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: rgb(160, 160, 160);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: #555555;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
 </style>
 
 <script type="text/javascript">
@@ -353,7 +411,44 @@ input[name=txtharf] {
   <div id="countdown_container">
   <div id="countdown_timer"></div>
   <div style="clear:both"></div>
-  </div><br>
+  </div><br><br>
+ <!--slider-->
+ <div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="9.jpg" style="width:80%">
+    <div class="text"></div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="10.jpg" style="width:80%">
+    <div class="text"></div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="8.jpg" style="width:80%">
+    <div class="text"></div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="11.webp" style="width:80%">
+    <div class="text"></div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="6.jpg" style="width:80%">
+    <div class="text"></div>
+  </div>
+ 
+  <br>
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span>
+    <span class="dot"></span> 
+    <span class="dot"></span>  
+  </div>
+  <script src="js/slider.js"></script>
   <!--4.sınıf taktir teşekkür hesaplama-->
   <style>
     form.hnarac {margin:0;padding:0;color:#000000; } form.hnarac > fieldset{background-color:#FFFFFF;clear:both;min-width:inherit;padding:15px;margin:20px 0;border:1px solid #EEEEEE;border-radius:0px;} form.hnarac > fieldset > legend{background-color: #EEEEEE;color:#000000;border-radius:0px;line-height: 1;cursor:default;margin: 0 8px;padding:8px;font-weight:bold;} form.hnarac em {color: #ff0000;font-weight:bold;} form.hnarac > fieldset > ol{padding:0px;margin:0px;list-style-type: none;} form.hnarac > fieldset > ol > li{padding:7px;margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;	-ms-flex-wrap: wrap;flex-wrap: wrap;} form.hnarac > fieldset > ol > li > label{font-weight:bold;min-width:180px;white-space:nowrap;cursor:auto;} form.hnarac > fieldset > ol.narrowest > li > label{min-width:130px;} form.hnarac > fieldset > ol.narrower > li > label{min-width:150px;} form.hnarac > fieldset > ol.narrow > li > label{min-width:170px;} form.hnarac > fieldset > ol.wide > li > label{min-width:190px;} form.hnarac > fieldset > ol.wider > li > label{min-width:220px;} form.hnarac > fieldset > ol.widest > li > label{min-width:250px;} form.hnarac > fieldset > ol > li input[type=number], form.hnarac > fieldset > ol > li input[type=text], form.hnarac > fieldset > ol > li textarea, form.hnarac > fieldset > ol > li select {padding:6px;box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.08);border: 1px solid #aaaaaa;margin:0 5px;} form.hnarac > fieldset > ol > li input[type=radio] {width:13px;height:13px;cursor: pointer;} form.hnarac > fieldset > ol > li input[type=checkbox], form.hnarac > fieldset > ol > li label{cursor: pointer;} form.hnarac > fieldset > ol > li input[type=number] {-moz-appearance: textfield;} form.hnarac > fieldset > ol > li input[type=number]::-webkit-inner-spin-button, form.hnarac > fieldset > ol > li input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0} form.hnarac > fieldset > ol > li select {cursor:pointer;max-width:100%;} form.hnarac > fieldset > ol > li textarea {width:100%;height:200px;} form.hnarac > fieldset > ol > li > fieldset {margin:0 5px 0 0;padding:0;border:0;} form.hnarac > fieldset > ol > li > fieldset > label {padding: 7px 0;display:block;} form.hnarac > fieldset > ol > li > fieldset > label:first-child {padding-top:4px;} form.hnarac > fieldset > ol > li .illabel > label, form.hnarac > fieldset > ol > li .illabel > label :first-child {display:inline-block;padding:0;} form.hnarac > fieldset .buttons {display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack: distribute;justify-content:space-around;margin:20px 0;} form.hnarac > fieldset .buttons > button {position:relative;overflow:hidden;cursor:pointer;border:0;border-radius: 4px;padding: 15px 30px;font-size:18px;font-weight:bold; box-shadow: 2px 2px 7px #cccccc;} form.hnarac > fieldset .buttons > button[type=button] {background-color:#3B8CEE;color:#FFFFFF;} form.hnarac > fieldset .buttons > button[type=reset] {background-color:#318fbb;color:#000000;} form.hnarac > fieldset .notlar {margin: 8px;} form.hnarac > fieldset .embedlink {float: right;} form.hnarac > fieldset > ol > li .iw1{width:37px} form.hnarac > fieldset > ol > li .iw2{width:40px} form.hnarac > fieldset > ol > li .iw3{width:44px} form.hnarac > fieldset > ol > li .iw4{width:48px} form.hnarac > fieldset > ol > li .iw5{width:52px} form.hnarac > fieldset > ol > li .iw6{width:56px} form.hnarac > fieldset > ol > li .iw7{width:60px} form.hnarac > fieldset > ol > li .iw8{width:64px} form.hnarac > fieldset > ol > li .iw9{width:68px} form.hnarac > fieldset > ol > li .orn{padding-left: 4px;} form.hnarac > fieldset > ol > li .neg{color:#EF0000;font-weight:bold;} </style>
@@ -377,16 +472,21 @@ input[name=txtharf] {
      </ol>
 
   </form>
-  
-  
-  <br><br><br><br><br><br><br><br><br><br><br><br>
-  <!--sitenin alt oluşturmak-->
-  <div class="footer"><br>
-    <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" id=bmk /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
-   <small>© Tüm haklar BedirhanandGames 'e aittir.</small>
+ </div>
+  <div>
+
+
+
+
+
+
+
+
 
   </div>
-
+<div class="footer"><br>
+    <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" id=bmk /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+   <small>© Tüm haklar BedirhanandGames 'e aittir.</small>
   </center>
   </div>
   <!--mouse tıklandığında öğeyi incele iptal-->
