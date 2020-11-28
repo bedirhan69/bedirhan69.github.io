@@ -1,7 +1,7 @@
 var myVar;
     
 function myFunction() {
-  myVar = setTimeout(showPage, 1000);//zaman ayarı
+  myVar = setTimeout(showPage, 500);//zaman ayarı
 }
 
 function showPage() {
