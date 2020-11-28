@@ -141,8 +141,15 @@ ul li:hover:not(.active) {
 }
 
 </style>
+<link href="css/loading.css" rel="stylesheet" media="screen">
+<script src="js/loading.js"></script>
 </head>
- <body>
+ <body onload="myFunction()" style="margin:0;">
+  <!--=================================preloader========================================== -->
+ <div id="loader">
+
+</div>
+<!--=================================preloader===============================================-->
   <center>
 
     <div id="menu" div style="position:absolute;" >
@@ -188,21 +195,9 @@ ul li:hover:not(.active) {
     </center>  
    </div>
    </div>
-   <SCRIPT language=JavaScript>
-document.oncontextmenu = function(){return false}
-if(document.layers) 
-{
-	window.captureEvents(Event.MOUSEDOWN);
-	window.onrightmousedown = function(e)
-	{
-	if(e.target==document)return false;
-	}
-}
-else 
-{
-	document.onrightmousedown = function(){return false}
-}
-</SCRIPT>
+  <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+  <script src="js/mouse.js"></script>
+  <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
 <script>
   "use strict";
     var formGiris = document.forms["forum2"];  // form seçimi
