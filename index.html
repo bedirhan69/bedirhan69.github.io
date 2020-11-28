@@ -360,70 +360,20 @@ input[name=txtortalama] {
 
 </style>
 
-
-<script type="text/javascript">
-  function hesapla(){
-      var not1, harfnot;
-      
-      s1 = parseFloat(document.getElementById('sinav1').value) * 5;//matematik
-      s2 = parseFloat(document.getElementById('sinav2').value) * 8;//turkce
-      s3 = parseFloat(document.getElementById('sinav3').value) * 2;//ingilizce
-      s4 = parseFloat(document.getElementById('sinav4').value) * 3;//fen
-      s5 = parseFloat(document.getElementById('sinav5').value) * 3;//sosyal
-      s6 = parseFloat(document.getElementById('sinav6').value) * 2;//din
-      s7 = parseFloat(document.getElementById('sinav7').value) * 1;//trafik
-      s8 = parseFloat(document.getElementById('sinav8').value) * 2;//insan
-      s9 = parseFloat(document.getElementById('sinav9').value) * 1;//resim
-      s10 = parseFloat(document.getElementById('sinav10').value) * 2;//beden 
-      s11 = parseFloat(document.getElementById('sinav11').value) * 1;//muzik
-
-      not1=(s1+s2+s3+s4+s5+s6+s7+s8+s9+s10+s11)/30.0;
-
-      if (not1>=85 && not1<=100)
-         harfnot='Tebrikler! Taktir belgesini Hak kazandınız!';
-      else if (not1>=70 && not1<=84.99)
-         harfnot='Tebrikler! Teşekkür belgesini Hak kazandınız!';
-      else if (not1>=0 && not1<69.99)
-       harfnot='Malesef hiç bir belge kazanamadınız!';
-
-         if(s1<44.9 && s1>0)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s2<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s3<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s4<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s5<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s6<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s7<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s8<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s9<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s10<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-         if(s11<44)
-         harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-        // if(s1<44.0)
-        // harfnot='ZAYIF DERS VAR! Hiç Bir Belge Alamadınız!!!';
-        //100 den fazla
-        if(s9>100){
-         alert('Dersler 100 üzerinden Girin!!!');}
-      
-       
-         
-      document.getElementById('txtortalama').value=not1;
-      document.getElementById('txtharf').value=harfnot;
-  }
-
-</script>
-
+<!---------------------------------------hesaplama--------------------------------------------->
+<script src="js/hesaplama.js"></script>
+<!---------------------------------------hesaplama--------------------------------------------->
+ 
+<link href="css/loading.css" rel="stylesheet" media="screen">
+<script src="js/loading.js"></script>
 </head>
-<body>
+<body onload="myFunction()" style="margin:0;">
+<!--=================================preloader========================================== -->
+ <div id="loader">
+
+  </div>
+<!--=================================preloader===============================================-->
+
     <div id="menu" div style="position:absolute;" >
         <ul id="alt">
             <li class="active">
@@ -494,7 +444,7 @@ input[name=txtortalama] {
  
   <br>
   <div style="text-align:center">
-   <a href="index.html/div#1234"><span class="dot"></span></a> 
+   <a href="index.html"><span class="dot"></span></a> 
     <span class="dot"></span> 
     <span class="dot"></span>
     <span class="dot"></span> 
@@ -541,51 +491,13 @@ input[name=txtortalama] {
    <small>© Tüm haklar BedirhanandGames 'e aittir.</small>
   </center>
   </div>
-  <!--mouse tıklandığında öğeyi incele iptal-->
-  <SCRIPT language=JavaScript>
-document.oncontextmenu = function(){return false}
-if(document.layers) 
-{
-	window.captureEvents(Event.MOUSEDOWN);
-	window.onrightmousedown = function(e)
-	{
-	if(e.target==document)return false;
-	}
-}
-else 
-{
-	document.onrightmousedown = function(){return false}
-}
-</SCRIPT>
-<!--videoya kalan süre-->
- <script>
-    var countDownDate = new Date("2020/12/02 16:00:00").getTime(); //geri sayılacak ileri zamanki bir tarihi milisaniye cinsinden elde ediyoruz
-      var dayText	= "Gün";
-      var hourText	= "Saat";
-      var minuteText	= "Dakika";
-      var secondText	= "Saniye";
-      if (countDownDate){ //tarih var ise
-        var x = setInterval(function() { //sayacı belirli aralıklarla yenile
-          var now = new Date().getTime(); //şimdiki zamanı al
-          var distance = countDownDate - now; //geri sayılacak tarih ile şimdiki tarih arasındaki zaman farkını al
-          if (distance < 0) { //zaman farkı yok ise belirtilen zamanı geçti
-            clearInterval(x); //sayacı sil
-            $("#countdown_timer").html("Geri sayım yapılacak ileri bir tarih yoktur");
-          }else { //zaman farkı var ise
-            //aradaki zaman farkını gün,saat,dakika,saniye olarak böl
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24)),
-              hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-              minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-              seconds = Math.floor((distance % (1000 * 60)) / 1000),
-              days = (days?'<div><div>'+days+'</div><div>'+dayText+'</div></div>':''), //gun varsa gun degerini yaz
-              hours = (hours?'<div><div>'+hours+'</div><div>'+hourText+'</div></div>':''), //saat varsa saat degerini yaz
-              minutes = (minutes?'<div><div>'+minutes+'</div><div>'+minuteText+'</div></div>':''), //dakika varsa dakika degerini yaz
-              seconds = (seconds?'<div><div>'+seconds+'</div><div>'+secondText+'</div></div>':''); //saniye varsa saniye degerini yaz
-            document.getElementById("countdown_timer").innerHTML = days + hours + minutes + seconds; //yazdır
-          }
-        }, 1000); //1 saniyede bir sayaç güncellenecek
-      } </script>
+  <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+<script src="js/mouse.js"></script>
+<!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
 
+<!----------------------------------------------------videoya kalan süre-------------------------------------->
+<script src="js/time.js"></script>
+<!----------------------------------------------------videoya kalan süre-------------------------------------->
 
 
   
