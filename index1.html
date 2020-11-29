@@ -5,7 +5,7 @@
     <meta charset='UTF-8'>
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <title>Bedirhan and Games</title>
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700,900'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -29,7 +29,7 @@
 
       .wrapper {
         position: relative;
-        background: url(arkaplan.jpg) no-repeat center center/cover;
+        background: url(img/arkaplan.jpg) no-repeat center center/cover;
       }
 
       .wrapper:before {
@@ -244,77 +244,34 @@
         </ul>--->
       </footer>
     </div>
+     <!-------------------------------------------Hazırlık kalan süre---------------------------------------------------------->
+       <script src="js/time-hazırlık(index1).js"></script>
+      
+   <!-------------------------------------------Hazırlık kalan süre---------------------------------------------------------->
 
-    <script>
-      (function() {
-        // Bitiş tarihi
-        var deadlineDate = new Date('November 22, 2020 23:59:59').getTime();
-
-        // Cache all countdown boxes into consts
-        var countdownDays = document.querySelector('.countdown__days .number');
-        var countdownHours = document.querySelector('.countdown__hours .number');
-        var countdownMinutes = document.querySelector('.countdown__minutes .number');
-        var countdownSeconds = document.querySelector('.countdown__seconds .number');
-
-        // Update the count down every 1 second (1000 milliseconds)
-        setInterval(function() {
-          // Get current date and time
-          var currentDate = new Date().getTime();
-
-          // Calculate the distance between current date and time and the deadline date and time
-          var distance = deadlineDate - currentDate;
-
-          // Calculations the data for remaining days, hours, minutes and seconds
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-          var minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
-          var seconds = Math.floor(distance % (1000 * 60) / 1000);
-
-          // Insert the result data into individual countdown boxes
-          countdownDays.innerHTML = days;
-          countdownHours.innerHTML = hours;
-          countdownMinutes.innerHTML = minutes;
-          countdownSeconds.innerHTML = seconds;
-        }, 1000);
-      })();
-    </script>
-
-    <!-- Jquery Library File -->
+    <!------------------------------------------- Jquery Library File ------------------------------->
     <script src="js/jquery-1.12.4.min.js"></script>
-    <!-- Timer counter js file -->
+    <!------------------------------------ Timer counter js file--------------------------------------- -->
     <script src="js/countdown-timer.js"></script>
-    <!-- Typed js file -->
+    <!------------------------------------ Typed js file ----------------------------------->
     <script src="js/typed.js"></script>
-    <!-- SmoothScroll -->
+    <!---------------------------------------- SmoothScroll---------------------------------- -->
     <script src="js/SmoothScroll.js"></script>
-      <!-- Bootstrap js file -->
+      <!------------------------------------ Bootstrap js file --------------------------------------------------->
     <script src="js/bootstrap.min.js"></script>
-      <!-- Main Custom js file -->
+      <!------------------------------------------------------- Main Custom js file----------------------- -->
     <script src="js/function.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
-    <!-- Bootstrap css -->
+    <!------------------------------------------------------------------ Bootstrap css------------------------------------ -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!-- Font Awesome icon css-->
+    <!------------------------------------------Font Awesome icon css------------------------------------------------------>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" media="screen">
-    <!-- Main custom css -->
+    <!-------------------------------------------- Main custom css-------------------------------------->
     <link href="css/custom.css" rel="stylesheet" media="screen">
-      <!--mouse tıklandığında öğeyi incele iptal-->
-  <SCRIPT language=JavaScript>
-    document.oncontextmenu = function(){return false}
-    if(document.layers) 
-    {
-      window.captureEvents(Event.MOUSEDOWN);
-      window.onrightmousedown = function(e)
-      {
-      if(e.target==document)return false;
-      }
-    }
-    else 
-    {
-      document.onrightmousedown = function(){return false}
-    }
-    </SCRIPT>
+      <!---------------------------mouse tıklandığında öğeyi incele iptal------------------------------->
 
+    <script src="js/mouse.js"></script>
+    <!---------------------------mouse tıklandığında öğeyi incele iptal------------------------------->
 
   </body>
 
