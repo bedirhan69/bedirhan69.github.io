@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   <title>Bedirhan and Games</title>
   <style>
   
@@ -62,7 +62,7 @@ div{
 
 }
 body{
-    background-image:url(mm.jpg);
+    background-image:url(img/mm.jpg);
   }
 input[name=isim] {
    width:200px;
@@ -183,7 +183,7 @@ ul li:hover:not(.active) {
    <input type="submit" name=gönder /><br><br>
    </form>
    <br><br><br>
-   <img src="free_horizontal_on_white_by_logaster.png" text-align=center; width=320px;>
+   <a href="https://bedirhan69.github.io/index.html"><img src="img/free_horizontal_on_white_by_logaster.png" text-align=center; width=320px;></a>
    <br><br><br><br><br><br><br><br><br>
      <!--sitenin alt oluşturmak-->
   <div class="footer"><br>
@@ -198,27 +198,9 @@ ul li:hover:not(.active) {
   <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
   <script src="js/mouse.js"></script>
   <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
-<script>
-  "use strict";
-    var formGiris = document.forms["forum2"];  // form seçimi
-    var eposta = formGiris.eposta;   // eposta alanı seçimi
-    var sifre = formGiris["isim"];  // sifre alanı seçimi
-    var text = formGiris["görüş"];  //e-posta veya telefon
 
-    formGiris.onsubmit = function() {
-      if (sifre.value.length > 2) {
-        
-      } else {
-        alert("Lütfen adınızı doğru giriniz!");
-        return false;  // form gönderimini iptal et
-      }
-    if (text.value.length > 12) {
-    }else{
-      alert("Görüşünüzü giriniz!")
-      return false; //form gönderimini iptal et
-    }
-    }
-  </script>
-
+  <!--------------------------------form kontrol-------------------------------------->
+  <script src="js/formkontrol(iletisim).js"></script>
+<!--------------------------------------form kontrol-------------------------------------------------->
  </body>
 </html>
