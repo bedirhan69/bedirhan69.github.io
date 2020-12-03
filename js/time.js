@@ -1,4 +1,4 @@
-var countDownDate = new Date("2020/12/03 16:00:00").getTime(); //geri sayılacak ileri zamanki bir tarihi milisaniye cinsinden elde ediyoruz
+var countDownDate = new Date("2020/12/11 17:00:00").getTime(); //geri sayılacak ileri zamanki bir tarihi milisaniye cinsinden elde ediyoruz
 var dayText	= "Gün";
 var hourText	= "Saat";
 var minuteText	= "Dakika";
