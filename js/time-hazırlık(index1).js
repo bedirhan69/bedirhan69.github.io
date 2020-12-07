@@ -1,6 +1,6 @@
 (function() {
     // Bitiş tarihi
-    var deadlineDate = new Date('December 12, 2020 23:59:59').getTime();
+    var deadlineDate = new Date('December 14, 2020 23:59:59').getTime();
 
     // Cache all countdown boxes into consts
     var countdownDays = document.querySelector('.countdown__days .number');
