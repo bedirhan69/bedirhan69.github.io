@@ -1,278 +1,560 @@
 <!DOCTYPE html>
-<html lang='en' class=''>
+<html>
+<head>
+  <meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <title>Bedirhan and Games</title>
+  <script type="text/javascript" src="http://code.jquery.com/"></script>
+  <script src="http://code.jquery.com/jquery-3.5.1.js:5429:27" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <style>
+ul#yatay-menu {
+list-style: none;
+margin:0;
+padding:0;
+}
+ul#yatay-menu li {
+display: inline-block;
+padding:0 10px;
+border-bottom:2px solid white;
+margin:auto -2px;
 
-  <head>
-    <meta charset='UTF-8'>
-    <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <title>Bedirhan and Games</title>
-    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700,900'>
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+}
+ul#yatay-menu li a {
+color: white;
+display: inline-block;
+font: 17px/100% Arial, Helvetica, sans-serif;
+width:160px ;
+height: 40px;
+line-height: 36px;
+text-decoration: none;
+vertical-align: middle;
+padding: 0 10px;
+background-color: #1f82dff5; 
+}
+ul#yatay-menu li a:hover{
+color: white;
+background-color: #d16456 ; 
+}
+body{
+    background-image:url(img/mm.jpg);
+    
+  }
+  /*
+  .card{
+  max-height:2900px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  border: 0px solid white;
+  border-radius: 0px;
+  overflow: hidden;
+  margin: 4px;
+  background-color:white;
+  text-align: center;
+  position: relative; 
+  margin: auto;
 
-    <style>
-      html,
-      body,
-      .wrapper {
-        height: 100%;
-      }
+}
+.example {
+    width:700px;
+    margin:auto;
+    position: relative;
+    margin: auto;
+ 
+}
+*/
+div{
+     background-color:rgba(161, 189, 207, 0.945);
+     position: relative;
+     margin: auto;
+     max-width: 700px;
+   }
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
 
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-      }
+    background: #ffffff;
+    color: #fa0000;
+}
 
-      body {
-        font: 1rem / 1.516 'Montserrat', Arial, sans-serif;
-      }
+.fa:hover {
+    opacity: 0.3;
+}
+/*------------------------------------------------------------------*/
+*{
+	font-family:sans-serif;
+  text-align:center;
 
-      .wrapper {
-        position: relative;
-        background: url(img/arkaplan.jpg) no-repeat center center/cover;
-      }
 
-      .wrapper:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(33, 33, 33, 0.25);
-      }
+}
+#countdown_container{
+	border-radius: 2px;
+	text-align: center;
+	font-weight: bold;
+	background: #5d91d4;
+	border: 5px dashed #ffffff;
+	display: inline-block;
+  padding: 0 5px;
+ 
+}
 
-      header,
-      .content,
-      footer {
-        position: absolute;
-      }
+#countdown_timer>div{
+	float: left;
+	background:#e7e7e7; /*white theme*/
+	padding:15px 20px;
+	margin:10px 5px;
+	text-align:center;
+  border-radius: 4px;
 
-      header,
-      footer {
-        width: 100%;
-      }
+}
 
-      header {
-        top: 0;
-        text-align: center;
-      }
+#countdown_timer>div>div:first-child{
+	font-size:28px;
+  background-color:#e7e7e7;
+	color:#16c2ec; /*white theme*/
+  text-shadow: 0px 1px 0px #12b0d8; /*white theme*/
+}
 
-      .header__logo {
-        max-width: 65px;
-        fill: #fff;
-      }
+#countdown_timer>div>div:last-child{
+	text-transform: capitalize;
+	font-size:14px;
+	background-color:#e7e7e7;
+	color:rgb(49, 160, 211); /*white theme*/
+}
+.footer {
+    height:165px;
 
-      .content {
-        top: 50%;
-        left: 50%;
-        text-align: center;
-        color: #fff;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-      }
+    margin-top:10px;
 
-      .content h1 {
-        margin-top: 0;
-      }
+    background-color:#5fb1c5;
+}
+.bmk {
+  position:left;
+}
 
-      .content form {
-        margin: auto;
-        display: table;
-      }
+body {
+    margin: 0;
+}
+ 
+#content{
+    margin-top:70px;
+    height:2000px;
+}
+ 
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #4e91b8;
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+    top: 0;
+   z-index:222 ;
+  
+   
+}
+ 
+ul li {
+    float:left;
+    border-bottom: 3px solid #65d1b6;
+}
+ 
+ul li.menu-right {
+    float: center;
+}
+ 
+ul li a {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+ 
+ul li.active {
+    background-color: #387188;
+    border-bottom: 3px solid #dd9d27;
+}
 
-      .content input {
-        float: left;
-        font-size: 16px;
-        border: 1px solid #fff;
-      }
+ul li:hover:not(.active) {
+    background-color: #068587;
+    border-bottom: 3px solid #d89c2e;
+}
+input[type=text] {
+ width:140px;
+ height:21px;
+}
 
-      .content input[type=email] {
-        padding: 12px;
-        background: #fff;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-      }
 
-      .content input[type=submit] {
-        padding: 12px 24px;
-        color: #fff;
-        background: transparent;
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
-        cursor: pointer;
-        -webkit-transition: all .235s ease-in-out;
-        transition: all .235s ease-in-out;
-      }
+div#not{
 
-      .content input[type=submit]:hover {
-        color: #212121;
-        background: #fff;
-      }
+    background-color:white;
+}
+input[type=button]{
+   background-color:red ;
+   color:#ffffff;
+   width:120px;
+   height:40px;
+   float:right;
+   border-radius:6px;
+   border:white;
+}
+input[type=reset] {
+    background-color:rgb(153, 221, 204) ;
+   color:#000000;
+   width:120px;
+   height:40px;
+   float:left;
+   border-radius:6px;
+   border:rgb(7, 7, 7);
 
-      .countdown {
-        margin: auto;
-        display: table;
-        font-size: 28px;
-        font-weight: 500;
-      }
+}
 
-      .countdown>div {
-        float: left;
-        min-width: 80px;
-      }
+ol{
+    background-color:rgb(192, 230, 255) ;
+}
+/*--------------------------------------menu uzerinden başka kağlantıya gitmek-----------------------------------------*/
+ul#alt li {
+    float: center;
+    position: relative;
+   
+}
+ul#alt li ul {
+    display: none;
+    position: absolute;
+    top: 7px; /* yukseklik 15px + sonradan eklenecek paddingler 4px toplam 19px */
+    left: 0;
+}
+ul#alt li > ul {
+    top: auto;
+    left: auto;
+}
 
-      .countdown span {
-        position: relative;
-        display: block;
-        font-size: 16px;
-        text-align: center;
-      }
 
-      .countdown span:before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        right: 0;
-        left: 0;
-        margin-right: auto;
-        margin-left: auto;
-        width: 20px;
-        height: 1px;
-        background: #fff;
-      }
+ul#alt li:hover ul {
+  display: block;
+}
+ul#alt li:hover ul, ul#alt li.over ul{
+    display: block;
+  }
+/*----------------------------------------------slider---------------------------------------------------------------*/
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 600px;
+  position: relative;
+  margin: auto;
+}
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: #528fc9;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+/*-----------------------------4.sınıf taktir teşekkür hesaplama input boyutları------------------------------------------------*/
+input[name=sinav1]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav2]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav3]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav4]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav5]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav6]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav7]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav8]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav9]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav10]{
+  width: auto;
+  height:auto;
+}
+input[name=sinav11]{
+  width: auto;
+  height:auto;
+}
+input[name=txtharf] {
+ width:240px;
+ height:60px;
+}
+input[name=txtortalama] {
+ width:auto;
+ height:auto;
+}
+/*-----------------------------------------------------------------------------------------*/
 
-      footer {
-        padding-bottom: 12px;
-        bottom: 0;
-      }
+</style>
 
-      .footer__links {
-        text-align: center;
-        list-style-type: none;
-      }
+<!---------------------------------------hesaplama--------------------------------------------->
+<script src="js/hesaplama.js"></script>
+<!---------------------------------------hesaplama--------------------------------------------->
+ 
+<link href="css/loading.css" rel="stylesheet" media="screen">
+<script src="js/loading.js"></script>
+</head>
+<body onload="myFunction()" style="margin:0;">
+<!--=================================preloader========================================== -->
+ <div id="loader">
+<div id=myDiv></div>
+  </div>
+<!--=================================preloader===============================================-->
 
-      .footer__links li {
-        display: inline-block;
-      }
+    <div id="menu" div style="position:absolute;" >
+        <ul id="alt">
+            <li class="active">
+                <a href="index.html">Anasayfa</a>
+            </li>
+            <li>
+                <a href="youtube.html">YouTube videolarım</a>
+            </li>
+            <li>
+                <a href="iletisim.html">İletişim</a>
+            </li>
+            <li class="menu-right">
+                <a href="sifreli-sayfa.html">Oyunlar</a>
+              
+            </li>
+            <li>
+              <a href="admin.html">Üye Girişi</a>
+            
+          </li>
 
-      .footer__links li:nth-of-type(n+2) {
-        margin-left: 12px;
-      }
-
-      .footer__links a {
-        padding: 8px 0;
-        display: block;
-        width: 41px;
-        text-align: center;
-        color: #fff;
-        border: 1px solid;
-        border-radius: 50%;
-        -webkit-transition: opacity .235s ease-in-out;
-        transition: opacity .235s ease-in-out;
-      }
-
-      .footer__links a:hover {
-        opacity: .5;
-      }
-
-      .footer__links .fa {
-        vertical-align: middle;
-        font-size: 21px;
-      }
-
-    </style>
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <header>
-       <!-- <svg class="header__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 318.5 100 125" enable-background="new 0 318.5 100 100"><path d="M88.888 349.937c-.109-.298-.405-.481-.718-.463-5.109.383-11.558.865-18.163 1.358l9.538-12.475c.182-.237.195-.563.033-.814-.162-.25-.46-.376-.756-.307-6.694 1.549-38.692 8.971-43.12 10.304l-6.457-5.539c-.108-.093-.241-.15-.382-.166l-6.908-.774-.053.006-.167.018-.126.032-.044.012-10.098 4.926c-.244.119-.398.366-.398.638 0 .271.155.518.399.637l10.442 5.075.226 3.224.007.024-.001.026 2.333 16.271.012.042.02.066.079.17.033.052.184.169.008.007.019.005.141.066 19.376 5.903 5.754 3.548 1.262 2.943-2.657 14.021c-.04.212.019.431.159.594.135.157.332.247.538.247l.025-.001c.154-.006 15.421-.557 16.007-.572.221-.006.45-.129.579-.308.243-.335.609-.843-4.467-17.763l-.05-.094-.026-.075c-.375-.606-3.278-5.282-4.554-7.092l31.722-23.125c.257-.187.358-.52.249-.816zm-20.773 1.036c-14.051 1.048-28.297 2.104-31.539 2.321l-.293-4.463c3.457-1.007 25.228-6.127 40.94-9.77l-9.108 11.912zm-17.659 29.556l-4.189-2.583 7.808-2.803-3.619 5.386zm-26.808-24.333l10.913-1.279-8.965 14.862-1.948-13.583zm12.112-.522l7.724 21.011-17.23-5.25 9.506-15.761zm-7.272-12.455l6.365 5.46.312 4.74-11.666 1.368-.856-12.224 5.845.656zm-15.092 3.47l7.845-3.827.554 7.909-8.399-4.082zm36.868 51.644l2.459-12.979 7.688-3.065c1.93 6.464 3.891 13.442 4.275 15.528-2.614.09-11.537.412-14.422.516zm2.215-14.407l-1.011-2.36 4.459-6.637c.893 1.301 2.583 3.965 3.894 6.069l-7.342 2.928zm3.106-10.83l-10.522 3.777-8.154-22.182c6.186-.423 39.375-2.906 48.886-3.618l-30.21 22.023z"/></svg>-->
-     
-      </header>
-
-      <main class="content">
-        <h1>Web sitemiz Geliştirilme aşamasındadır!</h1>
-        <div class="coming-text">
-        
-          <h2><span class="typed-title"></span></h2>
-          <div class="typing-title">
-            <!--<p>Site Bakım ve Geliştiriliyor... </p>-->
-            <p>Takipte kal!</p>
-            <p>Yakında</p>
-            <p>Burada Olacağız!</p>
-          </div>
-        </div>
-
-        <div class="countdown">
-          <div class="countdown__days">
-            <div class="number"></div>
-            <span class>Gün</span>
-          </div>
-
-          <div class="countdown__hours">
-            <div class="number"></div>
-            <span class>Saat</span>
-          </div>
-
-          <div class="countdown__minutes">
-            <div class="number"></div>
-            <span class>Dakika</span>
-          </div>
-
-          <div class="countdown__seconds">
-            <div class="number"></div>
-            <span class>Saniye</span>
-          </div>
-        </div>     
-
-        <p>BedirhanandGames<br />ekibi olarak, sizlere tekrardan hizmet verebilmek için yoğun bir çalışma sürdürüyoruz.</p>
-
-        <form action="https://formspree.io/f/xwkwqdzl" method="POST">
-          <input id="form-email" name="form-email" type="email" placeholder="Mail adresiniz" />
-          <input type="submit" value="Açıldığında bildir" />
-        </form>
-      </main>
-
-      <footer>
-       <!---<ul class="footer__links">
-         <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-          <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-          <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-          <li><a href="#"><span class="fa fa-github"></span></a></li>
-          <li><a href="#"><span class="fa fa-dribbble"></span></a></li>
-        </ul>--->
-      </footer>
+        </ul>
     </div>
-     <!-------------------------------------------Hazırlık kalan süre---------------------------------------------------------->
-       <script src="js/time-hazırlık(index1).js"></script>
-      
-   <!-------------------------------------------Hazırlık kalan süre---------------------------------------------------------->
 
-    <!------------------------------------------- Jquery Library File ------------------------------->
-    <script src="js/jquery-1.12.4.min.js"></script>
-    <!------------------------------------ Timer counter js file--------------------------------------- -->
-    <script src="js/countdown-timer.js"></script>
-    <!------------------------------------ Typed js file ----------------------------------->
-    <script src="js/typed.js"></script>
-    <!---------------------------------------- SmoothScroll---------------------------------- -->
-    <script src="js/SmoothScroll.js"></script>
-      <!------------------------------------ Bootstrap js file --------------------------------------------------->
-    <script src="js/bootstrap.min.js"></script>
-      <!------------------------------------------------------- Main Custom js file----------------------- -->
-    <script src="js/function.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
-    <!------------------------------------------------------------------ Bootstrap css------------------------------------ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!------------------------------------------Font Awesome icon css------------------------------------------------------>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" media="screen">
-    <!-------------------------------------------- Main custom css-------------------------------------->
-    <link href="css/custom.css" rel="stylesheet" media="screen">
-      <!---------------------------mouse tıklandığında öğeyi incele iptal------------------------------->
+</div>
+  <center><br><br><br><br><br>
+  <div class="card">
+    <div class="example">
+    
+<br>
+<a href="https://bedirhan69.github.io/index.html">
+<img src="img/mat.jpg"  width=200px; height=240px; border=1px; ></img></a>
+<br>
+<h1>Hakkımda</h1>
+<strong><p>Ben Bedirhan Aktaş youtube kanalımda çektiğim oyun videolarını yayınlamaktayım.Bu sitede de videoların gelme tarihleri ve içeriklerinden bahsedeceğim.Beni desteklemek için kanalıma aşağıdak linkten gidip abone olmayı ve videoları izleyip beğenmeyi unutmayınız.</p></strong>
+<a href="https://www.youtube.com/channel/UCBoIwUqYt5TtC-hXk_J8Raw" style="color:red">YouTube kanalım</a><br><br>
+<a href="https://www.youtube.com/channel/UCBoIwUqYt5TtC-hXk_J8Raw" class="fa fa-youtube" target="_blank" rel="noopener noreferrer"></a>     
+<h1>Diğer Videoya Son</h1>
+  <div id="countdown_container">
+  <div id="countdown_timer"></div>
+  <div style="clear:both"></div>
+  </div><br><br>
+ <!--slider-->
+ <a  name="12">
+ <div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="img/9.jpg" style="width:70%">
+   <!--<div class="text"></div>-->
+  </div></a>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="img/10.jpg" style="width:70%">
+    <!--<div class="text"></div>-->
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="img/7.jpg" style="width:70%">
+    <!--<div class="text"></div>-->
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="img/11.webp" style="width:70%">
+    <!--<div class="text"></div>-->
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="img/6.jpg" style="width:70%">
+  <!--<div class="text"></div>-->
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="img/2.jpg" style="width:70%">
+    <!--<div class="text"></div>-->
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="img/1.jpg" style="width:70%">
+    <!--<div class="text"></div>-->
+  </div>
+  <br>
+  <div style="text-align:center">
+   <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span>
+    <span class="dot"></span> 
+    <span class="dot"></span>
+    <span class="dot"></span> 
+    <span class="dot"></span>  
+        
+  </div>
+  <script src="js/slider.js"></script>
+  <!--4.sınıf taktir teşekkür hesaplama-->
+  <style>
+    form.hnarac {margin:0;padding:0;color:#000000; } form.hnarac > fieldset{background-color:#FFFFFF;clear:both;min-width:inherit;padding:15px;margin:20px 0;border:1px solid #EEEEEE;border-radius:0px;} form.hnarac > fieldset > legend{background-color: #EEEEEE;color:#000000;border-radius:0px;line-height: 1;cursor:default;margin: 0 8px;padding:8px;font-weight:bold;} form.hnarac em {color: #ff0000;font-weight:bold;} form.hnarac > fieldset > ol{padding:0px;margin:0px;list-style-type: none;} form.hnarac > fieldset > ol > li{padding:7px;margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;	-ms-flex-wrap: wrap;flex-wrap: wrap;} form.hnarac > fieldset > ol > li > label{font-weight:bold;min-width:180px;white-space:nowrap;cursor:auto;} form.hnarac > fieldset > ol.narrowest > li > label{min-width:130px;} form.hnarac > fieldset > ol.narrower > li > label{min-width:150px;} form.hnarac > fieldset > ol.narrow > li > label{min-width:170px;} form.hnarac > fieldset > ol.wide > li > label{min-width:190px;} form.hnarac > fieldset > ol.wider > li > label{min-width:220px;} form.hnarac > fieldset > ol.widest > li > label{min-width:250px;} form.hnarac > fieldset > ol > li input[type=number], form.hnarac > fieldset > ol > li input[type=text], form.hnarac > fieldset > ol > li textarea, form.hnarac > fieldset > ol > li select {padding:6px;box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.08);border: 1px solid #aaaaaa;margin:0 5px;} form.hnarac > fieldset > ol > li input[type=radio] {width:13px;height:13px;cursor: pointer;} form.hnarac > fieldset > ol > li input[type=checkbox], form.hnarac > fieldset > ol > li label{cursor: pointer;} form.hnarac > fieldset > ol > li input[type=number] {-moz-appearance: textfield;} form.hnarac > fieldset > ol > li input[type=number]::-webkit-inner-spin-button, form.hnarac > fieldset > ol > li input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;margin: 0} form.hnarac > fieldset > ol > li select {cursor:pointer;max-width:100%;} form.hnarac > fieldset > ol > li textarea {width:100%;height:200px;} form.hnarac > fieldset > ol > li > fieldset {margin:0 5px 0 0;padding:0;border:0;} form.hnarac > fieldset > ol > li > fieldset > label {padding: 7px 0;display:block;} form.hnarac > fieldset > ol > li > fieldset > label:first-child {padding-top:4px;} form.hnarac > fieldset > ol > li .illabel > label, form.hnarac > fieldset > ol > li .illabel > label :first-child {display:inline-block;padding:0;} form.hnarac > fieldset .buttons {display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack: distribute;justify-content:space-around;margin:20px 0;} form.hnarac > fieldset .buttons > button {position:relative;overflow:hidden;cursor:pointer;border:0;border-radius: 4px;padding: 15px 30px;font-size:18px;font-weight:bold; box-shadow: 2px 2px 7px #cccccc;} form.hnarac > fieldset .buttons > button[type=button] {background-color:#3B8CEE;color:#FFFFFF;} form.hnarac > fieldset .buttons > button[type=reset] {background-color:#318fbb;color:#000000;} form.hnarac > fieldset .notlar {margin: 8px;} form.hnarac > fieldset .embedlink {float: right;} form.hnarac > fieldset > ol > li .iw1{width:37px} form.hnarac > fieldset > ol > li .iw2{width:40px} form.hnarac > fieldset > ol > li .iw3{width:44px} form.hnarac > fieldset > ol > li .iw4{width:48px} form.hnarac > fieldset > ol > li .iw5{width:52px} form.hnarac > fieldset > ol > li .iw6{width:56px} form.hnarac > fieldset > ol > li .iw7{width:60px} form.hnarac > fieldset > ol > li .iw8{width:64px} form.hnarac > fieldset > ol > li .iw9{width:68px} form.hnarac > fieldset > ol > li .orn{padding-left: 4px;} form.hnarac > fieldset > ol > li .neg{color:#EF0000;font-weight:bold;} </style>
+   <form class="hnarac">  <fieldset class="meb"> <legend>4. Sınıf Takdir Teşekkür Hesaplama Aracı</legend> <div class="notlar" id="not"><em>NOT:</em> Bu hesaplama aracı 2020 - 2021 eğitim yılınna uyumlu olarak hazırlanmıştır. Puanını boş bıraktığınız dersler için hesaplamalarda 0 puan kullanılacaktır.</div>
+    <ol>
+     <li id="matematik"> <label for="matematikpuan"></label>Matematik :<input type="text" name="sinav1" id="sinav1" maxlength="5"><br/></li>
+     <li id="turkce"> <label for="turkcepuan"></label>Türkçe :<input type="text" name="sinav2" id="sinav2" maxlength="5"><br/></li>
+     <li id="ingilizce"> <label for="ingilizcepuan"></label>İngilizce :<input type="text" name="sinav3" id="sinav3" maxlength="5"><br/></li>
+     <li id="fen"> <label for="fenveteknolojipuan"></label>Fen bilimleri :<input type="text" name="sinav4" id="sinav4" maxlength="5"><br/></li>
+     <li id="sosyal"> <label for="sosyalbilgilerpuan"></label>Sosyal :<input type="text" name="sinav5" id="sinav5" maxlength="5"><br/></li>
+     <li id="din"> <label for="dinkulturupuan"></label>Din kültürü :<input type="text" name="sinav6" id="sinav6" maxlength="5"><br/></li>
+     <li id="trafik"> <label for="trafikpuan"></label>Trafik : <input type="text" name="sinav7" id="sinav7" maxlength="5"><br/></li>
+     <li id="insan"> <label for="insanhaklariveyurtpuan"></label>İnsan Hakları<br/> ve yurttaşlık :<input type="text" name="sinav8" id="sinav8" maxlength="5"><br/></li>
+     <li id="resim"> <label for="gorselsanatlarpuan"></label>Resim :<input type="text" name="sinav9" id="sinav9" maxlength="5"><br/></li>
+     <li id="beden"> <label for="bedenegitimipuan"></label>Beden :<input type="text" name="sinav10" id="sinav10" maxlength="5"><br/></li>
+     <li id="muzik"> <label for="muzikpuan"></label>Müzik :<input type="text" name="sinav11" id="sinav11" maxlength="5"><br/></li>
+     <li id="sonuc"><label for="sonucpuan"></label>Ortalama :<input type="text" name="txtortalama" id="txtortalama" maxlength="0"><br/></li>
+     <li id="sonuc"><label for="sonucpuan"></label>Belge :<input type="text" name="txtharf" id="txtharf" maxlength="0"><br/></li>
+     <input type="button" onclick="hesapla();" value="Hesapla"/>
+     <input type="reset" />
+     </ol>
 
-    <script src="js/mouse.js"></script>
-    <!---------------------------mouse tıklandığında öğeyi incele iptal------------------------------->
+  </form>
+ </div>
+  <div>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5fc744b0920fc91564cca6a9/1eojo5hd0';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
 
-  </body>
+<button id="izin">izin al</button>
+<button id="test">test et</button>
+
+<script type="text/javascript">
+$('button#izin').click(function(){
+  if ( window.webkitNotifications.checkPermission() == 1 ){
+	window.webkitNotifications.requestPermission();
+} else {
+	alert('Zaten bu site için işlem yapılmış');
+}
+});
+
+ $('button#test').click(function(){
+  var test = window.webkitNotifications.createNotification(
+	'http://www.gravatar.com/avatar/be2da7976e64ff4211a4ff7b22b10b58',
+	'oguzhan aktas',
+	'Bu bir test içeriğidir..'
+);
+test.ondisplay = function(){
+	alert('bildirim göründü');
+}
+test.onclose = function(){
+	alert('bildirim kapatıldı!');
+}
+
+
+test.show();
+});
+
+</script>
+
+
+  </div>
+
+<div class="footer"><br>
+    <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" id=bmk /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+   <small>© Tüm haklar BedirhanandGames 'e aittir.</small>
+  </center>
+  </div>
+  <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+<script src="js/mouse.js"></script>
+<!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+
+<!----------------------------------------------------videoya kalan süre-------------------------------------->
+<script src="js/time.js"></script>
+<!----------------------------------------------------videoya kalan süre-------------------------------------->
+
+
+  
+</body>
 
 </html>
