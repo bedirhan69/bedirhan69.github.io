@@ -1,6 +1,7 @@
 (function() {
+  
     // Bitiş tarihi
-    var deadlineDate = new Date('December 14, 2020 23:59:59').getTime();
+    var deadlineDate = new Date('December 15, 2020 23:59:59').getTime();
 
     // Cache all countdown boxes into consts
     var countdownDays = document.querySelector('.countdown__days .number');
@@ -29,3 +30,8 @@
       countdownSeconds.innerHTML = seconds;
     }, 1000);
   })();
+  
+ // setTimeout(function(){   
+ //   window.location.assign("index1.html");
+    //3 saniye sonra yönlenecek
+ //   }, 3000);
