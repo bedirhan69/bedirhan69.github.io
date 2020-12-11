@@ -321,4 +321,14 @@ button,
     }
   }
 }
-
+<script type="text/javascript">
+function Kodevreni(adres)
+{
+    window.open(adres, "_blank");
+}
+function KodevreniAc()
+{
+    Kodevreni("http://www.kodevreni.com");
+}
+</script>
+<input type="button" value="Yeni Pencere Aç" onClick="KodEvreniAc()" />
