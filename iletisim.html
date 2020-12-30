@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <title>Bedirhan and Games</title>
-  <script src="https://cdn.ticimax.com/Scripts/karScript/kar.js" type="text/javascript"></script>
-  <style>
-  
-ul#yatay-menu {
-list-style: none;
-margin:0;
-padding:0;
-}
-ul#yatay-menu li {
-display: inline-block;
-padding:0 10px;
-border-bottom:2px solid white;
-margin:auto -2px;
 
-}
-ul#yatay-menu li a {
-color: white;
-display: inline-block;
-font: 17px/100% Arial, Helvetica, sans-serif;
-width:160px ;
-height: 40px;
-line-height: 36px;
-text-decoration: none;
-vertical-align: middle;
-padding: 0 10px;
-background-color: #1f82dff5; 
-}
-ul#yatay-menu li a:hover{
-color: white;
-background-color: #d16456 ; 
-}
-/*
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <title>Bedirhan and Games</title>
+    <script src="js/kar.js" type="text/javascript"></script>
+    <style>
+        ul#yatay-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul#yatay-menu li {
+            display: inline-block;
+            padding: 0 10px;
+            border-bottom: 2px solid white;
+            margin: auto -2px;
+        }
+        
+        ul#yatay-menu li a {
+            color: white;
+            display: inline-block;
+            font: 17px/100% Arial, Helvetica, sans-serif;
+            width: 160px;
+            height: 40px;
+            line-height: 36px;
+            text-decoration: none;
+            vertical-align: middle;
+            padding: 0 10px;
+            background-color: #1f82dff5;
+        }
+        
+        ul#yatay-menu li a:hover {
+            color: white;
+            background-color: #d16456;
+        }
+        /*
 .card{
   max-height:2000px;
   width: 900px;
@@ -55,180 +57,189 @@ background-color: #d16456 ;
     margin:auto;
 }
 */
-div{
-  position: relative;
-     margin: auto;
-     max-width: 700px;
-  background-color:rgba(161, 189, 207, 0.945);
-
-}
-body{
-    background-image:url(img/mm.jpg);
-  }
-input[name=isim] {
-   width:200px;
-   height:30px;
-   border-radius:7px;
-   border-color: rgb(107, 102, 103);
-}
-input[name=görüş] {
-  width:200px;
-  height:30px;
-  border-radius:7px;
-  border-color:rgb(105, 105, 104) ;
-}
-input[type=submit] {
-  background-color:rgba(33, 90, 245, 0.911);
-  color:white;
-  width:70px;
-  height:35px;
-  border-color: rgba(33, 90, 245, 0.911);
-  border-radius:5px;
-  }
-  input[type=text]:focus {border: 1px solid rgb(0, 101, 253) ;
-}
-.footer {
-    height:165px;
-
-    margin-top:10px;
-
-    background-color:#5fb1c5;
-}
-body {
-    margin: 0;
-}
- 
-#content{
-    margin-top:70px;
-    height:2000px;
-}
- 
-ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    background-color: #4e91b8;
-    overflow: auto;
-    position: fixed;
-    width: 100%;
-    top: 0;
-   z-index:222 ; 
-}
- 
-ul li {
-    float:left;
-    border-bottom: 3px solid #65d1b6;
-}
- 
-ul li.menu-right {
-    float: center;
-}
- 
-ul li a {
-    display: inline-block;
-    padding: 12px 24px;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-}
- 
-ul li.active {
-    background-color: #387188;
-    border-bottom: 3px solid #dd9d27;
-}
-
-ul li:hover:not(.active) {
-    background-color: #068587;
-    border-bottom: 3px solid #d89c2e;
-}
-/*------------------------------------------------------------------------------*/
-form{
-  background-color: rgb(221, 230, 233);
-  width:460px;
-  height:300px;
-  border-radius:11px;
-
-}
-
-
-
-</style>
-<link href="css/loading.css" rel="stylesheet" media="screen">
-<script src="js/loading.js"></script>
+        
+        div {
+            position: relative;
+            margin: auto;
+            max-width: 700px;
+            background-color: rgba(161, 189, 207, 0.945);
+        }
+        
+        body {
+            background-image: url(img/mm.jpg);
+        }
+        
+        input[name=isim] {
+            width: 200px;
+            height: 30px;
+            border-radius: 7px;
+            border-color: rgb(107, 102, 103);
+        }
+        
+        input[name=görüş] {
+            width: 200px;
+            height: 30px;
+            border-radius: 7px;
+            border-color: rgb(105, 105, 104);
+        }
+        
+        input[type=submit] {
+            background-color: rgba(33, 90, 245, 0.911);
+            color: white;
+            width: 70px;
+            height: 35px;
+            border-color: rgba(33, 90, 245, 0.911);
+            border-radius: 5px;
+        }
+        
+        input[type=text]:focus {
+            border: 1px solid rgb(0, 101, 253);
+        }
+        
+        .footer {
+            height: 165px;
+            margin-top: 10px;
+            background-color: #5fb1c5;
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        #content {
+            margin-top: 70px;
+            height: 2000px;
+        }
+        
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            background-color: #4e91b8;
+            overflow: auto;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 222;
+        }
+        
+        ul li {
+            float: left;
+            border-bottom: 3px solid #65d1b6;
+        }
+        
+        ul li.menu-right {
+            float: center;
+        }
+        
+        ul li a {
+            display: inline-block;
+            padding: 12px 24px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+        }
+        
+        ul li.active {
+            background-color: #387188;
+            border-bottom: 3px solid #dd9d27;
+        }
+        
+        ul li:hover:not(.active) {
+            background-color: #068587;
+            border-bottom: 3px solid #d89c2e;
+        }
+        /*------------------------------------------------------------------------------*/
+        
+        form {
+            background-color: rgb(221, 230, 233);
+            width: 390px;
+            height: 270px;
+            border-radius: 11px;
+        }
+    </style>
+    <link href="css/loading.css" rel="stylesheet" media="screen">
+    <script src="js/loading.js"></script>
 </head>
- <body onload="myFunction()" style="margin:0;">
-  <!--=================================preloader========================================== -->
- <div id="loader">
 
-</div>
-<!--=================================preloader===============================================-->
-  <center>
+<body onload="myFunction()" style="margin:0;">
+    <!--=================================preloader========================================== -->
+    <div id="loader">
 
-    <div id="menu" div style="position:absolute;" >
-      <ul>
-          <li>
-              <a href="index.html">Anasayfa</a>
-          </li>
-          <li>
-              <a href="youtube.html">YouTube videolarım</a>
-          </li>
-          <li class="active">
-              <a href="iletisim.html">İletişim</a>
-          </li>
-          <li class="menu-right">
-              <a href="sifreli-sayfa.html">Oyunlar</a>
-          </li>
-          <li>
-            <a href="admin.html">Üye Girişi</a>
-          
-        </li>
-      </ul>
-  </div>
-    <br><br><br><br><br> 
-    <div class="card">
-    <div class="example">
-    <br><br>
-    <h2>Aşağıda kanalımda istediğiniz video türlerini ve web sitem hakkında görüşlerinizi belirtebilirsiniz </h2>
-    <form action="https://formspree.io/f/mdopgbbk" method="POST" name=forum2><br><br>
-   <input type="text" placeholder="Adınız"name=isim><br>
-   <input type="text"placeholder="Görüşünüz"name=görüş><br><br>
-   <input type="submit" name=gönder /><br><br>
-   </form>
-   <br><br><br>
-   <a href="https://bedirhan69.github.io/index.html"><img src="img/free_horizontal_on_white_by_logaster.png" text-align=center; width=320px;></a>
-   <br><br><br><br><br><br><br><br><br>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/5fc744b0920fc91564cca6a9/1eojo5hd0';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
+    </div>
+    <!--=================================preloader===============================================-->
+    <center>
 
- 
-    </center>  
-   </div>
-   </div>
+        <div id="menu" div style="position:absolute;">
+            <ul>
+                <li>
+                    <a href="index.html">Anasayfa</a>
+                </li>
+                <li>
+                    <a href="youtube.html">YouTube videolarım</a>
+                </li>
+                <li class="active">
+                    <a href="iletisim.html">İletişim</a>
+                </li>
+                <li class="menu-right">
+                    <a href="sifreli-sayfa.html">Oyunlar</a>
+                </li>
+                <li>
+                    <a href="admin.html">Üye Girişi</a>
+
+                </li>
+            </ul>
+        </div>
+        <br><br><br><br><br>
+        <div class="card">
+            <div class="example">
+                <br><br>
+                <h2>Aşağıda kanalımda istediğiniz video türlerini ve web sitem hakkında görüşlerinizi belirtebilirsiniz </h2>
+                <form action="https://formspree.io/f/mdopgbbk" method="POST" name=forum2><br><br>
+                    <input type="text" placeholder="Adınız" name=isim><br>
+                    <input type="text" placeholder="Görüşünüz" name=görüş><br><br>
+                    <input type="submit" name=gönder /><br><br>
+                </form>
+                <br><br><br>
+                <a href="https://bedirhan69.github.io/index.html"><img src="img/free_horizontal_on_white_by_logaster.png" text-align=center; width=320px;></a>
+                <br><br><br><br><br><br><br><br><br>
+                <!--Start of Tawk.to Script-->
+                <script type="text/javascript">
+                    var Tawk_API = Tawk_API || {},
+                        Tawk_LoadStart = new Date();
+                    (function() {
+                        var s1 = document.createElement("script"),
+                            s0 = document.getElementsByTagName("script")[0];
+                        s1.async = true;
+                        s1.src = 'https://embed.tawk.to/5fc744b0920fc91564cca6a9/1eojo5hd0';
+                        s1.charset = 'UTF-8';
+                        s1.setAttribute('crossorigin', '*');
+                        s0.parentNode.insertBefore(s1, s0);
+                    })();
+                </script>
+                <!--End of Tawk.to Script-->
+
+
+    </center>
+    </div>
+    </div>
 
     <div class="footer"><br>
-    <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
-    <small>© Tüm haklar BedirhanandGames 'e aittir.</small><br>
-    <a href="https://bedirhanandgames.tawk.help/">BedirhanandGames Help Center</a>
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" alt="DMCA.com Protection Status" /></a>
+        <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js">
+        </script>
+        <small>© Tüm haklar BedirhanandGames 'e aittir.</small><br>
+        <a href="https://bedirhanandgames.tawk.help/">BedirhanandGames Help Center</a>
 
-  </div>
-  
-  <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
-  <script src="js/mouse.js"></script>
-  <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+    </div>
 
-  <!--------------------------------form kontrol-------------------------------------->
-  <script src="js/formkontrol(iletisim).js"></script>
-<!--------------------------------------form kontrol-------------------------------------------------->
- </body>
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+    <script src="js/mouse.js"></script>
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+
+    <!--------------------------------form kontrol-------------------------------------->
+    <script src="js/formkontrol(iletisim).js"></script>
+    <!--------------------------------------form kontrol-------------------------------------------------->
+</body>
+
 </html>
