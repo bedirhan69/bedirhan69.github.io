@@ -458,14 +458,27 @@
         <div class="card">
             <div class="example">
 
-                <iframe src="1.mp3" allow="autoplay" loop style="display:none">
+                <iframe src="1.mp3" loop id="x" allow="autoplay" style="display:none" autoplay >
                 </iframe>
-                <audio loop autoplay>
+                <audio id="y">
                 
-                  <source src="1.mp3"  type="audio/mpeg">
+                  <source src="1.mp3"  type="audio/mpeg" >
                 
                 </audio>
 
+
+
+                <script>
+                    function play() {
+                        y.play();
+                    }
+
+                    function pause() {
+
+                        x.setAttribute("src", "");
+                        y.pause();
+                    }
+                </script>
                 <br>
                 <a href="https://bedirhan69.github.io/index.html">
                     <img src="img/mat.jpg" width=200px; height=240px; border=1px;></img>
