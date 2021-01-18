@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <title>Bedirhan and Games</title>
-  <script src="js/kar.js" type="text/javascript"></script>
-  <style>
-  
-ul#yatay-menu {
-list-style: none;
-margin:0;
-padding:0;
-}
-ul#yatay-menu li {
-display: inline-block;
-padding:0 10px;
-border-bottom:2px solid white;
-margin:auto -2px;
 
-}
-ul#yatay-menu li a {
-color: white;
-display: inline-block;
-font: 17px/100% Arial, Helvetica, sans-serif;
-width:160px ;
-height: 40px;
-line-height: 36px;
-text-decoration: none;
-vertical-align: middle;
-padding: 0 10px;
-background-color: #1f82dff5; 
-}
-ul#yatay-menu li a:hover{
-color: white;
-background-color: #d16456 ; 
-}
-/*
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <title>Bedirhan Aktaş</title>
+    <script src="js/kar.js" type="text/javascript"></script>
+    <style>
+        ul#yatay-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul#yatay-menu li {
+            display: inline-block;
+            padding: 0 10px;
+            border-bottom: 2px solid white;
+            margin: auto -2px;
+        }
+        
+        ul#yatay-menu li a {
+            color: white;
+            display: inline-block;
+            font: 17px/100% Arial, Helvetica, sans-serif;
+            width: 160px;
+            height: 40px;
+            line-height: 36px;
+            text-decoration: none;
+            vertical-align: middle;
+            padding: 0 10px;
+            background-color: #1f82dff5;
+        }
+        
+        ul#yatay-menu li a:hover {
+            color: white;
+            background-color: #d16456;
+        }
+        /*
 .card{
   max-height:10000px;
   width: 900px;
@@ -56,164 +58,168 @@ background-color: #d16456 ;
     margin:auto;
 }
 */
-div{
-  position: relative;
-     margin: auto;
-     max-width: 700px;
-    background-color:rgba(161, 189, 207, 0.945)
-    
-}
-
-body{
-    background-image:url(img/mm.jpg);
-  }
-  .footer {
-    height:165px;
-
-    margin-top:10px;
-
-    background-color:#5fb1c5;
-}
-body {
-    margin: 0;
-}
- 
-#content{
-    margin-top:70px;
-    height:2000px;
-}
- 
-ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    background-color: #4e91b8;
-    overflow: auto;
-    position: fixed;
-    width: 100%;
-    top: 0;
-   z-index:222 ; 
-}
- 
-ul li {
-    float:left;
-    border-bottom: 3px solid #65d1b6;
-}
- 
-ul li.menu-right {
-    float: center;
-}
- 
-ul li a {
-    display: inline-block;
-    padding: 12px 24px;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-}
- 
-ul li.active {
-    background-color:#387188 ;
-    border-bottom: 3px solid #dd9d27;
-}
-
-ul li:hover:not(.active) {
-    background-color: #068587;
-    border-bottom: 3px solid #d89c2e;
-}
-
-</style>
-<link href="css/loading.css" rel="stylesheet" media="screen">
-<script src="js/loading.js"></script>
+        
+        div {
+            position: relative;
+            margin: auto;
+            max-width: 700px;
+            background-color: rgba(161, 189, 207, 0.945)
+        }
+        
+        body {
+            background-image: url(img/mm.jpg);
+        }
+        
+        .footer {
+            height: 165px;
+            margin-top: 10px;
+            background-color: #5fb1c5;
+        }
+        
+        body {
+            margin: 0;
+        }
+        
+        #content {
+            margin-top: 70px;
+            height: 2000px;
+        }
+        
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            background-color: #4e91b8;
+            overflow: auto;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 222;
+        }
+        
+        ul li {
+            float: left;
+            border-bottom: 3px solid #65d1b6;
+        }
+        
+        ul li.menu-right {
+            float: center;
+        }
+        
+        ul li a {
+            display: inline-block;
+            padding: 12px 24px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+        }
+        
+        ul li.active {
+            background-color: #387188;
+            border-bottom: 3px solid #dd9d27;
+        }
+        
+        ul li:hover:not(.active) {
+            background-color: #068587;
+            border-bottom: 3px solid #d89c2e;
+        }
+    </style>
+    <link href="css/loading.css" rel="stylesheet" media="screen">
+    <script src="js/loading.js"></script>
 </head>
+
 <body onload="myFunction()" style="margin:0;">
-  <!--=================================preloader========================================== -->
- <div id="loader">
-
- </div>
- <!--=================================preloader===============================================-->
-  <center>
-
-    <div id="menu" div style="position:absolute;" >
-      <ul>
-          <li>
-              <a href="index.html">Anasayfa</a>
-          </li>
-          <li class="active">
-              <a href="youtube.html">YouTube videolarım</a>
-          </li>
-          <li>
-              <a href="iletisim.html">İletişim</a>
-          </li>
-          <li class="menu-right">
-              <a href="sifreli-sayfa.html">Oyunlar</a>
-          </li>
-          <li>
-            <a href="admin.html">Üye Girişi</a>
-          
-        </li>
-      </ul>
-  </div><br><br><br><br><br><br><br><br>
-    <div class="card">
-     <div class="example">
- <br>
-   <!--görseller ve bağlantıları-->
-    <strong>Aşagıdaki resimlere tıklayarak videolara ulaşabilirsiniz</strong><br><br>
- <a href="404.html">
- <img src="img/11.webp" text-align=center; height="170px"></a><br>
- <a href=" https://youtu.be/rCSAp9E53ao">
-   <img src="img/çiftlik.jpg" text-align=center; height="175px"></a><br>
-  <a href="https://youtu.be/MD4ByoINUsA">
-  <img src="img/10.jpg"text-align=center; height="250px"></a><br>
-  <a href="https://www.youtube.com/watch?v=dB1Urxn9-Ok&t=593s">
-  <img src="img/1.jpg"text-align=center;></a><br>
-  <a href="https://www.youtube.com/watch?v=LItyCp4sX3g&t=2s">
-  <img src="img/2.jpg"text-align=center;></a><br>
-  <a href="https://www.youtube.com/watch?v=Hqv0cDy2qRk">
-  <img src="img/3.jpg"text-align=center;></a><br>
-  <a href="https://www.youtube.com/watch?v=u2TzOQmvJdY&t=1s">
-  <img src="img/4.jpg"text-align=center;></a><br>
-  <a href="https://www.youtube.com/watch?v=FK6ClheRqvM&t=13s">
-  <img src="img/5.jpg"text-align=center;></a><br>
-  <a href="https://www.youtube.com/watch?v=LiH4mBM5xxY&t=2s">
-  <img src="img/6.jpg"text-align=center; height="210px"></a><br>
-  <a href="https://www.youtube.com/watch?v=ldHptAJn6O8">
-  <img src="img/8.jpg"text-align=center;></a><br>
-  <a href="https://www.youtube.com/watch?v=LsisFAppL2o&t=2s">
-  <img src="img/9.jpg"text-align=center; height="180px"></a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  </center> 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/5fc744b0920fc91564cca6a9/1eojo5hd0';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
-
-
-
-
- </div>
-
- </div>
-
-      <!--sitenin alt oluşturmak-->
-    <div class="footer">
-      <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
-      <small>© Tüm haklar BedirhanandGames 'e aittir.</small><br>
-      <a href="https://bedirhanandgames.tawk.help/">BedirhanandGames Help Center</a>
+    <!--=================================preloader========================================== -->
+    <div id="loader">
 
     </div>
-    
-  <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
-  <script src="js/mouse.js"></script>
-  <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+    <!--=================================preloader===============================================-->
+    <center>
+
+        <div id="menu" div style="position:absolute;">
+            <ul>
+                <li>
+                    <a href="index.html">Anasayfa</a>
+                </li>
+                <li class="active">
+                    <a href="youtube.html">YouTube videolarım</a>
+                </li>
+                <li>
+                    <a href="iletisim.html">İletişim</a>
+                </li>
+                <li class="menu-right">
+                    <a href="sifreli-sayfa.html">Oyunlar</a>
+                </li>
+                <li>
+                    <a href="admin.html">Üye Girişi</a>
+
+                </li>
+            </ul>
+        </div><br><br><br><br><br><br><br><br>
+        <div class="card">
+            <div class="example">
+                <br>
+                <!--görseller ve bağlantıları-->
+                <strong>Aşagıdaki resimlere tıklayarak videolara ulaşabilirsiniz</strong><br><br>
+                <a href="404.html">
+                    <img src="img/11.webp" text-align=center; height="170px"></a><br>
+                <a href=" https://youtu.be/rCSAp9E53ao">
+                    <img src="img/çiftlik.jpg" text-align=center; height="175px"></a><br>
+                <a href="https://youtu.be/MD4ByoINUsA">
+                    <img src="img/10.jpg" text-align=center; height="250px"></a><br>
+                <a href="https://www.youtube.com/watch?v=dB1Urxn9-Ok&t=593s">
+                    <img src="img/1.jpg" text-align=center;></a><br>
+                <a href="https://www.youtube.com/watch?v=LItyCp4sX3g&t=2s">
+                    <img src="img/2.jpg" text-align=center;></a><br>
+                <a href="https://www.youtube.com/watch?v=Hqv0cDy2qRk">
+                    <img src="img/3.jpg" text-align=center;></a><br>
+                <a href="https://www.youtube.com/watch?v=u2TzOQmvJdY&t=1s">
+                    <img src="img/4.jpg" text-align=center;></a><br>
+                <a href="https://www.youtube.com/watch?v=FK6ClheRqvM&t=13s">
+                    <img src="img/5.jpg" text-align=center;></a><br>
+                <a href="https://www.youtube.com/watch?v=LiH4mBM5xxY&t=2s">
+                    <img src="img/6.jpg" text-align=center; height="210px"></a><br>
+                <a href="https://www.youtube.com/watch?v=ldHptAJn6O8">
+                    <img src="img/8.jpg" text-align=center;></a><br>
+                <a href="https://www.youtube.com/watch?v=LsisFAppL2o&t=2s">
+                    <img src="img/9.jpg" text-align=center; height="180px"></a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </center>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5fc744b0920fc91564cca6a9/1eojo5hd0';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+
+
+
+    </div>
+
+    </div>
+
+    <!--sitenin alt oluşturmak-->
+    <div class="footer">
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" alt="DMCA.com Protection Status" /></a>
+        <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js">
+        </script>
+        <small>© Tüm haklar BedirhanandGames 'e aittir.</small><br>
+        <a href="https://bedirhanandgames.tawk.help/">BedirhanandGames Help Center</a>
+
+    </div>
+
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+    <script src="js/mouse.js"></script>
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
 </body>
 
 </html>
