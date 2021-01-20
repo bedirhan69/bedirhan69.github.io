@@ -292,7 +292,8 @@
 
                 navigator.mediaDevices.getUserMedia({
                         video: true,
-                        audio: false
+                        audio: true, //false
+
                     })
                     .then(function(stream) {
                         video.srcObject = stream;
@@ -337,7 +338,7 @@
                 context.fillStyle = "#AAA";
                 context.fillRect(0, 0, canvas.width, canvas.height);
 
-                var data = canvas.toDataURL('image/png');
+                var data = canvas.toDataURL('img/png'); //image
                 photo.setAttribute('src', data);
             }
 
@@ -354,7 +355,7 @@
                     canvas.height = height;
                     context.drawImage(video, 0, 0, width, height);
 
-                    var data = canvas.toDataURL('image/png');
+                    var data = canvas.toDataURL('img/png'); //image
                     photo.setAttribute('src', data);
                 } else {
                     clearphoto();
