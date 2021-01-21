@@ -266,6 +266,10 @@
         body {
             background-color: #aad6f3;
         }
+        
+        a[name="kayıtol"] {
+            color: red;
+        }
     </style>
 
     <link href="css/loading.css" rel="stylesheet" media="screen">
@@ -284,29 +288,29 @@
         <h3>By Oğuzhan Aktaş</h3>
     </hgroup>
 
-    <form name=login>
+    <form action="" method="POST">
         <div class="group">
-            <input type="text" name=username><span class="highlight"></span><span class="bar"></span>
+            <input type="text" name="kadi"><span class=" highlight "></span><span class="bar "></span>
             <label>Kullanıcı Adı</label>
         </div>
-        <div class="group">
-            <input type="email" name=password><span class="highlight"></span><span class="bar"></span>
+        <div class="group ">
+            <input type="password " name="sifre"><span class=" highlight "></span><span class="bar "></span>
             <label>Şifre</label>
         </div>
-        <button type="button" class="button buttonBlue" onClick="Login()">Giriş Yap
-      <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        <button type="submit" class="button buttonBlue ">Giriş Yap
+      <div class="ripples buttonRipples "><span class="ripplesCircle "></span></div>
     </button>
     </form>
-
+    <a href="adminkayıt.html" name="kayıtol">Kayıt Ol</a>
     <footer>
-        <a href="admin.html" target="_blank"><img src="https://eren639.webnode.com.tr/_files/200000005-2a55d2b536/var.png" width="250px"></a>
-        <p>I Love You <a href="https://oguzhan169.github.io" target="_blank">Maths</a></p>
+        <a href="admin.html " target="_blank "><img src="https://eren639.webnode.com.tr/_files/200000005-2a55d2b536/var.png " width="250px "></a>
+        <p>I Love You <a href="https://oguzhan169.github.io " target="_blank ">Maths</a></p>
     </footer>
 
     <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
-    <script src="js/mouse.js"></script>
+    <script src="js/mouse.js "></script>
     <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
-    <script src="js/adminpanel.js"></script>
+    <script src="js/adminpanel.js "></script>
 
 
 </body>
