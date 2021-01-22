@@ -47,8 +47,8 @@ function hesapla() {
         harfnot = 'Zayıf Ders var';
     if (not1 > 100)
         alert('Lütfen Dersleri 100 üzerinden gir!!!')
-        return=false;
-      else return=true;
+         break;
+        
     if (s2 > 00 && s2 < 55)
         harfnot = 'türkçe 55 altı';
 
