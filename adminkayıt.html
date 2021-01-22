@@ -286,26 +286,26 @@
 
     <form action="" method="POST">
         <div class="group">
-            <input type="text" name="adsoyad"><span class=" highlight "></span><span class="bar "></span>
+            <input type="text" name="adsoyad"><span class=" highlight " value="adsoyad"></span><span class="bar "></span>
             <label>Ad-Soyad</label>
         </div>
         <div class="group ">
-            <input type="text " name="kadi"><span class=" highlight "></span><span class="bar "></span>
+            <input type="text " name="kadi"><span class=" highlight " value="kadi"></span><span class="bar "></span>
             <label>Kullanıcı Adı</label>
         </div>
         <div class="group ">
-            <input type="password " name="sifre"><span class=" highlight "></span><span class="bar "></span>
+            <input type="password " name="sifre"><span class=" highlight " value="sifre"></span><span class="bar "></span>
             <label>Şifre</label>
         </div>
         <div class="group ">
-            <input type="password " name="sifret"><span class=" highlight "></span><span class="bar "></span>
+            <input type="password " name="sifret"><span class=" highlight " value="sifret"></span><span class="bar "></span>
             <label>Şifre Tekrar</label>
         </div>
         <div class="group ">
-            <input type="text " name="eposta"><span class=" highlight "></span><span class="bar "></span>
+            <input type="text " name="eposta"><span class=" highlight " value="eposta"></span><span class="bar "></span>
             <label>E-Posta</label>
         </div>
-        <button type="button " class="button buttonBlue " name="kayit">Kayıt Ol
+        <button type="button " class="button buttonBlue " name="kayit" value="kayit" onclick=kayıt()>Kayıt Ol
       <div class="ripples buttonRipples "><span class="ripplesCircle "></span></div>
     </button>
     </form>
@@ -321,9 +321,54 @@
     <script src="js/mouse.js "></script>
     <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
     <script src="js/adminpanel.js "></script>
-    <script src="uyelik.php">
-    </script>
+    <script>
+        function kayıt() {
 
+            var done = 0;
+
+            var adsoyad = document.kayıt.adsoyad.value;
+
+            adsoyad = adsoyad.toLowerCase();
+
+            var sifre = document.kayıt.sifre.value;
+
+            sifre = sifre.toLowerCase();
+
+            if (adsoyas == "KULLANICI ADI" && sifre == "ŞİFRESİ") {
+
+                done = 1;
+            }
+
+            if (username == "oguzhan" && password == "oguzhan") {
+                window.location = "xxx.html";
+                done = 1;
+            }
+
+            if (username == "member3" && password == "password3") {
+                window.location = "#.html";
+                done = 1;
+            }
+
+            if (done == 0) {
+                alert("Kullanıcı adını veya Şifreyi Kontrol Et!!!");
+            }
+
+        }
+
+        function validateForm() {
+            var isim = document.forms['form1'][0].value;
+            var soyIsim = document.forms['form1'][1].value;
+            if (isim == null || isim == "") {
+                alert("İsim kısmı boş bırakılamaz");
+                return false;
+            }
+
+            if (soyIsim == null || soyIsim == "") {
+                alert("Soyisim kısmı boş bırakılamaz");
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>
