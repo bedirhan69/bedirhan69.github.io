@@ -22,7 +22,8 @@ function hesapla() {
     else if (not1 >= 0 && not1 < 70)
         harfnot = 'Malesef hiç bir belge kazanamadınız!';
 
-
+    if (00>s1>100)
+        harfnot = 'Zayıf Ders var';
     if (s1 > 00 && s1 < 45)
         harfnot = 'Zayıf Ders var';
     if (s2 > 00 && s2 < 55)
