@@ -47,11 +47,6 @@ function hesapla() {
         harfnot = 'Zayıf Ders var';
     if (not1 > 100)
         alert('Lütfen Dersleri 100 üzerinden gir!!!');
-          break;
-        else continue;
-    if (s2 > 00 && s2 < 55)
-        harfnot = 'türkçe 55 altı';
-
 
     document.getElementById('txtortalama').value = not1;
     document.getElementById('txtharf').value = harfnot;
