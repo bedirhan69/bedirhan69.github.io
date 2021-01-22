@@ -284,7 +284,7 @@
         <h3>By Oğuzhan Aktaş</h3>
     </hgroup>
 
-    <form action="" method="POST">
+    <form action="" method="POST" name="forum1">
         <div class="group">
             <input type="text" name="adsoyad"><span class=" highlight " value="adsoyad"></span><span class="bar "></span>
             <label>Ad-Soyad</label>
@@ -305,7 +305,7 @@
             <input type="text " name="eposta"><span class=" highlight " value="eposta"></span><span class="bar "></span>
             <label>E-Posta</label>
         </div>
-        <button type="button " class="button buttonBlue " name="kayit" value="kayit" onclick=kayıt()>Kayıt Ol
+        <button type="submit " class="button buttonBlue " name="kayit" value="kayit" onclick=kayıt()>Kayıt Ol
       <div class="ripples buttonRipples "><span class="ripplesCircle "></span></div>
     </button>
     </form>
@@ -326,26 +326,22 @@
 
             var done = 0;
 
-            var adsoyad = document.kayıt.adsoyad.value;
+            var adsoyad = document.forms['form1'][0].value;
 
-            adsoyad = adsoyad.toLowerCase();
+            var sifre = document.forms['form1'][1].value;
 
-            var sifre = document.kayıt.sifre.value;
-
-            sifre = sifre.toLowerCase();
-
-            if (adsoyas == "KULLANICI ADI" && sifre == "ŞİFRESİ") {
+            if (adsoyad == "KULLANICI ADI" && sifre == "ŞİFRESİ") {
 
                 done = 1;
             }
 
-            if (username == "oguzhan" && password == "oguzhan") {
+            if (adsoyad == "oguzhan" && sifre == "oguzhan") {
                 window.location = "xxx.html";
                 done = 1;
             }
 
-            if (username == "member3" && password == "password3") {
-                window.location = "#.html";
+            if (adsoyad == "member3" && sifre == "password3") {
+                window.location = "xxx.html";
                 done = 1;
             }
 
@@ -353,20 +349,6 @@
                 alert("Kullanıcı adını veya Şifreyi Kontrol Et!!!");
             }
 
-        }
-
-        function validateForm() {
-            var isim = document.forms['form1'][0].value;
-            var soyIsim = document.forms['form1'][1].value;
-            if (isim == null || isim == "") {
-                alert("İsim kısmı boş bırakılamaz");
-                return false;
-            }
-
-            if (soyIsim == null || soyIsim == "") {
-                alert("Soyisim kısmı boş bırakılamaz");
-                return false;
-            }
         }
     </script>
 </body>
