@@ -24,29 +24,29 @@ function hesapla() {
 
     if (00>s1>100)
         harfnot = 'Zayıf Ders var';
-    if (s1 > 00 && s1 < 45)
+    if (s1 >= 00 && s1 < 45)
         harfnot = 'Zayıf Ders var';
-    if (s2 > 00 && s2 < 55)
+    if (s2 >= 00 && s2 < 55)
         harfnot = 'Türkçe 55 altı';
-    if (s3 > 00 && s3 < 45)
+    if (s3 >= 00 && s3 < 45)
         harfnot = 'Zayıf Ders var';
-    if (s4 > 00 && s4 < 45)
+    if (s4 >= 00 && s4 < 45)
         harfnot = 'Zayıf Ders var';
-    if (s5 > 00 && s5 < 45)
+    if (s5 >= 00 && s5 < 45)
         harfnot = 'Zayıf Ders var';
-    if (s6 > 00 && s6 < 45)
+    if (s6 >= 00 && s6 < 45)
         harfnot = 'Zayıf Ders var';
-    if (s7 > 00 && s7 < 45)
+    if (s7 >= 00 && s7 < 45)
         harfnot = 'Zayıf Ders var';
-    if (s8 > 00 && s8 < 45)
+    if (s8 >= 00 && s8 < 45)
         harfnot = 'Zayıf Ders var';
-    if (s9 > 00 && s9 < 45)
+    if (s9 >= 00 && s9 < 45)
         harfnot = 'Zayıf Ders var';
-    if (s10 > 00 && s10 < 45)
+    if (s10 >= 00 && s10 < 45)
         harfnot = 'Zayıf Ders var';
-    if (s11 > 00 && s11 < 45)
+    if (s11 >= 00 && s11 < 45)
         harfnot = 'Zayıf Ders var';
-    if (not1 > 100)
+    if (not1 >= 100)
         alert('Lütfen Dersleri 100 üzerinden gir!!!');
 
     document.getElementById('txtortalama').value = not1;
