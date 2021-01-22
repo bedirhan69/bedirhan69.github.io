@@ -41,7 +41,7 @@
 							if ($_SESSION) {
 								header("LOCATION:404.html");
 							}else{
-								ukas_mail("ugurbocugu8@gmail.com", "Ukas", "Hoşgeldin brocan, harcanıyosun buralarda.. Sana ihtiyacım var.. :)");
+								ukas_mail("bgjbh796@gmail.com", "Ukas", "Hoşgeldin brocan, harcanıyosun buralarda.. Sana ihtiyacım var.. :)");
 
 								ukas_kayit("ayar.php", "<p class='text-warning'>Lütfen boş bırakmayınız!</p>", "<p class='text-danger'>Böyle bir eposta mevcut! Lütfen başka bir tane deneyiniz!</p>", "<p class='text-warning'>Böyle bir kullanıcı adı mevcut! Lütfen başka bir tane deneyiniz!</p>", "<p class='text-success'>Başarıyla kaydoldun! :)</p>", $devam, "<p class='text-danger'>Kullanıcı adı veya şifre hatalı!</p>", "<p class='text-danger'>Kayıt başarısız!</p>", "<p>Şifreniz bir birine eşleşmiyor!</p>", "<p>Lütfen gerçek bir eposta giriniz!</p>", true);
 								echo '<strong>Sen de '.$say.' kayıtlı kişiden biri ol,</strong><h1 class="text-center"><strong>Şimdi Kayıt Ol!</strong></h1>
