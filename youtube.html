@@ -39,41 +39,22 @@
             color: white;
             background-color: #d16456;
         }
-        /*
-.card{
-  max-height:10000px;
-  width: 900px;
-  display: flex;
-  flex-direction: column;
-  border: 0px solid white;
-  border-radius: 0px;
-  overflow: hidden;
-  margin: 4px;
-  background-color:white;
-  text-align: center;
-}
-
-.example {
-    width: 900px;
-    margin:auto;
-}
-*/
         
-        div {
+        div#myDiv {
             position: relative;
             margin: auto;
             max-width: 700px;
-            background-color: rgba(161, 189, 207, 0.945)
+            background-color: rgba(90, 173, 240, 0.897);
         }
         
         body {
-            background-image: url(img/mm.jpg);
+            background-image: url(img/707055.jpg);
         }
         
         .footer {
             height: 165px;
             margin-top: 10px;
-            background-color: #5fb1c5;
+            background-color: #5e9ec9;
         }
         
         body {
@@ -90,7 +71,6 @@
             margin: 0;
             list-style-type: none;
             background-color: #4e91b8;
-            overflow: auto;
             position: fixed;
             width: 100%;
             top: 0;
@@ -123,6 +103,128 @@
             background-color: #068587;
             border-bottom: 3px solid #d89c2e;
         }
+        
+        p {
+            font-family: 'Brush Script MT', cursive;
+            color: rgba(255, 255, 255, 0.961);
+            size: 60px;
+        }
+        /*--------------------------------------------loader----------------------------------------------*/
+        
+        .loader {
+            background: #000;
+            background: radial-gradient(#222, #000);
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .loader-inner {
+            bottom: 0;
+            height: 60px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100px;
+        }
+        
+        .loader-line-wrap {
+            animation: spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+            box-sizing: border-box;
+            height: 50px;
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            transform-origin: 50% 100%;
+            width: 100px;
+        }
+        
+        .loader-line {
+            border: 4px solid transparent;
+            border-radius: 100%;
+            box-sizing: border-box;
+            height: 100px;
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100px;
+        }
+        
+        .loader-line-wrap:nth-child(1) {
+            animation-delay: -50ms;
+        }
+        
+        .loader-line-wrap:nth-child(2) {
+            animation-delay: -100ms;
+        }
+        
+        .loader-line-wrap:nth-child(3) {
+            animation-delay: -150ms;
+        }
+        
+        .loader-line-wrap:nth-child(4) {
+            animation-delay: -200ms;
+        }
+        
+        .loader-line-wrap:nth-child(5) {
+            animation-delay: -250ms;
+        }
+        
+        .loader-line-wrap:nth-child(1) .loader-line {
+            border-color: hsl(0, 80%, 60%);
+            height: 90px;
+            width: 90px;
+            top: 7px;
+        }
+        
+        .loader-line-wrap:nth-child(2) .loader-line {
+            border-color: hsl(60, 80%, 60%);
+            height: 76px;
+            width: 76px;
+            top: 14px;
+        }
+        
+        .loader-line-wrap:nth-child(3) .loader-line {
+            border-color: hsl(120, 80%, 60%);
+            height: 62px;
+            width: 62px;
+            top: 21px;
+        }
+        
+        .loader-line-wrap:nth-child(4) .loader-line {
+            border-color: hsl(180, 80%, 60%);
+            height: 48px;
+            width: 48px;
+            top: 28px;
+        }
+        
+        .loader-line-wrap:nth-child(5) .loader-line {
+            border-color: hsl(240, 80%, 60%);
+            height: 34px;
+            width: 34px;
+            top: 35px;
+        }
+        
+        @keyframes spin {
+            0%,
+            15% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        /*--------------------------------------loader son-----------------------------------------*/
     </style>
     <link href="css/loading.css" rel="stylesheet" media="screen">
     <script src="js/loading.js"></script>
@@ -130,8 +232,24 @@
 
 <body onload="myFunction()" style="margin:0;">
     <!--=================================preloader========================================== -->
-    <div id="loader">
-
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
     </div>
     <!--=================================preloader===============================================-->
     <center>
@@ -156,33 +274,23 @@
                 </li>
             </ul>
         </div><br><br><br><br><br><br><br><br>
-        <div class="card">
+        <div class="card" id="myDiv">
             <div class="example">
                 <br>
                 <!--görseller ve bağlantıları-->
-                <strong>Aşagıdaki resimlere tıklayarak videolara ulaşabilirsiniz</strong><br><br>
-                <a href="404.html">
-                    <img src="img/11.webp" text-align=center; height="170px"></a><br>
-                <a href=" https://youtu.be/rCSAp9E53ao">
-                    <img src="img/çiftlik.jpg" text-align=center; height="175px"></a><br>
-                <a href="https://youtu.be/MD4ByoINUsA">
-                    <img src="img/10.jpg" text-align=center; height="250px"></a><br>
-                <a href="https://www.youtube.com/watch?v=dB1Urxn9-Ok&t=593s">
-                    <img src="img/1.jpg" text-align=center;></a><br>
-                <a href="https://www.youtube.com/watch?v=LItyCp4sX3g&t=2s">
-                    <img src="img/2.jpg" text-align=center;></a><br>
-                <a href="https://www.youtube.com/watch?v=Hqv0cDy2qRk">
-                    <img src="img/3.jpg" text-align=center;></a><br>
-                <a href="https://www.youtube.com/watch?v=u2TzOQmvJdY&t=1s">
-                    <img src="img/4.jpg" text-align=center;></a><br>
-                <a href="https://www.youtube.com/watch?v=FK6ClheRqvM&t=13s">
-                    <img src="img/5.jpg" text-align=center;></a><br>
-                <a href="https://www.youtube.com/watch?v=LiH4mBM5xxY&t=2s">
-                    <img src="img/6.jpg" text-align=center; height="210px"></a><br>
-                <a href="https://www.youtube.com/watch?v=ldHptAJn6O8">
-                    <img src="img/8.jpg" text-align=center;></a><br>
-                <a href="https://www.youtube.com/watch?v=LsisFAppL2o&t=2s">
-                    <img src="img/9.jpg" text-align=center; height="180px"></a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <strong><p>Youtube videolarım</p></strong>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/mQKykdVyqKI" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/rCSAp9E53ao" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/MD4ByoINUsA" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/LsisFAppL2o" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/dB1Urxn9-Ok" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/LItyCp4sX3g" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/Hqv0cDy2qRk" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/ldHptAJn6O8?start=3" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/LiH4mBM5xxY" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="410" height="240" src="https://www.youtube.com/embed/FK6ClheRqvM" frameborder="6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </center>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -199,9 +307,6 @@
         })();
     </script>
     <!--End of Tawk.to Script-->
-
-
-
 
     </div>
 
@@ -220,6 +325,18 @@
     <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
     <script src="js/mouse.js"></script>
     <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 1500);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
 </body>
 
 </html>
