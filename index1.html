@@ -13,12 +13,13 @@
     <script src="js/kar.js" type="text/javascript"></script>
     <style>
         body {
-            background-image: url(img/mm.jpg);
+            background-image: url(img/background.jpg);
+            font-family: Verdana, sans-serif;
         }
         /*rgba(161, 189, 207, 0.945)*/
         
         div {
-            background-color: rgb(98, 175, 223);
+            background-color: rgb(160, 211, 240);
             position: relative;
             margin: auto;
             max-width: 700px;
@@ -51,7 +52,7 @@
             text-align: center;
             font-weight: bold;
             background: #5d91d4;
-            border: 5px dashed #ffffff;
+            border: 5px solid #ffffff;
             display: inline-block;
             padding: 0 5px;
         }
@@ -182,10 +183,6 @@
             box-sizing: border-box
         }
         
-        body {
-            font-family: Verdana, sans-serif;
-        }
-        
         .mySlides {
             display: none
         }
@@ -264,32 +261,38 @@
                 font-size: 11px
             }
         }
+        /*---------------------------------------slider son--------------------------------------*/
         
         ul#altı {
             border-radius: 9px;
             margin: 0;
             width: 98px;
         }
+        
+        img#bedirhan {
+            box-shadow: 0px 0px 10px 10px rgb(235, 238, 81), 0px 0px 10px 10px rgb(228, 222, 135), 0px 0px 10px 10px rgb(104, 127, 190);
+            width: 200px;
+            height: 240px;
+            border: solid 1px;
+        }
+        
+        h1 {
+            font-family: 'Brush Script MT', cursive;
+            color: rgb(255, 255, 255);
+        }
+        
+        p {
+            font-family: 'Brush Script MT', cursive;
+            color: rgb(255, 255, 255);
+        }
     </style>
 
     <!---------------------------------------hesaplama--------------------------------------------->
     <script src="js/hesaplama.js"></script>
     <!---------------------------------------hesaplama--------------------------------------------->
-
-    <link href="css/loading.css" rel="stylesheet" media="screen">
-    <script src="js/loading.js"></script>
 </head>
 
 <body onload="myFunction()" style="margin:0;" id=123>
-    <!--=================================preloader========================================== -->
-
-    <div id="loader">
-
-        <div id=myDiv></div>
-
-    </div>
-    <!--=================================preloader===============================================-->
-
     <div id="menu" div style="position:absolute;">
         <ul id="alt">
             <li class="active">
@@ -305,9 +308,9 @@
                 <a href="sifreli-sayfa.html">Oyunlar</a>
                 <ul id="altı">
                     <li>
-                        <a href="">5.sınıf</a></li>
+                        <a href="#.html">5.sınıf</a></li>
                     <li>
-                        <a href="">6.sınıf</a></li>
+                        <a href="#.html">6.sınıf</a></li>
                 </ul>
             </li>
             <li>
@@ -345,7 +348,7 @@
                 </script>
                 <br>
                 <a href="https://bedirhan69.github.io/index.html">
-                    <img src="img/mat.jpg" width=200px; height=240px; border=1px;></img>
+                    <img src="img/bedirhan.jpg" id="bedirhan"></img>
                 </a>
                 <br>
                 <h1>Hakkımda</h1>
@@ -408,10 +411,7 @@
 
                 </div>
                 <script src="js/slider.js"></script>
-                <!--4.sınıf taktir teşekkür hesaplama-->
-                <style>
 
-                </style>
                 <form class="hnarac">
                     <fieldset class="meb">
                         <legend>4. Sınıf Takdir Teşekkür Hesaplama Aracı</legend>
