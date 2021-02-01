@@ -22,6 +22,7 @@ form.hnarac>fieldset>legend {
     cursor: default;
     margin: 0 8px;
     padding: 8px;
+    font-family: 'Brush Script MT', cursive;
     font-weight: bold;
 }
 
@@ -315,5 +316,5 @@ input[type=reset] {
 }
 
 ol {
-    background-color: rgb(192, 230, 255);
+    background-color: rgb(157, 207, 240);
 }
