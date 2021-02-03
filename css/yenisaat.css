@@ -9,14 +9,16 @@
             -webkit-transform: translateY(-50%);
             -moz-transform: translateY(-50%);
             transform: translateY(-50%);
-            width: 540px;
+            max-width: 540px;
+            /**/
         }
         
         .clock-item .inner {
             height: 0px;
             padding-bottom: 100%;
             position: relative;
-            width: 100%;
+            max-width: 100%;
+            /**/
             border: solid 1px;
             border-radius: 100px;
             border-color: rgb(105, 105, 105);
