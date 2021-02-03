@@ -6,7 +6,6 @@ body {
 
 .gradient-border {
     --borderWidth: 7px;
-    background: #1f1e1e;
     position: relative;
     border-radius: var(--borderWidth);
     width: 155px;
