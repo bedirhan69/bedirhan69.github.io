@@ -23,6 +23,7 @@ function hesapla() {
         harfnot = 'Malesef hiç bir belge kazanamadınız!';
     else if (not1 > 100)
         alert('Lütfen Dersleri 100 üzerinden gir!!!');
+
     if (s2 >= 0 && s2 < 55)
         harfnot = 'Türkçe 55 altı';
     else if (s1 >= 00 && s1 < 45)
