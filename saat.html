@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!----------------------------------yeni saat------------------------------------------------->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://www.jqueryscript.net/demo/Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/js/kinetic.js"></script>
+    <script type="text/javascript" src="https://www.jqueryscript.net/demo/Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/jquery.final-countdown.js"></script>
+    <link rel="stylesheet" href="css/yenisaat.css">
+    <!------------------------------------yeni saat son----------------------------------->
+    <style>
+        * {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        
+        #countdown_container {
+            border-radius: 2px;
+            text-align: center;
+            font-weight: bold;
+            background: #5d91d4;
+            border: 5px solid #ffffff;
+            display: inline-block;
+            padding: 0 5px;
+        }
+        
+        #countdown_timer>div {
+            float: left;
+            background: #e7e7e7;
+            padding: 15px 20px;
+            margin: 10px 5px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        #countdown_timer>div>div:first-child {
+            font-size: 28px;
+            background-color: #e7e7e7;
+            color: #16c2ec;
+            text-shadow: 0px 1px 0px #12b0d8;
+        }
+        
+        #countdown_timer>div>div:last-child {
+            text-transform: capitalize;
+            font-size: 14px;
+            background-color: #e7e7e7;
+            color: rgb(49, 160, 211);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="countdown_container">
+        <div id="countdown_timer"></div>
+        <div style="clear:both"></div>
+    </div><br><br><br><br><br>
+    <div class="countdown-container container">
+        <div class="clock row">
+
+
+            <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
+                <div class="wrap">
+                    <div class="inner">
+                        <div id="canvas_days" class="clock-canvas"></div>
+                        <div class="text">
+                            <p class="val">0</p>
+                            <p class="type-days type-time">Gün</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
+                <div class="wrap">
+                    <div class="inner">
+                        <div id="canvas_hours" class="clock-canvas"></div>
+                        <div class="text">
+                            <p class="val">0</p>
+                            <p class="type-hours type-time">Saat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
+                <div class="wrap">
+                    <div class="inner">
+                        <div id="canvas_minutes" class="clock-canvas"></div>
+                        <div class="text">
+                            <p class="val">0</p>
+                            <p class="type-minutes type-time">Dakika</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
+                <div class="wrap">
+                    <div class="inner">
+                        <div id="canvas_seconds" class="clock-canvas"></div>
+                        <div class="text">
+                            <p class="val">0</p>
+                            <p class="type-seconds type-time">Saniye</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/yenisaat.js"></script>
+</body>
+
+</html>
