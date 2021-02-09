@@ -2,15 +2,37 @@
 <html>
 
 <head>
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>Klavye Olayları</title>
     <style>
 
     </style>
+
 </head>
+<script>
+    if (!("Notification" in window)) {
+        alert("Bu tarayıcı web bilgilendirme özelliğini desteklemiyor.");
+    }
+    // Daha önce kullanıcı izin verdi ise
+    else if (Notification.permission === "granted") {
+        // Bilgilendirme popup'ını çıkaralım.
+        var notification = new Notification("Merhaba dünya!");
+    }
+    // Eğer onay yoksa
+    else if (Notification.permission !== 'denied') {
+        // Kullanıcıdan onay ise
+        Notification.requestPermission(function(permission) {
+            // Kullanıcı onaylamadı ise tekrar soralım
+            if (permission === "granted") {
+                // onaylarsa bilgilendirme popup'ı aç
+                var notification = new Notification("Merhaba dünya!");
+            }
+        });
+    }
+</script>
 
 <body>
-
 
 </body>
 
