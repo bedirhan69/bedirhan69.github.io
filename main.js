@@ -9,6 +9,8 @@ window.addEventListener('load', () => {
     //.then(sendNotification)
 
 })
+
+
 const sendNotification = (Permission) => {
     let Notification = new Notification('yeni bildirim', {
         body: 'hello bedo my name is oguzhan how are you.',
