@@ -15,14 +15,14 @@ window.onkeydown = function(olay) {
         return false
     }
 }
-var kutu = document.getElementById("123");
+var kutu = document.getElementById("85");
 window.onkeydown = function(olay) {
     if (olay.keyCode == 123) {
         alert('Dostum Sayfanın yazılımı bizde kalsın')
         return false
     }
 }
-var kutu = document.getElementById("123");
+var kutu = document.getElementById("17");
 window.onkeydown = function(olay) {
     if (olay.keyCode == 73) {
         alert('Dostum Sayfanın yazılımı bizde kalsın')
