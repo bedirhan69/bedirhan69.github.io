@@ -8,6 +8,7 @@ if (document.layers) {
 } else {
     document.onrightmousedown = function() { return false; }
 }
+
 var kutu = document.getElementById("123");
 window.onkeydown = function(olay) {
     if (olay.keyCode == 85) {
@@ -15,16 +16,30 @@ window.onkeydown = function(olay) {
         return false
     }
 }
-var kutu = document.getElementById("85");
+var kutu = document.getElementById("123");
 window.onkeydown = function(olay) {
     if (olay.keyCode == 123) {
         alert('Dostum Sayfanın yazılımı bizde kalsın')
         return false
     }
 }
-var kutu = document.getElementById("17");
+var kutu = document.getElementById("123");
 window.onkeydown = function(olay) {
     if (olay.keyCode == 73) {
+        alert('Dostum Sayfanın yazılımı bizde kalsın')
+        return false
+    }
+}
+var kutu = document.getElementById("123");
+window.onkeydown = function(olay) {
+    if (olay.keyCode == 17) {
+        alert('Dostum Sayfanın yazılımı bizde kalsın')
+        return false
+    }
+}
+var kutu = document.getElementById("123");
+window.onkeydown = function(olay) {
+    if (olay.keyCode == 18) {
         alert('Dostum Sayfanın yazılımı bizde kalsın')
         return false
     }
