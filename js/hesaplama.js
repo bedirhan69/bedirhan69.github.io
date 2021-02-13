@@ -24,30 +24,30 @@ function hesapla() {
     else if (not1 > 100)
         alert('Lütfen Dersleri 100 üzerinden gir!!!');
 
-    if (s2 >= 0 && s2 < 55)
-        harfnot = 'Türkçe 55 altı';
-    else if (s1 >= 00 && s1 < 45)
+    if (parseFloat(document.getElementById('sinav2').value) >= 00 && parseFloat(document.getElementById('sinav2').value) < 55)
+        harfnot = 'Türkçe 55 Altı';
+    else if (parseFloat(document.getElementById('sinav1').value) >= 00 && parseFloat(document.getElementById('sinav1').value) < 45)
         harfnot = 'Zayıf Ders var';
-    else if (s3 >= 00 && s3 < 45)
+    else if (parseFloat(document.getElementById('sinav3').value) >= 00 && parseFloat(document.getElementById('sinav3').value) < 45)
         harfnot = 'Zayıf Ders var';
-    else if (s4 >= 00 && s4 < 45)
+    else if (parseFloat(document.getElementById('sinav4').value) >= 00 && parseFloat(document.getElementById('sinav4').value) < 45)
         harfnot = 'Zayıf Ders var';
-    else if (s5 >= 00 && s5 < 45)
+    else if (parseFloat(document.getElementById('sinav5').value) >= 00 && parseFloat(document.getElementById('sinav5').value) < 45)
         harfnot = 'Zayıf Ders var';
-    else if (s6 >= 00 && s6 < 45)
+    else if (parseFloat(document.getElementById('sinav6').value) >= 00 && parseFloat(document.getElementById('sinav6').value) < 45)
         harfnot = 'Zayıf Ders var';
-    else if (s7 >= 00 && s7 < 45)
+    else if (parseFloat(document.getElementById('sinav7').value) >= 00 && parseFloat(document.getElementById('sinav7').value) < 45)
         harfnot = 'Zayıf Ders var';
-    else if (s8 >= 00 && s8 < 45)
+    else if (parseFloat(document.getElementById('sinav8').value) >= 00 && parseFloat(document.getElementById('sinav8').value) < 45)
         harfnot = 'Zayıf Ders var';
-    else if (s9 >= 00 && s9 < 45)
+    else if (parseFloat(document.getElementById('sinav9').value) >= 00 && parseFloat(document.getElementById('sinav9').value) < 45)
         harfnot = 'Zayıf Ders var';
-    else if (s10 >= 00 && s10 < 45)
+    else if (parseFloat(document.getElementById('sinav10').value) >= 00 && parseFloat(document.getElementById('sinav10').value) < 45)
         harfnot = 'Zayıf Ders var';
-    else if (s11 >= 00 && s11 < 45)
+    else if (parseFloat(document.getElementById('sinav11').value) >= 00 && parseFloat(document.getElementById('sinav11').value) < 45)
         harfnot = 'Zayıf Ders var';
 
     document.getElementById('txtortalama').value = not1;
     document.getElementById('txtharf').value = harfnot;
-    return
+
 }
