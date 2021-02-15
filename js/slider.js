@@ -15,5 +15,5 @@ function showSlides() {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 2800); // Bu alandan resimlerin geçiş süresini değiştirebilirsiniz.
+    setTimeout(showSlides, 3000); // Bu alandan resimlerin geçiş süresini değiştirebilirsiniz.
 }
