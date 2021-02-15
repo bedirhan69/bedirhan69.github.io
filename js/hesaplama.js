@@ -25,9 +25,9 @@ function hesapla() {
         alert('Lütfen Dersleri 100 üzerinden gir!!!');
 
     if (parseFloat(document.getElementById('sinav2').value) >= 00 && parseFloat(document.getElementById('sinav2').value) < 55)
-        harfnot = 'Türkçe 55 Altı';
+        harfnot = 'Türkçe 55 Altı olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav1').value) >= 00 && parseFloat(document.getElementById('sinav1').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav3').value) >= 00 && parseFloat(document.getElementById('sinav3').value) < 45)
         harfnot = 'Zayıf Ders var';
     else if (parseFloat(document.getElementById('sinav4').value) >= 00 && parseFloat(document.getElementById('sinav4').value) < 45)
@@ -46,6 +46,7 @@ function hesapla() {
         harfnot = 'Zayıf Ders var';
     else if (parseFloat(document.getElementById('sinav11').value) >= 00 && parseFloat(document.getElementById('sinav11').value) < 45)
         harfnot = 'Zayıf Ders var';
+
 
     document.getElementById('txtortalama').value = not1;
     document.getElementById('txtharf').value = harfnot;
