@@ -1,37 +1,134 @@
-<!doctype html>
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1C1D24;
+        }
+    </style>
+    <script>
+        var canvas, ctx;
+        window.onload = function() {
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+            document.addEventListener("keydown", keyDownEvent);
+            // render X times per second
+            var x = 8;
+            setInterval(draw, 1000 / x);
+        };
+        // game world
+        var gridSize = (tileSize = 20); // 20 x 20 = 400
+        var nextX = (nextY = 0);
+        // snake
+        var defaultTailSize = 3;
+        var tailSize = defaultTailSize;
+        var snakeTrail = [];
+        var snakeX = (snakeY = 10);
+        // apple
+        var appleX = (appleY = 15);
+        // draw
+        function draw() {
+            // move snake in next pos
+            snakeX += nextX;
+            snakeY += nextY;
+            // snake over game world?
+            if (snakeX < 0) {
+                snakeX = gridSize - 1;
+            }
+            if (snakeX > gridSize - 1) {
+                snakeX = 0;
+            }
+            if (snakeY < 0) {
+                snakeY = gridSize - 1;
+            }
+            if (snakeY > gridSize - 1) {
+                snakeY = 0;
+            }
+            //snake bite apple?
+            if (snakeX == appleX && snakeY == appleY) {
+                tailSize++;
+                appleX = Math.floor(Math.random() * gridSize);
+                appleY = Math.floor(Math.random() * gridSize);
+            }
+            //paint background
+            ctx.fillStyle = "#1C1D24";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // paint snake
+            // Create gradient
+            // Create gradient
+            grd = ctx.createLinearGradient(0.000, 150.000, 300.000, 150.000);
 
+            // Add colors
+            grd.addColorStop(0.000, 'rgba(247, 149, 51, 1.000)');
+            grd.addColorStop(0.151, 'rgba(243, 112, 85, 1.000)');
+            grd.addColorStop(0.311, 'rgba(239, 78, 123, 1.000)');
+            grd.addColorStop(0.462, 'rgba(161, 102, 171, 1.000)');
+            grd.addColorStop(0.621, 'rgba(80, 115, 184, 1.000)');
+            grd.addColorStop(0.748, 'rgba(16, 152, 173, 1.000)');
+            grd.addColorStop(0.875, 'rgba(7, 179, 155, 1.000)');
+            grd.addColorStop(1.000, 'rgba(111, 186, 130, 1.000)');
+            ctx.fillStyle = grd;
+            for (var i = 0; i < snakeTrail.length; i++) {
+                ctx.fillRect(
+                    snakeTrail[i].x * tileSize,
+                    snakeTrail[i].y * tileSize,
+                    tileSize,
+                    tileSize
+                );
+                //snake bites it's tail?
+                if (snakeTrail[i].x == snakeX && snakeTrail[i].y == snakeY) {
+                    tailSize = defaultTailSize;
+                }
+            }
+            // paint apple
+            ctx.fillStyle = grd;
+            ctx.fillRect(appleX * tileSize, appleY * tileSize, tileSize, tileSize);
+            //set snake trail
+            snakeTrail.push({
+                x: snakeX,
+                y: snakeY
+            });
+            while (snakeTrail.length > tailSize) {
+                snakeTrail.shift();
+            }
+        }
+        // input
+        function keyDownEvent(e) {
+            switch (e.keyCode) {
+                case 37:
+                    nextX = -1;
+                    nextY = 0;
+                    break;
+                case 38:
+                    nextX = 0;
+                    nextY = -1;
+                    break;
+                case 39:
+                    nextX = 1;
+                    nextY = 0;
+                    break;
+                case 40:
+                    nextX = 0;
+                    nextY = 1;
+                    break;
+            }
+        }
+    </script>
 </head>
-<!------------------------------------------------hesaplama tasarımı-------------------------------------------------------------->
-<link rel="stylesheet" href=css/taktir.css>
-<!------------------------------------------------hesaplama tasarımı-------------------------------------------------------------->
-<!---------------------------------------hesaplama--------------------------------------------->
-<script src="js/hesaplama.js"></script>
-<!---------------------------------------hesaplama--------------------------------------------->
 
 <body>
-    <form class="hnarac">
-        <fieldset class="meb">
-            <legend>4. Sınıf Takdir Teşekkür Hesaplama Aracı</legend>
-            <div class="notlar" id="not"><em>NOT:</em>Bu hesaplama aracı 2020 - 2021 eğitim yılınna uyumlu olarak hazırlanmıştır. Puanını boş bıraktığınız dersler için hesaplamalarda 0 puan kullanılacaktır.</div>
-            <ol>
-                <li id="matematik"><label for="matematikpuan"></label>Matematik :<input type="text" name="sinav1" id="sinav1" maxlength="5" required><br/></li>
-                <li id="turkce"><label for="turkcepuan"></label>Türkçe :<input type="text" name="sinav2" id="sinav2" maxlength="5" required><br/></li>
-                <li id="ingilizce"><label for="ingilizcepuan"></label>İngilizce :<input type="text" name="sinav3" id="sinav3" maxlength="5" required><br/></li>
-                <li id="fen"><label for="fenveteknolojipuan"></label>Fen bilimleri :<input type="text" name="sinav4" id="sinav4" maxlength="5"><br/></li>
-                <li id="sosyal"><label for="sosyalbilgilerpuan"></label>Sosyal :<input type="text" name="sinav5" id="sinav5" maxlength="5"><br/></li>
-                <li id="din"><label for="dinkulturupuan"></label>Din kültürü :<input type="text" name="sinav6" id="sinav6" maxlength="5"><br/></li>
-                <li id="trafik"><label for="trafikpuan"></label>Trafik: <input type="text" name="sinav7" id="sinav7" maxlength="5"><br/></li>
-                <li id="insan"><label for="insanhaklariveyurtpuan"></label>İnsan Hakları<br/>ve yurttaşlık :<input type="text" name="sinav8" id="sinav8" maxlength="5"><br/></li>
-                <li id="resim"><label for="gorselsanatlarpuan"></label>Resim :<input type="text" name="sinav9" id="sinav9" maxlength="5"><br/></li>
-                <li id="beden"><label for="bedenegitimipuan"></label>Beden :<input type="text" name="sinav10" id="sinav10" maxlength="5"><br/></li>
-                <li id="muzik"><label for="muzikpuan"></label>Müzik :<input type="text" name="sinav11" id="sinav11" maxlength="5"><br/></li>
-                <li id="sonuc"><label for="sonucpuan"></label>Ortalama :<input type="text" name="txtortalama" id="txtortalama" maxlength="0"><br/></li>
-                <li id="sonuc"><label for="sonucpuan"></label>Belge :<input type="text" name="txtharf" id="txtharf" maxlength="0"><br/></li><input type="button" onclick="hesapla();" value="Hesapla" /><input type="reset" /></ol>
-    </form>
+    <canvas id="canvas" width="400" height="400"></canvas>
+
 </body>
 
 </html>
