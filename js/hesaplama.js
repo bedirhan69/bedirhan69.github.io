@@ -22,30 +22,30 @@ function hesapla() {
     else if (not1 >= 0 && not1 < 70)
         harfnot = 'Malesef hiç bir belge kazanamadınız!';
     else if (not1 > 100)
-        alert('Lütfen Dersleri 100 üzerinden gir!!!');
+        alert('Lütfen Dersleri 100 üzerinden giriniz!!!');
 
     if (parseFloat(document.getElementById('sinav2').value) >= 00 && parseFloat(document.getElementById('sinav2').value) < 55)
         harfnot = 'Türkçe 55 Altı olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav1').value) >= 00 && parseFloat(document.getElementById('sinav1').value) < 45)
         harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav3').value) >= 00 && parseFloat(document.getElementById('sinav3').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız ';
     else if (parseFloat(document.getElementById('sinav4').value) >= 00 && parseFloat(document.getElementById('sinav4').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav5').value) >= 00 && parseFloat(document.getElementById('sinav5').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav6').value) >= 00 && parseFloat(document.getElementById('sinav6').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav7').value) >= 00 && parseFloat(document.getElementById('sinav7').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav8').value) >= 00 && parseFloat(document.getElementById('sinav8').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav9').value) >= 00 && parseFloat(document.getElementById('sinav9').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav10').value) >= 00 && parseFloat(document.getElementById('sinav10').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav11').value) >= 00 && parseFloat(document.getElementById('sinav11').value) < 45)
-        harfnot = 'Zayıf Ders var';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
 
 
     document.getElementById('txtortalama').value = not1;
