@@ -1,0 +1,429 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Yılan Oyunu</title>
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+    <script src="js/mouse.js "></script>
+    <script src="js/mouse17.js "></script>
+    <script src="js/mouse18.js "></script>
+    <script src="js/mouse73.js "></script>
+    <script src="js/mouse123.js "></script>
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+    <style>
+        /*--------------------------------------------loader----------------------------------------------*/
+        
+        .loader {
+            background: #000;
+            background: radial-gradient(#222, #000);
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            height: 100%;
+            overflow: none;
+        }
+        
+        .loader-inner {
+            bottom: 0;
+            height: 60px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100px;
+        }
+        
+        .loader-line-wrap {
+            animation: spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite;
+            box-sizing: border-box;
+            height: 50px;
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            transform-origin: 50% 100%;
+            width: 100px;
+        }
+        
+        .loader-line {
+            border: 4px solid transparent;
+            border-radius: 100%;
+            box-sizing: border-box;
+            height: 100px;
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100px;
+        }
+        
+        .loader-line-wrap:nth-child(1) {
+            animation-delay: -50ms;
+        }
+        
+        .loader-line-wrap:nth-child(2) {
+            animation-delay: -100ms;
+        }
+        
+        .loader-line-wrap:nth-child(3) {
+            animation-delay: -150ms;
+        }
+        
+        .loader-line-wrap:nth-child(4) {
+            animation-delay: -200ms;
+        }
+        
+        .loader-line-wrap:nth-child(5) {
+            animation-delay: -250ms;
+        }
+        
+        .loader-line-wrap:nth-child(1) .loader-line {
+            border-color: hsl(0, 80%, 60%);
+            height: 90px;
+            width: 90px;
+            top: 7px;
+        }
+        
+        .loader-line-wrap:nth-child(2) .loader-line {
+            border-color: hsl(60, 80%, 60%);
+            height: 76px;
+            width: 76px;
+            top: 14px;
+        }
+        
+        .loader-line-wrap:nth-child(3) .loader-line {
+            border-color: hsl(120, 80%, 60%);
+            height: 62px;
+            width: 62px;
+            top: 21px;
+        }
+        
+        .loader-line-wrap:nth-child(4) .loader-line {
+            border-color: hsl(180, 80%, 60%);
+            height: 48px;
+            width: 48px;
+            top: 28px;
+        }
+        
+        .loader-line-wrap:nth-child(5) .loader-line {
+            border-color: hsl(240, 80%, 60%);
+            height: 34px;
+            width: 34px;
+            top: 35px;
+        }
+        
+        @keyframes spin {
+            0%,
+            15% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        /*--------------------------------------loader son-----------------------------------------*/
+        
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #67676b;
+        }
+        
+        div#score {
+            color: rgb(255, 0, 0);
+            margin: 0;
+            z-index: 999;
+            width: 120px;
+            height: 60px;
+            font-size: 28px;
+            background-color: rgb(146, 145, 145);
+            position: fixed;
+            top: 50px;
+            right: 278px;
+        }
+        
+        canvas#canvas {
+            position: fixed;
+            margin: 0;
+        }
+        
+        button#yukarı {
+            position: fixed;
+            left: 95px;
+            top: 350px;
+            border-radius: 100px;
+            background-color: rgb(131, 69, 160);
+            margin: 0;
+        }
+        
+        button#asagı {
+            position: fixed;
+            left: 100px;
+            top: 550px;
+            border-radius: 100px;
+            background-color: rgb(131, 69, 160);
+            margin: 0;
+        }
+        
+        button#saga {
+            position: fixed;
+            left: 195px;
+            top: 450px;
+            border-radius: 100px;
+            background-color: rgb(131, 69, 160);
+            margin: 0;
+        }
+        
+        button#sola {
+            position: fixed;
+            left: 12px;
+            top: 450px;
+            border-radius: 100px;
+            background-color: rgb(131, 69, 160);
+            margin: 0;
+        }
+        
+        img#yukarı1 {
+            border-radius: 100px;
+            margin: 0;
+        }
+        
+        img#asagı1 {
+            border-radius: 100px;
+            margin: 0;
+        }
+        
+        img#saga1 {
+            border-radius: 100px;
+            margin: 0;
+        }
+        
+        img#sola1 {
+            border-radius: 100px;
+            margin: 0;
+        }
+    </style>
+    <script>
+        var canvas, ctx, scorediv;
+        window.onload = function() {
+            canvas = document.getElementById("canvas");
+            this.scorediv = document.getElementById("score");
+            ctx = canvas.getContext("2d");
+            document.addEventListener("keydown", keyDownEvent);
+            yukarı = document.getElementById("yukarı");
+            asagı = document.getElementById("asagı");
+            saga = document.getElementById("saga");
+            sola = document.getElementById("sola");
+            // render X times per second
+            var x = 8;
+            setInterval(draw, 1000 / x);
+        };
+        // game world
+        var gridSize = (tileSize = 27); // 20 x 20 = 400
+        var nextX = (nextY = 0);
+        // snake
+        var defaultTailSize = 3;
+        var tailSize = defaultTailSize;
+        var snakeTrail = [];
+        var snakeX = (snakeY = 10);
+        // apple
+        var appleX = (appleY = 15);
+        // draw
+        function draw() {
+            // move snake in next pos
+            snakeX += nextX;
+            snakeY += nextY;
+            // snake over game world?
+            if (snakeX < 0) {
+                snakeX = gridSize - 1;
+            }
+            if (snakeX > gridSize - 1) {
+                snakeX = 0;
+            }
+            if (snakeY < 0) {
+                snakeY = gridSize - 1;
+            }
+            if (snakeY > gridSize - 1) {
+                snakeY = 0;
+            }
+            //snake bite apple?
+            if (snakeX == appleX && snakeY == appleY) {
+                tailSize++;
+                appleX = Math.floor(Math.random() * gridSize);
+                appleY = Math.floor(Math.random() * gridSize);
+            }
+            //paint background
+            ctx.fillStyle = "#1C1D24";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // paint snake
+            // Create gradient
+            // Create gradient
+            grd = ctx.createLinearGradient(0.000, 150.000, 300.000, 150.000);
+
+            // Add colors
+            grd.addColorStop(0.000, 'rgba(247, 149, 51, 1.000)');
+            grd.addColorStop(0.151, 'rgba(243, 112, 85, 1.000)');
+            grd.addColorStop(0.311, 'rgba(239, 78, 123, 1.000)');
+            grd.addColorStop(0.462, 'rgba(161, 102, 171, 1.000)');
+            grd.addColorStop(0.621, 'rgba(80, 115, 184, 1.000)');
+            grd.addColorStop(0.748, 'rgba(16, 152, 173, 1.000)');
+            grd.addColorStop(0.875, 'rgba(7, 179, 155, 1.000)');
+            grd.addColorStop(1.000, 'rgba(111, 186, 130, 1.000)');
+
+            ctx.fillStyle = grd;
+            for (var i = 0; i < snakeTrail.length; i++) {
+                ctx.fillRect(
+                    snakeTrail[i].x * tileSize,
+                    snakeTrail[i].y * tileSize,
+                    tileSize,
+                    tileSize
+                );
+                //snake bites it's tail?
+                if (snakeTrail[i].x == snakeX && snakeTrail[i].y == snakeY) {
+                    tailSize = defaultTailSize;
+                }
+
+            }
+            // paint apple
+            ctx.fillStyle = grd;
+            ctx.fillRect(appleX * tileSize, appleY * tileSize, tileSize, tileSize);
+            //set snake trail
+            snakeTrail.push({
+                x: snakeX,
+                y: snakeY
+            });
+            while (snakeTrail.length > tailSize) {
+                snakeTrail.shift();
+            }
+            this.scorediv.innerHTML = "Score : " + (tailSize - 3);
+
+
+        }
+        // input
+        function keyDownEvent(e) {
+            switch (e.keyCode) {
+                case 37:
+                    nextX = -1;
+                    nextY = 0; //sola65
+                    break;
+                case 38:
+                    nextX = 0; //yukarı87
+                    nextY = -1;
+                    break;
+                case 39:
+                    nextX = 1;
+                    nextY = 0; //saga68
+                    break;
+                case 40:
+                    nextX = 0;
+                    nextY = 1; //asagı83
+                    break;
+                    /////////
+                case 65:
+                    nextX = -1;
+                    nextY = 0; //sola65
+                    break;
+                case 87:
+                    nextX = 0; //yukarı87
+                    nextY = -1;
+                    break;
+                case 68:
+                    nextX = 1;
+                    nextY = 0; //saga68
+                    break;
+                case 83:
+                    nextX = 0;
+                    nextY = 1; //asagı83
+                    break;
+                    /////////
+
+
+            }
+            document.getElementById("yukarı").addEventListener("click", function() {
+                nextX = 0; //yukarı87
+                nextY = -1;
+
+            });
+            document.getElementById("asagı").addEventListener("click", function() {
+                nextX = 0;
+                nextY = 1; //asagı83
+
+            });
+            document.getElementById("sola").addEventListener("click", function() {
+                nextX = -1;
+                nextY = 0; //sola65
+
+            });
+            document.getElementById("saga").addEventListener("click", function() {
+                nextX = 1;
+                nextY = 0; //saga68
+
+            });
+
+        }
+    </script>
+</head>
+
+<body onload="myFunction()" style="margin:0;" id="123">
+    <!--=================================preloader========================================== -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+    <!--=================================preloader===============================================-->
+    <div id="score"></div>
+    <div id="myDiv"> <canvas id=" canvas " width="729 " height="729 ">
+        </canvas>
+        <button id="yukarı " type="submit "><img src="https://www.vhv.rs/dpng/d/406-4063205_up-arrow-button-svg-png-icon-free-download.png " id="yukarı1 " width=80px;></button>
+        <button id="asagı " type="submit "><img src="https://toppng.com/uploads/preview/down-arrow-button-11549781285rminpqseqx.png " id="asagı1 " width=80px;></button>
+        <button id="saga " type="submit "><img src="https://cdn.imgbin.com/2/9/6/imgbin-computer-icons-arrow-button-arrow-YL3Xj2vTwjwL5vwFzkQXri2v2.jpg " id="saga1 " width=80px;></button>
+        <button id="sola " type="submit "><img src="https://image.flaticon.com/icons/png/512/61/61791.png " id="sola1 " width=80px;></button>
+
+
+        <script>
+            var myVar;
+
+            function myFunction() {
+                myVar = setTimeout(showPage, 500);
+            }
+
+            function showPage() {
+                document.getElementById("loader ").style.display = "none ";
+                document.getElementById("myDiv ").style.display = "block ";
+            }
+        </script>
+    </div>
+</body>
+
+</html>
