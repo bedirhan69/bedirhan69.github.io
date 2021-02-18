@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Yılan Oyunu</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
-    <script src="js/mouse.js "></script>
-    <script src="js/mouse17.js "></script>
-    <script src="js/mouse18.js "></script>
-    <script src="js/mouse73.js "></script>
-    <script src="js/mouse123.js "></script>
+
     <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
     <style>
         html {
@@ -100,6 +97,12 @@
             border-radius: 100px;
             margin: 0;
         }
+        
+        input[type=button] {
+            color: red;
+            position: fixed;
+            left: 50px;
+        }
     </style>
     <script>
         var canvas, ctx, scorediv;
@@ -117,7 +120,7 @@
             setInterval(draw, 1000 / x);
         };
         // game world
-        var gridSize = (tileSize = 27); // 20 x 20 = 400
+        var gridSize = (tileSize = 27); // 27 x 27 = 729
         var nextX = (nextY = 0);
         // snake
         var defaultTailSize = 3;
@@ -237,6 +240,7 @@
 
 
             }
+
             document.getElementById("yukarı").addEventListener("click", function() {
                 nextX = 0; //yukarı87
                 nextY = -1;
@@ -258,6 +262,7 @@
 
             });
 
+
         }
     </script>
 </head>
@@ -265,6 +270,7 @@
 <body>
 
     <div id="score"></div>
+    <input type="button" value="Start" id="start" onclick="stop()" />
     <canvas id="canvas" width="729" height="729"></canvas>
     <button id="yukarı" type="submit"><img src="https://www.vhv.rs/dpng/d/406-4063205_up-arrow-button-svg-png-icon-free-download.png" id="yukarı1" width=80px;></button>
     <button id="asagı" type="submit"><img src="https://toppng.com/uploads/preview/down-arrow-button-11549781285rminpqseqx.png " id="asagı1" width=80px;></button>
