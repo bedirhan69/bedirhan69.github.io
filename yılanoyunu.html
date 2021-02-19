@@ -25,21 +25,23 @@
         }
         
         div#score {
-            color: rgb(255, 0, 0);
+            color: rgb(255, 255, 255);
             margin: 0;
             z-index: 999;
             width: 120px;
             height: 60px;
             font-size: 28px;
-            background-color: rgb(146, 145, 145);
+            background-color: transparent;
             position: fixed;
-            top: 50px;
-            right: 266px;
+            top: 20px;
+            right: 990px;
         }
         
         canvas#canvas {
             position: fixed;
             margin: 0;
+            border: solid 2px;
+            border-color: rgb(255, 0, 0);
         }
         
         button#yukarı {
@@ -97,12 +99,6 @@
             border-radius: 100px;
             margin: 0;
         }
-        
-        input[type=button] {
-            color: red;
-            position: fixed;
-            left: 50px;
-        }
     </style>
     <script>
         var canvas, ctx, scorediv;
@@ -116,7 +112,7 @@
             saga = document.getElementById("saga");
             sola = document.getElementById("sola");
             // render X times per second
-            var x = 8;
+            var x = 9;
             setInterval(draw, 1000 / x);
         };
         // game world
@@ -181,6 +177,9 @@
                 );
                 //snake bites it's tail?
                 if (snakeTrail[i].x == snakeX && snakeTrail[i].y == snakeY) {
+                    tailSize = defaultTailSize;
+                }
+                if (snakeTrail[i].x == 730 && snakeTrail[i].y == 730) {
                     tailSize = defaultTailSize;
                 }
 
@@ -270,12 +269,12 @@
 <body>
 
     <div id="score"></div>
-    <input type="button" value="Start" id="start" onclick="stop()" />
     <canvas id="canvas" width="729" height="729"></canvas>
-    <button id="yukarı" type="submit"><img src="https://www.vhv.rs/dpng/d/406-4063205_up-arrow-button-svg-png-icon-free-download.png" id="yukarı1" width=80px;></button>
-    <button id="asagı" type="submit"><img src="https://toppng.com/uploads/preview/down-arrow-button-11549781285rminpqseqx.png " id="asagı1" width=80px;></button>
-    <button id="saga" type="submit"><img src="https://cdn.imgbin.com/2/9/6/imgbin-computer-icons-arrow-button-arrow-YL3Xj2vTwjwL5vwFzkQXri2v2.jpg" id="saga1" width=80px;></button>
-    <button id="sola" type="submit"><img src="https://image.flaticon.com/icons/png/512/61/61791.png " id="sola1" width=80px;></button>
+
+    <button id="yukarı" type="submit"><img src="https://www.vhv.rs/dpng/d/406-4063205_up-arrow-button-svg-png-icon-free-download.png" id="yukarı1" width=65px;></button>
+    <button id="asagı" type="submit"><img src="https://toppng.com/uploads/preview/down-arrow-button-11549781285rminpqseqx.png " id="asagı1" width=65px;></button>
+    <button id="saga" type="submit"><img src="https://cdn.imgbin.com/2/9/6/imgbin-computer-icons-arrow-button-arrow-YL3Xj2vTwjwL5vwFzkQXri2v2.jpg" id="saga1" width=65px;></button>
+    <button id="sola" type="submit"><img src="https://image.flaticon.com/icons/png/512/61/61791.png " id="sola1" width=65px;></button>
 
 </body>
 
