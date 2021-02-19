@@ -1,74 +1,306 @@
-        html,
-        body {
-            height: 100%;
-        }
-        
-        @viewport {
-            width: device-width;
-            zoom: 1.0;
-        }
-        
-        @-ms-viewport {
-            width: device-width;
-        }
-        
-        .countdown-container {
-            position: relative;
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            -moz-transform: translateY(-50%);
-            transform: translateY(-50%);
-            max-width: 540px;
-            /**/
-        }
-        
-        .clock-item .inner {
-            height: 0px;
-            padding-bottom: 100%;
-            position: relative;
-            max-width: 100%;
-            /**/
-            border: solid 1px;
-            border-radius: 100px;
-            border-color: rgb(105, 105, 105);
-        }
-        
-        .clock-canvas {
-            background-color: rgba(181, 185, 189, 0.582);
-            border-radius: 100%;
-            height: 0px;
-            padding-bottom: 100%;
-        }
-        
-        .text {
-            color: #fff;
-            font-size: 23px;
-            font-weight: bold;
-            margin-top: -50px;
-            position: absolute;
-            top: 50%;
-            text-align: center;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-            width: 100%;
-        }
-        
-        .text .val {
-            font-size: 42px;
-        }
-        
-        .text .type-time {
-            font-size: 20px;
-            padding: -5px;
-        }
-        
-        @media (min-width: 768px) and (max-width: 991px) {
-            .clock-item {
-                margin-bottom: 30px;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .clock-item {
-                margin: 0px 30px 30px 30px;
-            }
-        }
+                    html {
+                        display: grid;
+                        min-height: 100%;
+                    }
+                    
+                    body {
+                        display: grid;
+                        background: #183059;
+                    }
+                    
+                    .container {
+                        position: relative;
+                        margin: auto;
+                        overflow: hidden;
+                        width: 650px;
+                        height: 480px;
+                    }
+                    
+                    h1 {
+                        font-family: 'Lato', sans-serif;
+                        text-align: center;
+                        margin-top: 2em;
+                        font-size: 1em;
+                        text-transform: uppercase;
+                        letter-spacing: 5px;
+                        color: #F6F4F3;
+                    }
+                    
+                    #timer {
+                        color: #F6F4F3;
+                        text-align: center;
+                        text-transform: uppercase;
+                        font-family: 'Lato', sans-serif;
+                        font-size: .7em;
+                        letter-spacing: 5px;
+                        margin-top: 25%;
+                    }
+                    
+                    .days,
+                    .hours,
+                    .minutes,
+                    .seconds {
+                        display: inline-block;
+                        padding: 20px;
+                        width: 100px;
+                        border-radius: 5px;
+                    }
+                    
+                    .days {
+                        background: #EF2F3C;
+                    }
+                    
+                    .hours {
+                        background: #F6F4F3;
+                        color: #183059;
+                    }
+                    
+                    .minutes {
+                        background: #276FBF;
+                    }
+                    
+                    .seconds {
+                        background: #F0A202;
+                    }
+                    
+                    .numbers {
+                        font-family: 'Montserrat', sans-serif;
+                        color: #183059;
+                        font-size: 4em;
+                    }
+                    
+                    .white {
+                        position: absolute;
+                        background: #F6F4F3;
+                        height: 85px;
+                        width: 75px;
+                        left: 30%;
+                        top: 2%;
+                    }
+                    
+                    .white .triangle {
+                        border-bottom: 14px solid #F6F4F3;
+                    }
+                    
+                    .white .string {
+                        background: #F6F4F3;
+                        border: 1px solid #F6F4F3;
+                    }
+                    
+                    .red {
+                        position: absolute;
+                        background: #EF2F3C;
+                        left: 18%;
+                        top: 9%;
+                        height: 65px;
+                        width: 70px;
+                    }
+                    
+                    .red .triangle {
+                        border-bottom: 14px solid #EF2F3C;
+                    }
+                    
+                    .red .string {
+                        background: #EF2F3C;
+                        border: 1px solid #EF2F3C;
+                    }
+                    
+                    .blue {
+                        position: absolute;
+                        background: #276FBF;
+                        height: 80px;
+                        width: 80px;
+                        left: 60%;
+                        top: 5%;
+                    }
+                    
+                    .blue .triangle {
+                        border-bottom: 14px solid #276FBF;
+                    }
+                    
+                    .blue .string {
+                        background: #276FBF;
+                        border: 1px solid #276FBF;
+                    }
+                    
+                    .blue .balloon {
+                        border: 1px solid #000;
+                        border-radius: 50% 50% 50% 50%/ 40% 40% 60% 60%;
+                        z-index: 2;
+                    }
+                    
+                    .eye {
+                        position: absolute;
+                        width: 7px;
+                        height: 7px;
+                        top: 40%;
+                        left: 22%;
+                        background: #000;
+                        border-radius: 50%;
+                    }
+                    
+                    .eye:after {
+                        content: '';
+                        left: 35px;
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                        background: #000;
+                        position: absolute;
+                    }
+                    
+                    .mouth {
+                        position: absolute;
+                        top: 45%;
+                        left: 43%;
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 50%;
+                    }
+                    
+                    .happy {
+                        border: 2px solid;
+                        border-color: transparent #000 #000 transparent;
+                        transform: rotate(45deg);
+                    }
+                    
+                    .triangle {
+                        position: absolute;
+                        left: 40%;
+                        bottom: -10%;
+                        width: 0;
+                        height: 0;
+                        border-left: 7px solid transparent;
+                        border-right: 7px solid transparent;
+                    }
+                    
+                    .string {
+                        position: absolute;
+                        height: 70px;
+                        width: 1px;
+                        left: 48%;
+                        top: 100%;
+                        z-index: -1;
+                    }
+                    
+                    .star {
+                        width: 20px;
+                        height: 20px;
+                        background: #F6F4F3;
+                        -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                    }
+                    
+                    .star-red {
+                        width: 30px;
+                        height: 30px;
+                        margin-left: 51px;
+                        margin-top: -5px;
+                        background: #EF2F3C;
+                        -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                    }
+                    /* footer {
+                        position: fixed;
+                        bottom: 0;
+                        right: 0;
+                        text-transform: uppercase;
+                        padding: 10px;
+                        font-family: 'Lato', sans-serif;
+                        font-size: 0.7em;
+                    }
+                    
+                    footer p {
+                        letter-spacing: 3px;
+                        color: #EF2F3C;
+                    }
+                    
+                    footer a {
+                        color: #F6F4F3;
+                        text-decoration: none;
+                    }
+                    
+                    footer a:hover {
+                        color: #276FBF;
+                    }*/
+                    /* latin-ext */
+                    
+                    @font-face {
+                        font-family: 'Lato';
+                        font-style: normal;
+                        font-weight: 400;
+                        src: url(https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+                        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+                    }
+                    /* latin */
+                    
+                    @font-face {
+                        font-family: 'Lato';
+                        font-style: normal;
+                        font-weight: 400;
+                        src: url(https://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+                        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                    }
+                    /* latin-ext */
+                    
+                    @font-face {
+                        font-family: 'Lato';
+                        font-style: normal;
+                        font-weight: 700;
+                        src: url(https://fonts.gstatic.com/s/lato/v17/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
+                        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+                    }
+                    /* latin */
+                    
+                    @font-face {
+                        font-family: 'Lato';
+                        font-style: normal;
+                        font-weight: 700;
+                        src: url(https://fonts.gstatic.com/s/lato/v17/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+                        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                    }
+                    /* cyrillic-ext */
+                    
+                    @font-face {
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 900;
+                        src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3gTD_u50.woff2) format('woff2');
+                        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+                    }
+                    /* cyrillic */
+                    
+                    @font-face {
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 900;
+                        src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3g3D_u50.woff2) format('woff2');
+                        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+                    }
+                    /* vietnamese */
+                    
+                    @font-face {
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 900;
+                        src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3gbD_u50.woff2) format('woff2');
+                        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+                    }
+                    /* latin-ext */
+                    
+                    @font-face {
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 900;
+                        src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3gfD_u50.woff2) format('woff2');
+                        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+                    }
+                    /* latin */
+                    
+                    @font-face {
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 900;
+                        src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_epG3gnD_g.woff2) format('woff2');
+                        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                    }
