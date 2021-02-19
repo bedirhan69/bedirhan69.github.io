@@ -2,10 +2,12 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/scss" href="m.scss">
+
+    <link rel="stylesheet" href="m.css">
+
     <script>
         const year = new Date().getFullYear();
-        const fourthOfJuly = new Date(year, 6, 4).getTime();
+        const fourthOfJuly = new Date(year, 2, 0).getTime();
         const fourthOfJulyNextYear = new Date(year + 1, 6, 4).getTime();
         const month = new Date().getMonth();
 
@@ -22,9 +24,6 @@
             } else {
                 diff = fourthOfJuly - today;
             }
-
-
-
 
             // math
             let days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -59,7 +58,6 @@
             <div class="triangle"></div>
             <div class="string"></div>
         </div>
-
         <div class="balloon red">
             <div class="star"></div>
             <div class="face">
@@ -69,7 +67,6 @@
             <div class="triangle"></div>
             <div class="string"></div>
         </div>
-
         <div class="balloon blue">
             <div class="star"></div>
             <div class="face">
@@ -82,10 +79,6 @@
         <div id="timer"></div>
         <h1>4th of july counter</h1>
     </div>
-    <footer>
-        <p>made by <a href="https://codepen.io/juliepark"> julie</a> ♡
-    </footer>
-
 
 </body>
 
