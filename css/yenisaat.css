@@ -3,17 +3,12 @@
                         min-height: 100%;
                     }
                     
-                    body {
-                        display: grid;
-                        background: #183059;
-                    }
-                    
                     .container {
                         position: relative;
                         margin: auto;
                         overflow: hidden;
-                        width: 650px;
-                        height: 480px;
+                        width: 540px;
+                        height: 370px;
                     }
                     
                     h1 {
@@ -22,7 +17,7 @@
                         margin-top: 2em;
                         font-size: 1em;
                         text-transform: uppercase;
-                        letter-spacing: 5px;
+                        letter-spacing: 4px;
                         color: #F6F4F3;
                     }
                     
@@ -32,7 +27,7 @@
                         text-transform: uppercase;
                         font-family: 'Lato', sans-serif;
                         font-size: .7em;
-                        letter-spacing: 5px;
+                        letter-spacing: 4px;
                         margin-top: 25%;
                     }
                     
@@ -41,8 +36,8 @@
                     .minutes,
                     .seconds {
                         display: inline-block;
-                        padding: 20px;
-                        width: 100px;
+                        padding: 18px;
+                        width: 90px;
                         border-radius: 5px;
                     }
                     
@@ -92,8 +87,8 @@
                         background: #EF2F3C;
                         left: 18%;
                         top: 9%;
-                        height: 65px;
-                        width: 70px;
+                        height: 60px;
+                        width: 65px;
                     }
                     
                     .red .triangle {
@@ -108,8 +103,8 @@
                     .blue {
                         position: absolute;
                         background: #276FBF;
-                        height: 80px;
-                        width: 80px;
+                        height: 75px;
+                        width: 75px;
                         left: 60%;
                         top: 5%;
                     }
@@ -200,30 +195,6 @@
                         -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
                         clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
                     }
-                    /* footer {
-                        position: fixed;
-                        bottom: 0;
-                        right: 0;
-                        text-transform: uppercase;
-                        padding: 10px;
-                        font-family: 'Lato', sans-serif;
-                        font-size: 0.7em;
-                    }
-                    
-                    footer p {
-                        letter-spacing: 3px;
-                        color: #EF2F3C;
-                    }
-                    
-                    footer a {
-                        color: #F6F4F3;
-                        text-decoration: none;
-                    }
-                    
-                    footer a:hover {
-                        color: #276FBF;
-                    }*/
-                    /* latin-ext */
                     
                     @font-face {
                         font-family: 'Lato';
