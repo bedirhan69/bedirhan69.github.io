@@ -125,6 +125,10 @@
         var snakeX = (snakeY = 10);
         // apple
         var appleX = (appleY = 15);
+        var odulX = (odulY = 4);
+        var normalboyut = 4;
+        var boyut = normalboyut;
+        var odulboyut = [];
         // draw
         function draw() {
             // move snake in next pos
@@ -148,6 +152,11 @@
                 tailSize++;
                 appleX = Math.floor(Math.random() * gridSize);
                 appleY = Math.floor(Math.random() * gridSize);
+            }
+            if (snakeX == odulX && snakeY == odulY) {
+                tailSize++;
+                odulX = Math.floor(Math.random() * gridSize);
+                odulY = Math.floor(Math.random() * gridSize);
             }
             //paint background
             ctx.fillStyle = "#1C1D24";
@@ -175,18 +184,23 @@
                     tileSize,
                     tileSize
                 );
+
+
                 //snake bites it's tail?
                 if (snakeTrail[i].x == snakeX && snakeTrail[i].y == snakeY) {
                     tailSize = defaultTailSize;
                 }
-                if (snakeTrail[i].x == 730 && snakeTrail[i].y == 730) {
-                    tailSize = defaultTailSize;
-                }
+
+
+            }
+            for (var u = 0; u < odulboyut.length; u++) {
 
             }
             // paint apple
             ctx.fillStyle = grd;
             ctx.fillRect(appleX * tileSize, appleY * tileSize, tileSize, tileSize);
+            ctx.fillStyle = grd;
+            ctx.fillRect(odulX * tileSize, odulY * tileSize, tileSize, tileSize);
             //set snake trail
             snakeTrail.push({
                 x: snakeX,
