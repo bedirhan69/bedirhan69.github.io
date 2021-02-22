@@ -51,6 +51,7 @@
             border-radius: 100px;
             background-color: rgb(131, 69, 160);
             margin: 0;
+            padding: 0;
         }
         
         button#asagı {
@@ -60,6 +61,7 @@
             border-radius: 100px;
             background-color: rgb(131, 69, 160);
             margin: 0;
+            padding: 0;
         }
         
         button#saga {
@@ -69,6 +71,7 @@
             border-radius: 100px;
             background-color: rgb(131, 69, 160);
             margin: 0;
+            padding: 0;
         }
         
         button#sola {
@@ -78,26 +81,31 @@
             border-radius: 100px;
             background-color: rgb(131, 69, 160);
             margin: 0;
+            padding: 0;
         }
         
         img#yukarı1 {
             border-radius: 100px;
             margin: 0;
+            padding: 0;
         }
         
         img#asagı1 {
             border-radius: 100px;
             margin: 0;
+            padding: 0;
         }
         
         img#saga1 {
             border-radius: 100px;
             margin: 0;
+            padding: 0;
         }
         
         img#sola1 {
             border-radius: 100px;
             margin: 0;
+            padding: 0;
         }
     </style>
     <script>
@@ -125,10 +133,6 @@
         var snakeX = (snakeY = 10);
         // apple
         var appleX = (appleY = 15);
-        var odulX = (odulY = 4);
-        var normalboyut = 4;
-        var boyut = normalboyut;
-        var odulboyut = [];
         // draw
         function draw() {
             // move snake in next pos
@@ -152,11 +156,6 @@
                 tailSize++;
                 appleX = Math.floor(Math.random() * gridSize);
                 appleY = Math.floor(Math.random() * gridSize);
-            }
-            if (snakeX == odulX && snakeY == odulY) {
-                tailSize++;
-                odulX = Math.floor(Math.random() * gridSize);
-                odulY = Math.floor(Math.random() * gridSize);
             }
             //paint background
             ctx.fillStyle = "#1C1D24";
@@ -185,7 +184,6 @@
                     tileSize
                 );
 
-
                 //snake bites it's tail?
                 if (snakeTrail[i].x == snakeX && snakeTrail[i].y == snakeY) {
                     tailSize = defaultTailSize;
@@ -193,14 +191,10 @@
 
 
             }
-            for (var u = 0; u < odulboyut.length; u++) {
 
-            }
             // paint apple
             ctx.fillStyle = grd;
             ctx.fillRect(appleX * tileSize, appleY * tileSize, tileSize, tileSize);
-            ctx.fillStyle = grd;
-            ctx.fillRect(odulX * tileSize, odulY * tileSize, tileSize, tileSize);
             //set snake trail
             snakeTrail.push({
                 x: snakeX,
