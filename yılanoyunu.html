@@ -107,6 +107,11 @@
             margin: 0;
             padding: 0;
         }
+        
+        input[type=text] {
+            position: fixed;
+            top: 20px;
+        }
     </style>
     <script>
         var canvas, ctx, scorediv;
@@ -227,23 +232,6 @@
                     nextY = 1; //asagı83
                     break;
                     /////////
-                case 65:
-                    nextX = -1;
-                    nextY = 0; //sola65
-                    break;
-                case 87:
-                    nextX = 0; //yukarı87
-                    nextY = -1;
-                    break;
-                case 68:
-                    nextX = 1;
-                    nextY = 0; //saga68
-                    break;
-                case 83:
-                    nextX = 0;
-                    nextY = 1; //asagı83
-                    break;
-                    /////////
 
 
             }
@@ -278,7 +266,7 @@
 
     <div id="score"></div>
     <canvas id="canvas" width="729" height="729"></canvas>
-
+    <input type="text" width=100px; color=red; />
     <button id="yukarı" type="submit"><img src="https://www.vhv.rs/dpng/d/406-4063205_up-arrow-button-svg-png-icon-free-download.png" id="yukarı1" width=65px;></button>
     <button id="asagı" type="submit"><img src="https://toppng.com/uploads/preview/down-arrow-button-11549781285rminpqseqx.png " id="asagı1" width=65px;></button>
     <button id="saga" type="submit"><img src="https://cdn.imgbin.com/2/9/6/imgbin-computer-icons-arrow-button-arrow-YL3Xj2vTwjwL5vwFzkQXri2v2.jpg" id="saga1" width=65px;></button>
