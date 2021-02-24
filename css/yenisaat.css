@@ -7,8 +7,8 @@
                         position: relative;
                         margin: auto;
                         overflow: hidden;
-                        width: 540px;
-                        height: 370px;
+                        max-width: 540px;
+                        max-height: 370px;
                     }
                     
                     h1 {
@@ -37,7 +37,7 @@
                     .seconds {
                         display: inline-block;
                         padding: 18px;
-                        width: 90px;
+                        max-width: 90px;
                         border-radius: 5px;
                     }
                     
@@ -67,8 +67,8 @@
                     .white {
                         position: absolute;
                         background: #F6F4F3;
-                        height: 85px;
-                        width: 75px;
+                        max-height: 85px;
+                        max-width: 75px;
                         left: 30%;
                         top: 2%;
                     }
@@ -88,7 +88,7 @@
                         left: 18%;
                         top: 9%;
                         height: 60px;
-                        width: 65px;
+                        max-width: 65px;
                     }
                     
                     .red .triangle {
@@ -103,8 +103,8 @@
                     .blue {
                         position: absolute;
                         background: #276FBF;
-                        height: 75px;
-                        width: 75px;
+                        max-height: 75px;
+                        max-width: 75px;
                         left: 60%;
                         top: 5%;
                     }
@@ -126,8 +126,8 @@
                     
                     .eye {
                         position: absolute;
-                        width: 7px;
-                        height: 7px;
+                        max-width: 7px;
+                        max-height: 7px;
                         top: 40%;
                         left: 22%;
                         background: #000;
@@ -137,8 +137,8 @@
                     .eye:after {
                         content: '';
                         left: 35px;
-                        width: 7px;
-                        height: 7px;
+                        max-width: 7px;
+                        max-height: 7px;
                         border-radius: 50%;
                         background: #000;
                         position: absolute;
