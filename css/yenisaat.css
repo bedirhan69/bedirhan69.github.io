@@ -148,8 +148,8 @@
                         position: absolute;
                         top: 45%;
                         left: 43%;
-                        width: 7px;
-                        height: 7px;
+                        max-width: 7px;
+                        max-height: 7px;
                         border-radius: 50%;
                     }
                     
@@ -163,23 +163,23 @@
                         position: absolute;
                         left: 40%;
                         bottom: -10%;
-                        width: 0;
-                        height: 0;
+                        max-width: 0;
+                        max-height: 0;
                         border-left: 7px solid transparent;
                         border-right: 7px solid transparent;
                     }
                     
                     .string {
                         position: absolute;
-                        height: 70px;
-                        width: 1px;
+                        max-height: 70px;
+                        max-width: 1px;
                         left: 48%;
                         top: 100%;
                         z-index: -1;
                     }
                     
                     .star {
-                        width: 20px;
+                        max-width: 20px;
                         height: 20px;
                         background: #F6F4F3;
                         -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
@@ -187,8 +187,8 @@
                     }
                     
                     .star-red {
-                        width: 30px;
-                        height: 30px;
+                        max-width: 30px;
+                        max-height: 30px;
                         margin-left: 51px;
                         margin-top: -5px;
                         background: #EF2F3C;
