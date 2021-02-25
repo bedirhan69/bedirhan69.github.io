@@ -27,7 +27,6 @@
         div#score {
             color: rgb(255, 255, 255);
             margin: 0;
-            z-index: 999;
             width: 120px;
             height: 60px;
             font-size: 28px;
@@ -111,6 +110,13 @@
         input[type=text] {
             position: fixed;
             top: 40px;
+        }
+        
+        div#ana {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(233, 98, 188);
+            z-index: 999;
         }
     </style>
     <script>
@@ -258,12 +264,18 @@
             });
 
 
-        }
+        } //.remove()
     </script>
 </head>
 
 <body>
-
+    <div id="ana">
+        <center><br><br>
+            <h1>Yılan Oyunu</h1><br>
+            <input type="text" width=100px; color=red; /><br>
+            <input type="text" width=100px; color=red; /><br>
+            <input type="submit" width=100px; value="Başla" onclick=/></center>
+    </div>
     <div id="score"></div>
     <canvas id="canvas" width="676" height="676"></canvas>
     <input type="text" width=100px; color=red; />
