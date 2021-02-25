@@ -37,8 +37,7 @@
                     .seconds {
                         display: inline-block;
                         padding: 18px;
-                        width: 90px;
-                        /**/
+                        max-width: 90px;
                         border-radius: 5px;
                     }
                     
