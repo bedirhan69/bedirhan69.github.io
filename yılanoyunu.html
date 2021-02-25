@@ -107,16 +107,33 @@
             padding: 0;
         }
         
-        input[type=text] {
-            position: fixed;
-            top: 40px;
-        }
-        
         div#ana {
             width: 100%;
             height: 100%;
-            background-color: rgb(233, 98, 188);
+            background-image: url(img/snakebackground.png);
             z-index: 999;
+        }
+        
+        h1 {
+            color: white;
+        }
+        
+        input[type=text] {
+            width: 190px;
+            height: 30px;
+            border: solid 1px;
+            border-radius: 5px 5px 5px 5px;
+            border-color: rgba(124, 122, 122, 0.397);
+        }
+        
+        input[type=submit] {
+            width: 170px;
+            height: 28px;
+            border: solid 1px;
+            border-radius: 4px 4px 4px 4px;
+            background-color: red;
+            border-color: red;
+            color: white;
         }
     </style>
     <script>
@@ -138,7 +155,7 @@
         var gridSize = (tileSize = 26); // 27 x 27 = 729
         var nextX = (nextY = 0);
         // snake
-        var defaultTailSize = 3;
+        var defaultTailSize = 2;
         var tailSize = defaultTailSize;
         var snakeTrail = [];
         var snakeX = (snakeY = 10);
@@ -193,13 +210,14 @@
                     snakeTrail[i].y * tileSize,
                     tileSize,
                     tileSize
+
                 );
 
                 //snake bites it's tail?
                 if (snakeTrail[i].x == snakeX && snakeTrail[i].y == snakeY) {
                     tailSize = defaultTailSize;
-                }
 
+                }
 
             }
 
@@ -214,10 +232,11 @@
             while (snakeTrail.length > tailSize) {
                 snakeTrail.shift();
             }
-            this.scorediv.innerHTML = "Score : " + (tailSize - 3);
+            this.scorediv.innerHTML = "Score : " + (tailSize - 2);
 
 
         }
+
         // input
         function keyDownEvent(e) {
             switch (e.keyCode) {
@@ -265,6 +284,9 @@
 
 
         } //.remove()
+        function sil() {
+            document.getElementById("ana").remove();
+        }
     </script>
 </head>
 
@@ -272,18 +294,39 @@
     <div id="ana">
         <center><br><br>
             <h1>Yılan Oyunu</h1><br>
-            <input type="text" width=100px; color=red; /><br>
-            <input type="text" width=100px; color=red; /><br>
-            <input type="submit" width=100px; value="Başla" onclick=/></center>
+            <form action="index.php" method="GET">
+                <input type="text" width=100px; placeholder="Adınız" id="ad" name="ad" required/><br><br>
+                <input type="text" width=100px; placeholder="Soyadınız" id="soyad" name="soyad" required/><br><br>
+                <input type="submit" width=100px; value="Başla" />
+            </form>
+        </center>
     </div>
     <div id="score"></div>
     <canvas id="canvas" width="676" height="676"></canvas>
-    <input type="text" width=100px; color=red; />
     <button id="yukarı" type="submit"><img src="https://www.vhv.rs/dpng/d/406-4063205_up-arrow-button-svg-png-icon-free-download.png" id="yukarı1" width=45px;></button>
-    <button id="asagı" type="submit"><img src="https://toppng.com/uploads/preview/down-arrow-button-11549781285rminpqseqx.png " id="asagı1" width=45px;></button>
+    <button id="asagı" type="submit"><img src="https://toppng.com/uploads/preview/down-arrow-button-11549781285rminpqseqx.png" id="asagı1 " width=45px;></button>
     <button id="saga" type="submit"><img src="https://cdn.imgbin.com/2/9/6/imgbin-computer-icons-arrow-button-arrow-YL3Xj2vTwjwL5vwFzkQXri2v2.jpg" id="saga1" width=45px;></button>
-    <button id="sola" type="submit"><img src="https://image.flaticon.com/icons/png/512/61/61791.png " id="sola1" width=45px;></button>
+    <button id="sola" type="submit"><img src="https://image.flaticon.com/icons/png/512/61/61791.png" id="sola1" width=45px;></button>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        //echo $_GET['isim'];
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC4QyXzRGhcPsoMbAa_GbmKMleGObfrmLo",
+            authDomain: "oyuncular-9c9a9.firebaseapp.com",
+            projectId: "oyuncular-9c9a9",
+            storageBucket: "oyuncular-9c9a9.appspot.com",
+            messagingSenderId: "141929158567",
+            appId: "1:141929158567:web:ed9c782f207cd0eec8c882"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 </body>
 
 </html>
