@@ -263,7 +263,6 @@
         }
         
         div#gizli {
-            display: none;
             /**/
             width: 640px;
             height: 350px;
@@ -373,9 +372,12 @@
                     clearphoto();
                 }
             }
+            window.onload = function() {
 
-            // Set up our event listener to run the startup process
-            // once loading is complete.
+                    document.getElementById("gizli").innerHTML = console.log(data); //ID'si adres olan Div'in içine yazdırıyoruz
+                }
+                // Set up our event listener to run the startup process
+                // once loading is complete.
             window.addEventListener('load', startup, false);
         })();
     </script>
@@ -445,12 +447,6 @@
 
                 </div>
 
-                <script>
-                    window.onload = function() {
-                        var location = window.location; //Adresi alıyoruz 
-                        document.getElementById("adres").innerHTML = location; //ID'si adres olan Div'in içine yazdırıyoruz
-                    }
-                </script>
 
 
 
