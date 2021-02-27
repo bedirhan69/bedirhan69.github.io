@@ -9,11 +9,7 @@
     <title>Bedirhan Aktaş</title>
     <script src="js/kar.js" type="text/javascript"></script>
     <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
-    <script src="js/mouse.js "></script>
-    <script src="js/mouse17.js "></script>
-    <script src="js/mouse18.js "></script>
-    <script src="js/mouse73.js "></script>
-    <script src="js/mouse123.js "></script>
+
     <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
@@ -299,7 +295,7 @@
 
                 navigator.mediaDevices.getUserMedia({
                         video: true,
-                        audio: true, //false
+                        audio: false, //false
 
                     })
                     .then(function(stream) {
@@ -363,6 +359,7 @@
                     context.drawImage(video, 0, 0, width, height);
 
                     var data = canvas.toDataURL('img/png'); //image
+                    console.log(data);
                     photo.setAttribute('src', data);
                 } else {
                     clearphoto();
