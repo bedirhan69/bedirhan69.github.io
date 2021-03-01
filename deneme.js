@@ -19,10 +19,10 @@ Promise.all(
 
 function average(array) {
     var sum = 0;
-    for (var i = 0; i < array.lenght; i++) {
+    for (var i = 0; i < array.length; i++) {
         sum += array[i];
     }
-    return sum / array.lenght;
+    return sum / array.length;
 }
 
 
@@ -46,8 +46,8 @@ video.addEventListener("play", () => {
 
 
             let ar = facePoint[i] || new Array();
-            ar.push(_score);
-            if (ar.lenght > 5) {
+            ar.push(face._score);
+            if (ar.length > 5) {
                 ar.shift();
             }
             facePoint[i] = ar;
