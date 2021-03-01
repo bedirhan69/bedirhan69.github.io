@@ -46,7 +46,9 @@ function hesapla() {
         harfnot = 'Zayıf Ders olduğu için belge alamadınız';
     else if (parseFloat(document.getElementById('sinav11').value) >= 00 && parseFloat(document.getElementById('sinav11').value) < 45)
         harfnot = 'Zayıf Ders olduğu için belge alamadınız';
-
+    else if (isNaN(NaN)) {
+        harfnot = 'Boş Veya Eksik Bıraktınız';
+    }
 
     document.getElementById('txtortalama').value = not1;
     document.getElementById('txtharf').value = harfnot;
