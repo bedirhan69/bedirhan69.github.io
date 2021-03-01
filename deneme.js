@@ -43,7 +43,7 @@ video.addEventListener("play", () => {
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         detections.forEach((face, i) => {
-
+            //
 
             let ar = facePoint[i] || new Array();
             ar.push(face._score);
