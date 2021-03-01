@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <title>Bedirhan Aktaş</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f6f5f7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: -20px 0 50px;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        p {
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 20px;
+            letter-spacing: .5px;
+            margin: 20px 0 30px;
+        }
+        
+        span {
+            font-size: 12px;
+        }
+        
+        a {
+            color: #333;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0;
+        }
+        
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+        }
+        
+        .form-container {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 0 50px;
+            /**/
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .social-container {
+            margin: 20px 0;
+        }
+        
+        .social-container a {
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            height: 40px;
+            width: 40px;
+        }
+        
+        .form-container input {
+            background: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+        }
+        
+        button {
+            border-radius: 20px;
+            border: 1px solid #ff4b2b;
+            background: #ff445c;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+        
+        button:active {
+            transform: scale(.95);
+        }
+        
+        button:focus {
+            outline: none;
+        }
+        
+        button.ghost {
+            background: transparent;
+            border-color: #fff;
+        }
+        
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all .6s ease-in-out;
+        }
+        
+        .sign-in-container {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+        
+        .sign-up-container {
+            left: 0;
+            width: 50%;
+            z-index: 1;
+            opacity: 0;
+        }
+        
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform .6s ease-in-out;
+            z-index: 100;
+        }
+        
+        .overlay {
+            background: #ff416c;
+            background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+            color: #fff;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateY(0);
+            transition: transform .6s ease-in-out;
+        }
+        
+        .overlay-panel {
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 40px;
+            height: 100%;
+            width: 50%;
+            text-align: center;
+            transform: translateY(0);
+            transition: transform .6s ease-in-out;
+        }
+        
+        .overlay-right {
+            right: 0;
+            transform: translateY(0);
+        }
+        
+        .overlay-left {
+            transform: translateY(-20%);
+        }
+        /* Move signin to right */
+        
+        .container.right-panel-active .sign-in-container {
+            transform: translateY(100%);
+        }
+        /* Move overlay to left */
+        
+        .container.right-panel-active .overlay-container {
+            transform: translateX(-100%);
+        }
+        /* Bring signup over signin */
+        
+        .container.right-panel-active .sign-up-container {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+        }
+        /* Move overlay back to right */
+        
+        .container.right-panel-active .overlay {
+            transform: translateX(50%);
+        }
+        /* Bring back the text to center */
+        
+        .container.right-panel-active .overlay-left {
+            transform: translateY(0);
+        }
+        /* Same effect for right */
+        
+        .container.right-panel-active .overlay-right {
+            transform: translateY(20%);
+        }
+        
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .icons {
+            display: flex;
+            width: 30px;
+            height: 30px;
+            letter-spacing: 15px;
+            align-items: center;
+        }
+    </style>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script>
+        //ttal999
+        var firebaseConfig = {
+            apiKey: "AIzaSyBWn_sUIZOy8W_A2k-_hFdHTPqlEVPuLLQ",
+            authDomain: "ttal999.firebaseapp.com",
+            projectId: "ttal999",
+            storageBucket: "ttal999.appspot.com",
+            messagingSenderId: "779901543676",
+            appId: "1:779901543676:web:e852b193490772d432a379"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+
+        function signUp() {
+            var email = document.getElementById("gmail");
+            var password = document.getElementById("sifre");
+            const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+            promise.catch(e => alert(e.message));
+            alert("Kayıt Yapıldı!");
+            firebase.database().ref("kullanıcı").set({
+                Adınız: document.getElementById("ad").value,
+                Soyadınız: document.getElementById("soyad").value,
+                Gmail: document.getElementById("gmail").value,
+                Sifre: document.getElementById("sifre").value
+            });
+
+        }
+
+        auth.onAuthStateChanged(function(user) {
+
+            if (user) {
+
+                var email = user.email;
+                alert("Aktif Kullanıcı " + email);
+
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <div id="form">
+                <h1>Kayıt Ol</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>veya hesabınızı kullanın</span>
+                <input type="text" placeholder="Adınız" id="ad" required/>
+                <input type="text" placeholder="Soyadınız" id="soyad" />
+                <input type="email" placeholder="Gmail" id="gmail" required/>
+                <input type="password" placeholder="Sifre" id="sifre" required/>
+                <button onclick="signUp()" id="signUp">Kayıt Ol</button>
+            </div>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>Merhaba, Dostum!</h1>
+                    <p>Kişisel bilgilerinizi girin ve bizimle yolculuğa başlayın</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
