@@ -44,7 +44,8 @@ video.addEventListener("play", () => {
         detections.forEach((face, i) => {
 
             let ar = facePoint[i] || new Array();
-            ar.push(face._score);
+            ar.push(facePoint);
+            //face._score
             if (ar.lenght > 5) {
                 ar.shift();
             }
