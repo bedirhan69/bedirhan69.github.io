@@ -39,14 +39,14 @@ video.addEventListener("play", () => {
 
     setInterval(async() => {
         const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions());
-        console.log(detections);
+        console.log(detections); //
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         detections.forEach((face, i) => {
 
 
             let ar = facePoint[i] || new Array();
-            ar.push(face._score);
+            ar.push(_score);
             if (ar.lenght > 5) {
                 ar.shift();
             }
