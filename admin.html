@@ -236,8 +236,38 @@
             letter-spacing: 15px;
             align-items: center;
         }
+        
+        a#kayıt {
+            color: white;
+        }
     </style>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBWn_sUIZOy8W_A2k-_hFdHTPqlEVPuLLQ",
+            authDomain: "ttal999.firebaseapp.com",
+            projectId: "ttal999",
+            storageBucket: "ttal999.appspot.com",
+            messagingSenderId: "779901543676",
+            appId: "1:779901543676:web:e852b193490772d432a379"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
 
+        function signIn() {
+            var email = document.getElementById("gmail");
+            var password = document.getElementById("sifre");
+            const promise = auth.signInWithEmailAndPassword(email.value, password.value);
+            promise.catch(e => alert(e.message));
+            alert("Giriş Yapıldı " + email.value);
+
+        }
+    </script>
 
 
 
@@ -248,22 +278,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form action="#">
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>
-                    veya e-posta adresinizi kayıt için kullanın</span>
-                <input type="text" placeholder="İsim" />
-                <input type="email" placeholder="E-Posta" />
-                <input type="password" placeholder="Şifre" />
-                <button>Kayıt Ol</button>
-            </form>
-        </div>
+
         <div class="form-container sign-in-container">
             <form action="#">
                 <h1>Oturum Aç</h1>
@@ -273,23 +288,19 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>veya hesabınızı kullanın</span>
-                <input type="email" placeholder="E-Posta" />
-                <input type="password" placeholder="Şifre" />
+                <input type="email" placeholder="E-Posta" id="gmail" />
+                <input type="password" placeholder="Şifre" id="sifre" />
                 <a href="#">Şifreni mi Unuttunuz?</a>
                 <button>Oturum Aç</button>
             </form>
         </div>
         <div class="overlay-container">
             <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Tekrar Hoşgeldiniz!</h1>
-                    <p>Bizimle bağlantıda kalmak için lütfen kişisel bilgilerinizle giriş yapın</p>
-                    <button class="ghost" id="signIn">Oturum Aç</button>
-                </div>
+
                 <div class="overlay-panel overlay-right">
                     <h1>Merhaba, Dostum!</h1>
                     <p>Kişisel bilgilerinizi girin ve bizimle yolculuğa başlayın</p>
-                    <button class="ghost" id="signUp">Kayıt Ol</button>
+                    <button class="ghost" id="signUp"><a href="adminkayıt.html" id="kayıt">Kayıt Ol</a></button>
                 </div>
             </div>
         </div>
