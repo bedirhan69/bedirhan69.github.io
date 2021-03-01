@@ -5,7 +5,7 @@ const virus = new Image();
 const facePoint = [];
 Promise.all(
     [
-        faceapi.nets.tinyFaceDetector.loadFromUri('/Users/oguzhan/Documents/GitHub/bedirhan69.github.io/models')
+        faceapi.nets.tinyFaceDetector.loadFromUri('/models')
     ]
 ).then(
     console.log("moduller yuklendi"),
