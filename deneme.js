@@ -42,18 +42,18 @@ video.addEventListener("play", () => {
         console.log(detections);
         context.clearRect(0, 0, canvas.width, canvas.height);
 
-        detections.forEach(face => {
-
-            //  let ar = facePoint[i] || new Array();
-            //  ar.push(face._score);
-
-            // if (ar.lenght > 5) {
-            //      ar.shift();
-            //  }
-            // facePoint[i] = ar;
+        detections.forEach((face, i) => {
 
 
-            debug.innerHTML = face._score; //average(facePoint[i]);
+            let ar = facePoint[i] || new Array();
+            ar.push(face._score);
+            if (ar.lenght > 5) {
+                ar.shift();
+            }
+            facePoint[i] = ar;
+
+            debug.innerHTML = average(facePoint[i]);
+
 
             if (average(facePoint[i]) > .78) {
                 context.drawImage(virus, face._box._x, face._box._y, face._box._width, face._box._width);
