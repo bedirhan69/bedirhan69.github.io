@@ -5,7 +5,7 @@ const virus = new Image();
 const facePoint = [];
 Promise.all(
     [
-        faceapi.nets.tinyFaceDetector.loadFromUri('/models')
+        faceapi.nets.tinyFaceDetector.loadFromUri('/models/tiny_face_detector_model-weights_manifest.json')
     ]
 ).then(
     console.log("moduller yuklendi"),
@@ -39,13 +39,14 @@ video.addEventListener("play", () => {
 
     setInterval(async() => {
         const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions());
+        console.log(detections);
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         detections.forEach((face, i) => {
 
             let ar = facePoint[i] || new Array();
-            ar.push(facePoint);
-            //face._score
+            ar.push(face._score);
+
             if (ar.lenght > 5) {
                 ar.shift();
             }
