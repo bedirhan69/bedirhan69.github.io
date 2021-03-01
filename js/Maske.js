@@ -55,7 +55,7 @@ video.addEventListener("play", () => {
             debug.innerHTML = average(facePoint[i]);
 
 
-            if (average(facePoint[i]) > .70) {
+            if (average(facePoint[i]) > .79) {
                 context.drawImage(virus, face._box._x, face._box._y, face._box._width, face._box._width);
                 uyari.classList.remove("hidden");
             } else {
