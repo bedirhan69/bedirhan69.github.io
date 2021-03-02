@@ -159,8 +159,8 @@
         }
         
         .overlay {
-            background: #ff416c;
-            background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+            background: linear-gradient(-45deg, #ff4b2b, #ff416c, #23a6d5, #23a6d5, #23d5ab);
+            animation: gradient 15s ease infinite;
             color: #fff;
             position: relative;
             left: -100%;
@@ -168,6 +168,18 @@
             width: 200%;
             transform: translateY(0);
             transition: transform .6s ease-in-out;
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         
         .overlay-panel {
@@ -315,5 +327,8 @@
         </div>
     </div>
 </body>
+<!-----------------------------------------------------güzel arkaplan--------------------------------------------------->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+<!-------------------------------------------------------------güzel arkaplan son-------------------------------------------------->
 
 </html>
