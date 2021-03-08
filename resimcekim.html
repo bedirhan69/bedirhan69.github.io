@@ -11,14 +11,8 @@
 <body>
     <input type="file" id="photo" />
     <button onclick="uploadImage()" id="button1">Upload Image</button>
-    <!-- Stream video via webcam -->
-
     <video id="video" width=400 height=400 playsinline controls autoplay></video>
-
-    <!-- Trigger canvas web API -->
     <button id="snap">Capture</button>
-
-    <!-- Webcam video snapshot -->
     <canvas id="canvas" width="600" height="460"></canvas>
 </body>
 <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
@@ -40,10 +34,13 @@
     firebase.initializeApp(firebaseConfig);
     console.log(firebase);
 
+    setInterval(mat, 1000);
+
     function uploadImage() {
         const ref = firebase.storage().ref();
         const file = document.querySelector("#photo").files[0];
         const name = +new Date() + "-" + file.name;
+
         const metadata = {
             contentType: file.type
         };
@@ -89,9 +86,11 @@
     // Load init
     init();
 
-    // Draw image
-    var context = canvas.getContext('2d');
-    snap.addEventListener("click", function() { //load
+
+
+    function mat() {
+        var context = canvas.getContext('2d');
+        // snap.addEventListener("click", function() { //load
         context.drawImage(video, 0, 0, 640, 480);
         var image = new Image();
         image.id = "pic";
@@ -108,7 +107,7 @@
                 alert("Image Uploaded")
             });
         }
-    });
+    }
 </script>
 
 </html>
