@@ -10,6 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <title>Bedirhan Aktaş</title>
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+    <script src="js/mouse.js "></script>
+    <script src="js/mouse17.js "></script>
+    <script src="js/mouse18.js "></script>
+    <script src="js/mouse73.js "></script>
+    <script src="js/mouse123.js "></script>
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
         * {
@@ -340,6 +347,10 @@
             top: 76px;
             right: 85px;
         }
+        
+        div#sms {
+            display: none;
+        }
     </style>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
@@ -359,7 +370,7 @@
         firebase.initializeApp(firebaseConfig);
 
         const auth = firebase.auth();
-        document.getElementById("sms").style.display = "none";
+
 
         function signUp() {
             var email = document.getElementById("gmail");
@@ -373,12 +384,15 @@
                 Gmail: document.getElementById("gmail").value,
                 Sifre: document.getElementById("sifre").value
             });
-            console.log("veritabannı gitti");
-            //window.location = ('https:bedirhan69.github.io/admin.html');
-            alert("Giriş Yapailirsiniz!!!");
-            button.addEventListener('click', () => {
-                document.getElementById("sms").add()
-            })
+            console.log("veritabanı gitti");
+            var dv = document.getElementById('sms');
+            if (dv.style.display == 'none') {
+                dv.style.display = 'block';
+            } else {
+                dv.style.display = 'none';
+            }
+            //alert("Giriş Yapailirsiniz!!!");
+
         }
 
         function sil() {
@@ -408,7 +422,7 @@
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-right">
-                    <h1>Merhaba, Dostum!</h1>
+                    <h1>Merhaba Dostum!</h1>
                     <p>Kişisel bilgilerinizi girin ve bizimle yolculuğa başlayın</p>
                     <button class="ghost" id="signUp"><a href="admin.html" id="kayıt">Giriş Yap!</a></button>
                 </div>
