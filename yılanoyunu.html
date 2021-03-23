@@ -284,7 +284,34 @@
 
         } //.remove()
         function sil() {
-            document.getElementById("ana").remove();
+            "use strict";
+            var adın;
+            var soyadın;
+            var formGiris = document.forms["forum1"];
+            var sifre = formGiris["ad"];
+            var text = formGiris["soyad"];
+            adın = document.getElementById("ad").value;
+            soyadın = document.getElementById("soyad").value;
+
+            formGiris.onsubmit = function() {
+                if (sifre.value.length > 2) {
+
+                } else {
+                    alert("Lütfen adınızı doğru giriniz!");
+                    return false;
+                }
+                if (text.value.length > 1) {
+
+                } else {
+                    alert("Lütfen soyadınızı doğru giriniz!")
+                    return false;
+                }
+                if (sifre.value.length > 2 || text.value.length > 1) {
+                    document.getElementById("ana").remove();
+                    alert("Oyunuma hoşgeldin " + adın);
+                }
+            }
+
         }
     </script>
 </head>
@@ -293,10 +320,13 @@
     <div id="ana">
         <center><br><br>
             <h1>Yılan Oyunu</h1><br>
-            <input type="text" width=100px; placeholder="Adınız" id="ad" name="ad" required/><br><br>
-            <input type="text" width=100px; placeholder="Soyadınız" id="soyad" name="soyad" required/><br><br>
-            <input type="submit" width=100px; value="Başla" onclick="sil();" />
+            <form name="forum1">
+                <input type="text" width=100px; placeholder="Adınız" id="ad" name="ad" required/><br><br>
+                <input type="text" width=100px; placeholder="Soyadınız" id="soyad" name="soyad" required/><br><br>
+                <input type="submit" width=100px; value="Başla" onclick="sil();" />
+            </form>
         </center>
+
     </div>
     <div id="score"></div>
     <canvas id="canvas" width="676" height="676"></canvas>
