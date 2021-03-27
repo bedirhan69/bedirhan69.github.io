@@ -405,6 +405,96 @@
             border: 2px solid;
             color: black;
         }
+        /*---------------------------------------------------duyuru-------------------------------------*/
+        
+        section.duyuru {
+            display: flex;
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.368);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: duyuruKapat 11s 1;
+            visibility: hidden;
+        }
+        
+        section.duyuru div {
+            background: white;
+            padding: 1em;
+            max-width: 90%;
+            position: relative;
+        }
+        
+        section.duyuru div img {
+            max-width: 100%;
+        }
+        
+        section.duyuru div a#cıkıs {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            background: black;
+            color: white;
+            border-radius: 20px;
+            font-weight: bolder;
+        }
+        
+        section.duyuru div a#youtube {
+            color: red;
+            text-decoration: none;
+        }
+        
+        section.duyuru div a#youtube:hover {
+            color: rgb(23, 23, 240);
+            text-decoration: none;
+        }
+        
+        section.duyuru div a#cıkıs::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            background: white;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            z-index: -1;
+            border-radius: 20px;
+        }
+        
+        section:target {
+            animation: none;
+            visibility: hidden;
+        }
+        
+        @keyframes duyuruKapat {
+            0% {
+                opacity: 1;
+                visibility: visible;
+            }
+            80% {
+                opacity: 1;
+                visibility: visible;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        h2 {
+            color: red;
+        }
+        /*---------------------------------------------------duyuru-------------------------------------*/
     </style>
 
     <!---------------------------------------hesaplama--------------------------------------------->
@@ -464,7 +554,16 @@
 
         </ul>
     </div>
+    <section class="duyuru" id="duyuru">
 
+        <div>
+            <a href="#duyuru" id="cıkıs">X</a>
+            <img src="img/duyuru.jfif">
+            <h2>!!!Önemli Duyuru!!!</h2>
+            <h5>Bedirhan Aktaş Kanalına Aşağıdaki Linkten<br>Abone Ol!!!</h5>
+            <a href="https://www.youtube.com/channel/UCBoIwUqYt5TtC-hXk_J8Raw" id="youtube">BEDİRHAN AKTAŞ</a>
+        </div>
+    </section>
 
     <center><br><br><br><br><br><br>
         <div class="card" id="myDiv">
