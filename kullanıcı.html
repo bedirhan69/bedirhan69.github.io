@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <style>
+        body {
+            margin: 0;
+            color: #6a6f8c;
+            background: #9b92a5;
+            font: 600 16px/18px 'Open Sans', sans-serif;
+        }
+        
+        *,
+         :after,
+         :before {
+            box-sizing: border-box
+        }
+        
+        .clearfix:after,
+        .clearfix:before {
+            content: '';
+            display: table
+        }
+        
+        .clearfix:after {
+            clear: both;
+            display: block
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+        
+        .login-wrap {
+            width: 100%;
+            margin: auto;
+            max-width: 525px;
+            min-height: 670px;
+            position: relative;
+            background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        }
+        
+        .login-html {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 90px 70px 50px 70px;
+            background: rgba(40, 57, 101, .9);
+        }
+        
+        .login-html .sign-in-htm,
+        .login-html .sign-up-htm {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all .4s linear;
+        }
+        
+        .login-html .sign-in,
+        .login-html .sign-up,
+        .login-form .group .check {
+            display: none;
+        }
+        
+        .login-html .tab,
+        .login-form .group .label,
+        .login-form .group .button {
+            text-transform: uppercase;
+        }
+        
+        .login-html .tab {
+            font-size: 22px;
+            margin-right: 15px;
+            padding-bottom: 5px;
+            margin: 0 15px 10px 0;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .login-html .sign-in:checked+.tab,
+        .login-html .sign-up:checked+.tab {
+            color: #fff;
+            border-color: #1161ee;
+        }
+        
+        .login-form {
+            min-height: 345px;
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        
+        .login-form .group {
+            margin-bottom: 15px;
+        }
+        
+        .login-form .group .label,
+        .login-form .group .input,
+        .login-form .group .button {
+            width: 100%;
+            color: #fff;
+            display: block;
+        }
+        
+        .login-form .group .input,
+        .login-form .group .button {
+            border: none;
+            padding: 15px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .1);
+        }
+        
+        .login-form .group input[data-type="password"] {
+            text-security: circle;
+            -webkit-text-security: circle;
+        }
+        
+        .login-form .group .label {
+            color: #aaa;
+            font-size: 12px;
+        }
+        
+        .login-form .group .button {
+            background: #1161ee;
+        }
+        
+        .login-form .group label .icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
+        }
+        
+        .login-form .group label .icon:before,
+        .login-form .group label .icon:after {
+            content: '';
+            width: 10px;
+            height: 2px;
+            background: #fff;
+            position: absolute;
+            transition: all .2s ease-in-out 0s;
+        }
+        
+        .login-form .group label .icon:before {
+            left: 3px;
+            width: 5px;
+            bottom: 6px;
+            transform: scale(0) rotate(0);
+        }
+        
+        .login-form .group label .icon:after {
+            top: 6px;
+            right: 0;
+            transform: scale(0) rotate(0);
+        }
+        
+        .login-form .group .check:checked+label {
+            color: #fff;
+        }
+        
+        .login-form .group .check:checked+label .icon {
+            background: #1161ee;
+        }
+        
+        .login-form .group .check:checked+label .icon:before {
+            transform: scale(1) rotate(45deg);
+        }
+        
+        .login-form .group .check:checked+label .icon:after {
+            transform: scale(1) rotate(-45deg);
+        }
+        
+        .login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
+            transform: rotate(0);
+        }
+        
+        .login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
+            transform: rotate(0);
+        }
+        
+        .hr {
+            height: 2px;
+            margin: 60px 0 50px 0;
+            background: rgba(255, 255, 255, .2);
+        }
+        
+        .foot-lnk {
+            text-align: center;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBWn_sUIZOy8W_A2k-_hFdHTPqlEVPuLLQ",
+            authDomain: "ttal999.firebaseapp.com",
+            projectId: "ttal999",
+            storageBucket: "ttal999.appspot.com",
+            messagingSenderId: "779901543676",
+            appId: "1:779901543676:web:e852b193490772d432a379"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+
+        function signUp() {
+            var email = document.getElementById("mail1");
+            var password = document.getElementById("pass1");
+            const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+            promise.catch(e => alert(e.message));
+            firebase.database().ref("kullanıcı").set({
+                Adınız: document.getElementById("user").value,
+                Gmail: document.getElementById("mail1").value,
+                Sifre: document.getElementById("pass1").value
+            });
+            console.log("veritabanı gitti");
+
+
+        }
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+                ///// document.getElementById("boyut").style.display = "block";
+                //document.getElementById("user_div").style.display = "block";
+                //document.getElementById("login_div").style.display = "none";
+                alert("giriş yapıldı");
+                console.log("olduuuu");
+                var user = firebase.auth().currentUser;
+
+                if (user != null) {
+
+                    var email_id = user.email;
+                    document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+
+                }
+
+            } else {
+                // No user is signed in.
+                alert("giriş yapılamadı");
+                console.log("olmadı");
+                /////  document.getElementById("boyut").style.display = "none";
+            }
+        });
+
+        function signIn() {
+            var email = document.getElementById("mail").value;
+            var password = document.getElementById("pass").value;
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                alert("Lutfen sifre veya gmail kontrol et!");
+                console.log("oldu");
+            });
+        }
+
+        function sil() {
+            document.getElementById("sms").remove();
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Giriş Yap</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Kayıt ol</label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="mail" class="label">E-Posta</label>
+                        <input id="mail" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Sifre</label>
+                        <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span> Oturumu açık tut</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Giriş yap" onclick="signIn()">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <a href="#">Şifreyi unuttun mu?</a>
+                    </div>
+                </div>
+                <!------------------------------------------------------------------------------------------------------>
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="user" class="label">Kullanıcı adı</label>
+                        <input id="user" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="pass1" class="label">Sifre</label>
+                        <input id="pass1" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="mail1" class="label">E-posta</label>
+                        <input id="mail1" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Kayıt ol" onclick="signUp()">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <label for="tab-1">Zaten üye misin?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
