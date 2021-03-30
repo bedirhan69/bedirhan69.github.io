@@ -101,7 +101,7 @@
             width: 100%;
         }
         
-        button {
+        button#fen {
             border-radius: 20px;
             border: 1px solid #ff4b2b;
             background: #ff445c;
@@ -114,15 +114,41 @@
             transition: transform 80ms ease-in;
         }
         
-        button:active {
+        button#fen:active {
             transform: scale(.95);
         }
         
-        button:focus {
+        button#fen:focus {
             outline: none;
         }
         
-        button.ghost {
+        button#fen.ghost {
+            background: transparent;
+            border-color: #fff;
+        }
+        
+        button#ing {
+            border-radius: 20px;
+            border: 1px solid #ff4b2b;
+            background: #ff445c;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+        }
+        
+        button#ing:active {
+            transform: scale(.95);
+        }
+        
+        button#ing:focus {
+            outline: none;
+        }
+        
+        button#ing.ghost {
             background: transparent;
             border-color: #fff;
         }
@@ -254,6 +280,94 @@
         a#kayıt {
             color: white;
         }
+        /*------------------------------------------------------------------------------------------------------------*/
+        
+        .alert>.start-icon {
+            margin-right: 0;
+            min-width: 20px;
+            text-align: center;
+        }
+        
+        .alert>.start-icon {
+            margin-right: 5px;
+        }
+        
+        .greencross {
+            font-size: 18px;
+            color: #25ff0b;
+            text-shadow: none;
+        }
+        
+        .alert-simple.alert-success {
+            border: 1px solid rgba(36, 241, 6, 0.46);
+            background-color: rgba(7, 149, 66, 0.12156862745098039);
+            box-shadow: 0px 0px 2px #259c08;
+            color: #0ad406;
+            text-shadow: 2px 1px #00040a;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        
+        .alert-success:hover {
+            background-color: rgba(7, 149, 66, 0.35);
+            transition: 0.5s;
+        }
+        
+        .alert:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: calc(100% - 44px);
+            border-left: 1px solid;
+            border-right: 2px solid;
+            border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            height: 20px;
+        }
+        
+        .fa-times {
+            -webkit-animation: blink-1 2s infinite both;
+            animation: blink-1 2s infinite both;
+        }
+        /**
+ * ----------------------------------------
+ * animation blink-1
+ * ----------------------------------------
+ */
+        
+        @-webkit-keyframes blink-1 {
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes blink-1 {
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+        
+        div#boyut {
+            z-index: 999;
+            position: fixed;
+            top: 76px;
+            right: 85px;
+        }
     </style>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
@@ -273,24 +387,37 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
 
-        function signIn() {
-            var email = document.getElementById("gmail");
-            var password = document.getElementById("sifre");
-            const promise = auth.signInWithEmailAndPassword(email.value, password.value);
-            promise.catch(e => alert(e.message));
-            window.location = ('https:bedirhan69.github.io');
-            alert("Giriş Yapıldı " + email.value);
-
-        }
-        auth.onAuthStateChanged(function(user) {
-
+        firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
+                // User is signed in.
+                document.getElementById("boyut").style.display = "block";
+                //document.getElementById("user_div").style.display = "block";
+                //document.getElementById("login_div").style.display = "none";
+                alert("giriş yapıldı");
 
-                var email = user.email;
-                alert(email + "  Adlı Hesap Aktif Buton' a Tıklayarak Giriş Yapabilirsiniz!!!");
+                var user = firebase.auth().currentUser;
 
+                if (user != null) {
+
+                    var email_id = user.email;
+                    document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+
+                }
+
+            } else {
+                // No user is signed in.
+                alert("giriş yapılamadı");
+                document.getElementById("boyut").style.display = "none";
             }
         });
+
+        function signIn() {
+            var email = document.getElementById("gmail").value;
+            var password = document.getElementById("sifre").value;
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                alert("Lutfen sifre veya gmail kontrol et!");
+            });
+        }
     </script>
 
 </head>
@@ -313,7 +440,7 @@
                 <input type="email" placeholder="E-Posta" id="gmail" />
                 <input type="password" placeholder="Şifre" id="sifre" />
                 <a href="#">Şifreni mi Unuttunuz?</a>
-                <button onclick="signIn()">Oturum Aç</button>
+                <button onclick="signIn()" id="fen">Oturum Aç</button>
             </div>
         </div>
         <div class="overlay-container">
@@ -321,8 +448,23 @@
                 <div class="overlay-panel overlay-right">
                     <h1>Merhaba, Dostum!</h1>
                     <p>Kişisel bilgilerinizi girin ve bizimle yolculuğa başlayın</p>
-                    <button class="ghost" id="signUp"><a href="adminkayıt.html" id="kayıt">Kayıt Ol</a></button>
+                    <button class="ghost" id="ing"><a href="adminkayıt.html" id="kayıt">Kayıt Ol</a></button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="boyut">
+        <div class="col-sm-12" id="sms">
+            <div class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show">
+                <button type="button" class="close font__size-18" data-dismiss="alert">
+                                      <span aria-hidden="true"  onclick="sil()"><!---<a href="https://www.youtube.com/watch?v=_XiOcsj3oNI&t=50s" target="_blank">-->
+                      <i class="fa fa-times greencross"></i>
+                      </a></span>
+                                      <span class="sr-only">Close</span> 
+                                  </button>
+                <i class="start-icon far fa-check-circle faa-tada animated"></i>
+                <strong class="font__weight-semibold">Aferin!</strong> Başarılı Bir şekilde Kayıt Oldun.
             </div>
         </div>
     </div>
