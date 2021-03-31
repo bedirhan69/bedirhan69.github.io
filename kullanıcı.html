@@ -3,9 +3,16 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <title>Bedirhan Aktaş</title>
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+    <script src="js/mouse.js "></script>
+    <script src="js/mouse17.js "></script>
+    <script src="js/mouse18.js "></script>
+    <script src="js/mouse73.js "></script>
+    <script src="js/mouse123.js "></script>
+    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
     <style>
         body {
             margin: 0;
@@ -131,7 +138,12 @@
         }
         
         .login-form .group .button {
-            background: #1161ee;
+            background: #1162ee;
+        }
+        
+        .login-form .group .button:hover {
+            background: #e9eaebe7;
+            color: #1161ee;
         }
         
         .login-form .group label .icon {
@@ -199,6 +211,52 @@
         .foot-lnk {
             text-align: center;
         }
+        /*------------------------------------------------------------------------------------------------------------*/
+        
+        .alertuyarı {
+            padding: 20px;
+            background-color: #bd200b;
+            color: white;
+            width: 400px;
+            height: 70px;
+            padding: 35 30 30 30;
+            position: fixed;
+            right: 10px;
+            top: 50px;
+            display: none;
+        }
+        
+        .alert {
+            padding: 20px;
+            background-color: #11bd0b;
+            color: white;
+            width: 400px;
+            height: 70px;
+            padding: 35 30 30 30;
+            position: fixed;
+            right: 10px;
+            top: 50px;
+            display: none;
+        }
+        
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .closebtn:hover {
+            color: black;
+        }
+        
+        a#link:hover {
+            color: white;
+        }
     </style>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
@@ -232,42 +290,24 @@
 
         }
 
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                // User is signed in.
-                ///// document.getElementById("boyut").style.display = "block";
-                //document.getElementById("user_div").style.display = "block";
-                //document.getElementById("login_div").style.display = "none";
-                alert("giriş yapıldı");
-                console.log("olduuuu");
-                var user = firebase.auth().currentUser;
-
-                if (user != null) {
-
-                    var email_id = user.email;
-                    document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
-
-                }
-
-            } else {
-                // No user is signed in.
-                alert("giriş yapılamadı");
-                console.log("olmadı");
-                /////  document.getElementById("boyut").style.display = "none";
-            }
-        });
-
         function signIn() {
             var email = document.getElementById("mail").value;
             var password = document.getElementById("pass").value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    var user = userCredential.user;
+                    console.log("Hoş Geldin");
+                    document.getElementById("alert").style.display = "block";
+                });
             firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-                alert("Lutfen sifre veya gmail kontrol et!");
-                console.log("oldu");
+                console.log("giris yapılamadı email veya sifre kontrol et");
+                document.getElementById("alertuyarı").style.display = "block";
             });
         }
 
         function sil() {
-            document.getElementById("sms").remove();
+            document.getElementById("boyut").remove();
         }
     </script>
 </head>
@@ -297,7 +337,7 @@
                     </div>
                     <div class="hr"></div>
                     <div class="foot-lnk">
-                        <a href="#">Şifreyi unuttun mu?</a>
+                        <a href="kullanııcısıfırlama.html" id="link">Şifreyi unuttun mu?</a>
                     </div>
                 </div>
                 <!------------------------------------------------------------------------------------------------------>
@@ -325,6 +365,13 @@
 		</div>
 	</div>
 </div>
-
+<div class="alert" id="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Aferin!</strong>Başarılı bir şekilde giriş yaptın. 
+  </div>
+  <div class="alertuyarı" id="alertuyarı">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    <strong>Hata!</strong>Lütfen Eposta veya şifreyi kontrol edin. 
+  </div>
 </body>
 </html>
