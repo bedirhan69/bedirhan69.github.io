@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -128,7 +129,6 @@
         }
         
         .login-form .group input[data-type="password"] {
-            text-security: circle;
             -webkit-text-security: circle;
         }
         
@@ -254,8 +254,36 @@
             color: black;
         }
         
+        a#link {
+            color: rgb(172, 164, 164);
+        }
+        
         a#link:hover {
             color: white;
+        }
+        
+        i#giris {
+            color: rgb(255, 255, 255);
+            z-index: 999;
+            position: fixed;
+            top: 113px;
+            right: 10px;
+        }
+        
+        i#giris:hover {
+            color: rgb(255, 255, 255);
+        }
+        
+        i#kayıt {
+            color: rgb(255, 255, 255);
+            z-index: 999;
+            position: fixed;
+            top: 113px;
+            right: 10px;
+        }
+        
+        i#kayıt:hover {
+            color: rgb(255, 255, 255);
         }
     </style>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
@@ -276,6 +304,17 @@
 
 
         function signUp() {
+            "use strict";
+            var formGiris = document.getElementById("form2"); // form seçimi
+            var eposta = document.getElementById("mail1"); // eposta alanı seçimi
+            var sifre = document.getElementById("pass1"); // sifre alanı seçimi
+
+            if (sifre.value.length > 6) {
+
+            } else {
+                alert("Lütfen sifreniz en az 6 harften olusmalı!");
+                return false; // form gönderimini iptal et
+            }
             var email = document.getElementById("mail1");
             var password = document.getElementById("pass1");
             const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
@@ -286,7 +325,8 @@
                 Sifre: document.getElementById("pass1").value
             });
             console.log("veritabanı gitti");
-
+            y.play();
+            document.getElementById("alert").style.display = "block";
 
         }
 
@@ -298,10 +338,12 @@
                 .then((userCredential) => {
                     var user = userCredential.user;
                     console.log("Hoş Geldin");
+                    y.play();
                     document.getElementById("alert").style.display = "block";
                 });
             firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
                 console.log("giris yapılamadı email veya sifre kontrol et");
+                yanlıs.play();
                 document.getElementById("alertuyarı").style.display = "block";
             });
         }
@@ -310,23 +352,52 @@
             document.getElementById("boyut").remove();
         }
     </script>
+    <script>
+        function togglePassword1() {
+            var element = document.getElementById('pass');
+            element.type = (element.type == 'password' ? 'text' : 'password');
+        }
+
+        function togglePassword2() {
+            var element = document.getElementById('pass1');
+            element.type = (element.type == 'password' ? 'text' : 'password');
+        }
+    </script>
+
 </head>
 
 <body>
-
+    <iframe src="dogru.mp3" loop id="x" allow="autoplay" style="display:none">
+    </iframe>
+    <audio id="y">
+    
+      <source src="dogru.mp3"  type="audio/mpeg">
+    
+    </audio>
+    <iframe src="yanlıs.mp3" loop id="x" allow="autoplay" style="display:none">
+    </iframe>
+    <audio id="yanlıs">
+    
+      <source src="yanlıs.mp3"  type="audio/mpeg">
+    
+    </audio>
     <div class="login-wrap">
         <div class="login-html">
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Giriş Yap</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Kayıt ol</label>
             <div class="login-form">
                 <div class="sign-in-htm">
+
                     <div class="group">
                         <label for="mail" class="label">E-Posta</label>
                         <input id="mail" type="text" class="input">
                     </div>
                     <div class="group">
+
                         <label for="pass" class="label">Sifre</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <input id="pass" type="password" class="input">
+                        <!--data-type="password"-->
+                        <i class="circular eye link icon" onclick="togglePassword1()" id="giris"></i>
                     </div>
                     <div class="group">
                         <input id="check" type="checkbox" class="check" checked>
@@ -335,20 +406,22 @@
                     <div class="group">
                         <input type="submit" class="button" value="Giriş yap" onclick="signIn()">
                     </div>
+
                     <div class="hr"></div>
                     <div class="foot-lnk">
                         <a href="kullanııcısıfırlama.html" id="link">Şifreyi unuttun mu?</a>
                     </div>
                 </div>
                 <!------------------------------------------------------------------------------------------------------>
-                <div class="sign-up-htm">
+                <div class="sign-up-htm" id="form2">
                     <div class="group">
                         <label for="user" class="label">Kullanıcı adı</label>
                         <input id="user" type="text" class="input">
                     </div>
                     <div class="group">
-                        <label for="pass1" class="label">Sifre</label>
-                        <input id="pass1" type="password" class="input" data-type="password">
+                        <label for="pass1" class="label" name="sifre2">Sifre</label>
+                        <input id="pass1" type="password" class="input">
+                        <i class="circular eye link icon" onclick="togglePassword2()" id="kayıt"></i>
                     </div>
                     <div class="group">
                         <label for="mail1" class="label">E-posta</label>
