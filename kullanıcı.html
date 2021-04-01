@@ -303,7 +303,10 @@
         const auth = firebase.auth();
 
 
+
         function signUp() {
+            yanlıs.pause();
+            y.pause();
             "use strict";
             var formGiris = document.getElementById("form2"); // form seçimi
             var eposta = document.getElementById("mail1"); // eposta alanı seçimi
@@ -331,6 +334,8 @@
         }
 
         function signIn() {
+            yanlıs.pause();
+            y.pause();
             var email = document.getElementById("mail").value;
             var password = document.getElementById("pass").value;
 
