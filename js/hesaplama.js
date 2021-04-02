@@ -15,14 +15,7 @@ function hesapla() {
 
     not1 = (s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9 + s10 + s11) / 30.0;
 
-    if (not1 >= 85 && not1 <= 100)
-        harfnot = 'Tebrikler! Taktir belgesini Hak kazandınız!';
-    else if (not1 >= 70 && not1 <= 85)
-        harfnot = 'Tebrikler! Teşekkür belgesini Hak kazandınız!';
-    else if (not1 >= 0 && not1 < 70)
-        harfnot = 'Malesef hiç bir belge kazanamadınız!';
-    else if (not1 > 100)
-        alert('Lütfen Dersleri 100 üzerinden giriniz!!!');
+
 
     if (parseFloat(document.getElementById('sinav11').value) > 100)
         document.getElementById('sinav11').style.color = "red ",
@@ -58,29 +51,81 @@ function hesapla() {
         document.getElementById('sinav1').style.color = "red ",
         harfnot = 'Matematik Dersini 100 üzerinden Girin';
     else if (parseFloat(document.getElementById('sinav2').value) >= 00 && parseFloat(document.getElementById('sinav2').value) < 55)
-        harfnot = 'Türkçe 55 Altı olduğu için belge alamadınız';
+        document.getElementById('yüz').innerHTML = "Malesef Türkçe 55 Altında olduğu için belge alamadınız!", //türkçe
+        harfnot = 'Türkçe 55 Altı olduğu için belge alamadınız',
+        document.getElementById('yüz').style.display = "block",
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav1').value) >= 00 && parseFloat(document.getElementById('sinav1').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız', //matematik
+        document.getElementById('yüz').innerHTML = "Malesef Matematik 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block",
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav3').value) >= 00 && parseFloat(document.getElementById('sinav3').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız ';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız ', //ingilizce
+        document.getElementById('yüz').innerHTML = "Malesef İngilizce 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block",
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav4').value) >= 00 && parseFloat(document.getElementById('sinav4').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız',
+        document.getElementById('yüz').innerHTML = "Malesef Fen bilgisi 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block", //fen
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav5').value) >= 00 && parseFloat(document.getElementById('sinav5').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız', //sosyal
+        document.getElementById('yüz').innerHTML = "Malesef Sosyal bilgiler 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block",
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav6').value) >= 00 && parseFloat(document.getElementById('sinav6').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız', //din
+        document.getElementById('yüz').innerHTML = "Malesef  Din Kültürü 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block",
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav7').value) >= 00 && parseFloat(document.getElementById('sinav7').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız', //trafik
+        document.getElementById('yüz').innerHTML = "Malesef Trafik 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block",
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav8').value) >= 00 && parseFloat(document.getElementById('sinav8').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız', //insan
+        document.getElementById('yüz').innerHTML = "Malesef İnsan Hakları 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block",
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav9').value) >= 00 && parseFloat(document.getElementById('sinav9').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız',
+        document.getElementById('yüz').innerHTML = "Malesef Resim 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block", //resim
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav10').value) >= 00 && parseFloat(document.getElementById('sinav10').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız',
+        document.getElementById('yüz').innerHTML = "Malesef Beden 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block", //beden
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (parseFloat(document.getElementById('sinav11').value) >= 00 && parseFloat(document.getElementById('sinav11').value) < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız';
+        harfnot = 'Zayıf Ders olduğu için belge alamadınız',
+        document.getElementById('yüz').innerHTML = "Malesef Müzik 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block", //müzik
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
 
-
+    else if (not1 >= 85 && not1 <= 100)
+        harfnot = 'Tebrikler! Taktir belgesini Hak kazandınız!',
+        document.getElementById('mesaj').style.display = "block",
+        setTimeout("document.getElementById('mesaj').style.display = 'none'", 10000);
+    else if (not1 >= 70 && not1 <= 85)
+        harfnot = 'Tebrikler! Teşekkür belgesini Hak kazandınız!',
+        document.getElementById('tesekkür').style.display = "block",
+        setTimeout("document.getElementById('tesekkür').style.display = 'none'", 10000);
+    else if (not1 >= 0 && not1 < 70)
+        harfnot = 'Malesef hiç bir belge kazanamadınız!',
+        document.getElementById('hic').style.display = "block",
+        setTimeout("document.getElementById('hic').style.display = 'none'", 10000);
+    else if (not1 > 100)
+        alert('Lütfen Dersleri 100 üzerinden giriniz!!!');
+    document.getElementById('mesaj').innerHTML = "Aferin " +
+        not1 + " puan ile Taktir Belgesini almaya hak kazandınız!";
+    document.getElementById('hic').innerHTML = "Malesef " +
+        not1 + " puan ile HİÇ BELGE alamadınız!";
+    document.getElementById('tesekkür').innerHTML = "Aferin " +
+        not1 + " puan ile Teşekkür Belgesini almaya hak kazandınız!";
 
     document.getElementById('txtortalama').value = not1;
     document.getElementById('txtharf').value = harfnot;
