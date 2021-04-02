@@ -303,6 +303,7 @@ input[type=button] {
     float: right;
     border-radius: 6px;
     border: white;
+    cursor: pointer;
 }
 
 input[type=reset] {
@@ -313,6 +314,7 @@ input[type=reset] {
     float: left;
     border-radius: 6px;
     border: rgb(7, 7, 7);
+    cursor: pointer;
 }
 
 ol {
