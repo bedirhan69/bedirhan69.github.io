@@ -334,8 +334,8 @@
         }
 
         function signIn() {
-            // yanlıs.pause();
-            //y.pause();
+            yanlıs.pause();
+            y.pause();
             var email = document.getElementById("mail").value;
             var password = document.getElementById("pass").value;
 
@@ -368,7 +368,7 @@
             element.type = (element.type == 'password' ? 'text' : 'password');
         }
     </script>
-
+    <script src='https://www.google.com/recaptcha/api.js?hl=tr'></script>
 </head>
 
 <body>
@@ -408,6 +408,7 @@
                         <input id="check" type="checkbox" class="check" checked>
                         <label for="check"><span class="icon"></span> Oturumu açık tut</label>
                     </div>
+                    <div class="g-recaptcha" data-sitekey="6LcuC6EaAAAAAAtXKEsFPGhmnq8M6ONLiQRliHQr"></div>
                     <div class="group">
                         <input type="submit" class="button" value="Giriş yap" onclick="signIn()">
                     </div>
