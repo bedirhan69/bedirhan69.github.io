@@ -7,13 +7,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <title>Bedirhan Aktaş</title>
-    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
-    <script src="js/mouse.js "></script>
-    <script src="js/mouse17.js "></script>
-    <script src="js/mouse18.js "></script>
-    <script src="js/mouse73.js "></script>
-    <script src="js/mouse123.js "></script>
-    <!-------------------------------mouse tıklandığında öğeyi incele iptal------------------------>
+
     <style>
         body {
             margin: 0;
@@ -343,14 +337,17 @@
                 .then((userCredential) => {
                     var user = userCredential.user;
                     console.log("Hoş Geldin");
+                    document.getElementById("alertuyarı").style.display = "none";
                     y.play();
                     document.getElementById("alert").style.display = "block";
                 });
             firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
                 console.log("giris yapılamadı email veya sifre kontrol et");
+                document.getElementById("alert").style.display = "none";
                 yanlıs.play();
                 document.getElementById("alertuyarı").style.display = "block";
             });
+
         }
 
         function sil() {
