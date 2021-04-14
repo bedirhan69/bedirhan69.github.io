@@ -11,84 +11,12 @@ function hesapla() {
     s8 = document.getElementById('sinav8').value * 2; //insan
     s9 = document.getElementById('sinav9').value * 1; //resim
     s10 = document.getElementById('sinav10').value * 2; //beden 
-    s11 = document.getElementById('sinav11').value * 1; //muzik
+    s11 = document.getElementById('sinav11').value * 1; //muzik 
 
     not1 = (s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9 + s10 + s11) / 30.0;
 
-    if (document.getElementById('sinav11').value > 100)
-        document.getElementById('sinav11').style.color = "red ",
-        harfnot = 'Müzik Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "Müzik Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav10').value > 100)
-        document.getElementById('sinav10').style.color = "red ",
-        harfnot = 'Beden Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "Beden eğitimi Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav9').value > 100)
-        document.getElementById('sinav9').style.color = "red ",
-        harfnot = 'Resim Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "Resim Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav8').value > 100) document.getElementById('sinav8').style.color = "red ",
-        harfnot = 'İnsan hakları Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "İnsan hakları Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav7').value > 100)
-        document.getElementById('sinav7').style.color = "red ",
-        harfnot = 'Trafik Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "Trafik Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav6').value > 100)
-        document.getElementById('sinav6').style.color = "red ",
-        harfnot = 'Din Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "Din kültürü Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav5').value > 100) document.getElementById('sinav5').style.color = "red ",
-        harfnot = 'Sosyal Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "Sosyal bilgisi Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav4').value > 100)
-        document.getElementById('sinav4').style.color = "red ",
-        harfnot = 'Fen Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "Fen bilimleri Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav3').value > 100) document.getElementById('sinav3').style.color = "red ",
-        harfnot = 'İngilizce Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "İngilizce Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav2').value > 100) document.getElementById('sinav2').style.color = "red ",
-        harfnot = 'Türkçe Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "Türkçe Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav1').value > 100)
-        document.getElementById('sinav1').style.color = "red ",
-        harfnot = 'Matematik Dersini 100 üzerinden Girin',
-        document.getElementById('yüz').innerHTML = "Matematik Dersini 100 üzerinden Girin!",
-        document.getElementById('yüz').style.display = "block", //beden
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000),
-        not1 = "!!!";
-    else if (document.getElementById('sinav2').value >= 00 && document.getElementById('sinav2').value < 55)
+
+    if (document.getElementById('sinav2').value >= 00 && document.getElementById('sinav2').value < 55)
         document.getElementById('yüz').innerHTML = "Malesef Türkçe 55 Altında olduğu için belge alamadınız!", //türkçe
         harfnot = 'Türkçe 55 Altı olduğu için belge alamadınız',
         document.getElementById('yüz').style.display = "block",
@@ -151,9 +79,7 @@ function hesapla() {
         harfnot = 'Malesef hiç bir belge kazanamadınız!',
         document.getElementById('hic').style.display = "block",
         setTimeout("document.getElementById('hic').style.display = 'none'", 10000);
-    //else if ();
-    else if (not1 > 100)
-        alert('Lütfen Dersleri 100 üzerinden giriniz!!!');
+
     document.getElementById('mesaj').innerHTML = "Aferin " +
         not1 + " puan ile Taktir Belgesini almaya hak kazandınız!";
     document.getElementById('hic').innerHTML = "Malesef " +
@@ -165,3 +91,44 @@ function hesapla() {
     document.getElementById('txtharf').value = harfnot;
 
 }
+
+function kontrol() {
+    var y, x, z, t, o, p, r, s, q, e, r;
+
+    y = document.getElementById('sinav1').value;
+    x = document.getElementById('sinav2').value;
+    z = document.getElementById('sinav3').value;
+    t = document.getElementById('sinav4').value;
+    o = document.getElementById('sinav5').value;
+    p = document.getElementById('sinav6').value;
+    r = document.getElementById('sinav7').value;
+    s = document.getElementById('sinav8').value;
+    q = document.getElementById('sinav9').value;
+    e = document.getElementById('sinav10').value;
+    r = document.getElementById('sinav11').value;
+    if (100 < y)
+        document.getElementById('sinav1').value = 100;
+    if (100 < x)
+        document.getElementById('sinav2').value = 100;
+    if (100 < z)
+        document.getElementById('sinav3').value = 100;
+    if (100 < t)
+        document.getElementById('sinav4').value = 100;
+    if (100 < o)
+        document.getElementById('sinav5').value = 100;
+    if (100 < p)
+        document.getElementById('sinav6').value = 100;
+    if (100 < r)
+        document.getElementById('sinav7').value = 100;
+    if (100 < s)
+        document.getElementById('sinav8').value = 100;
+    if (100 < q)
+        document.getElementById('sinav9').value = 100;
+    if (100 < e)
+        document.getElementById('sinav10').value = 100;
+    if (100 < r)
+        document.getElementById('sinav11').value = 100;
+}
+var tarama;
+
+tarama = setInterval(kontrol, 1200);
