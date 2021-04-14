@@ -131,4 +131,4 @@ function kontrol() {
 }
 var tarama;
 
-tarama = setInterval(kontrol, 1200);
+tarama = setInterval(kontrol, 300);
