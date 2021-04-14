@@ -7,74 +7,7 @@
 
 <body>
 
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
-    <script>
-        //------------------------------------------------------------------------------------------------------
 
-        var firebaseConfig = {
-            apiKey: "AIzaSyAlh8jHfzmXFicExDu5HP_HkbQq3ejWy1I",
-            authDomain: "ttal123.firebaseapp.com",
-            projectId: "ttal123",
-            storageBucket: "ttal123.appspot.com",
-            messagingSenderId: "307885954524",
-            appId: "1:307885954524:web:9c115f3fa746c686e66b19"
-                //firebase config stuff
-        };
-
-        firebase.initializeApp(firebaseConfig);
-
-        const auth = firebase.auth();
-
-        function signUp() {
-            var email = document.getElementById("gmail");
-            var password = document.getElementById("sifre");
-            const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-            promise.catch(e => alert(e.message));
-            firebase.database().ref("kullanıcı").set({
-                gmail: document.getElementById("gmail").value,
-                sifre: document.getElementById("sifre").value
-            });
-            alert("Signed Up");
-        }
-
-        function signIn() {
-
-            var email = document.getElementById("gmail");
-            var password = document.getElementById("sifre");
-
-            const promise = auth.signInWithEmailAndPassword(email.value, password.value);
-            promise.catch(e => alert(e.message));
-            alert("Signed in " + email.value);
-        }
-
-        function signOut() {
-
-            auth.signOut();
-            alert("Signed Out");
-
-        }
-        auth.onAuthStateChanged(function(user) {
-
-            if (user) {
-
-                var email = user.email;
-                alert("Active User " + email);
-
-            } else {
-
-                alert("No Active User");
-                //no user is signed in
-            }
-
-        });
-    </script>
-    <input type="gmail" placeholder="gmail" id="gmail">
-    <input type="text" placeholder="sifre" id="sifre">
-    <button onclick="signIn()" id="signIn">giriş yap</button>
-    <button onclick="signUp()" id="signUp">kayıt ol</button>
-    <button onclick="signOut()" id="signOut">çıkış yap</button>
 </body>
 
 </html>
