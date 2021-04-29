@@ -1,0 +1,323 @@
+form.hnarac {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+}
+
+form.hnarac>fieldset {
+    background-color: #FFFFFF;
+    clear: both;
+    min-width: inherit;
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #EEEEEE;
+    border-radius: 0px;
+}
+
+form.hnarac>fieldset>legend {
+    background-color: #EEEEEE;
+    color: #000000;
+    border-radius: 0px;
+    line-height: 1;
+    cursor: default;
+    margin: 0 8px;
+    padding: 8px;
+    font-family: 'Brush Script MT', cursive;
+    font-weight: bold;
+}
+
+form.hnarac em {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+form.hnarac>fieldset>ol {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+form.hnarac>fieldset>ol>li {
+    padding: 7px;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+form.hnarac>fieldset>ol>li>label {
+    font-weight: bold;
+    min-width: 180px;
+    white-space: nowrap;
+    cursor: auto;
+}
+
+form.hnarac>fieldset>ol.narrowest>li>label {
+    min-width: 130px;
+}
+
+form.hnarac>fieldset>ol.narrower>li>label {
+    min-width: 150px;
+}
+
+form.hnarac>fieldset>ol.narrow>li>label {
+    min-width: 170px;
+}
+
+form.hnarac>fieldset>ol.wide>li>label {
+    min-width: 190px;
+}
+
+form.hnarac>fieldset>ol.wider>li>label {
+    min-width: 220px;
+}
+
+form.hnarac>fieldset>ol.widest>li>label {
+    min-width: 250px;
+}
+
+form.hnarac>fieldset>ol>li input[type=number],
+form.hnarac>fieldset>ol>li input[type=text],
+form.hnarac>fieldset>ol>li textarea,
+form.hnarac>fieldset>ol>li select {
+    padding: 6px;
+    box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.08);
+    border: 1px solid #aaaaaa;
+    margin: 0 5px;
+}
+
+form.hnarac>fieldset>ol>li input[type=radio] {
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+
+form.hnarac>fieldset>ol>li input[type=checkbox],
+form.hnarac>fieldset>ol>li label {
+    cursor: pointer;
+}
+
+form.hnarac>fieldset>ol>li input[type=number] {
+    -moz-appearance: textfield;
+}
+
+form.hnarac>fieldset>ol>li input[type=number]::-webkit-inner-spin-button,
+form.hnarac>fieldset>ol>li input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+form.hnarac>fieldset>ol>li select {
+    cursor: pointer;
+    max-width: 100%;
+}
+
+form.hnarac>fieldset>ol>li textarea {
+    width: 100%;
+    height: 200px;
+}
+
+form.hnarac>fieldset>ol>li>fieldset {
+    margin: 0 5px 0 0;
+    padding: 0;
+    border: 0;
+}
+
+form.hnarac>fieldset>ol>li>fieldset>label {
+    padding: 7px 0;
+    display: block;
+}
+
+form.hnarac>fieldset>ol>li>fieldset>label:first-child {
+    padding-top: 4px;
+}
+
+form.hnarac>fieldset>ol>li .illabel>label,
+form.hnarac>fieldset>ol>li .illabel>label :first-child {
+    display: inline-block;
+    padding: 0;
+}
+
+form.hnarac>fieldset .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+form.hnarac>fieldset .buttons>button {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 2px 2px 7px #cccccc;
+}
+
+form.hnarac>fieldset .buttons>button[type=button] {
+    background-color: #3B8CEE;
+    color: #FFFFFF;
+}
+
+form.hnarac>fieldset .buttons>button[type=reset] {
+    background-color: #318fbb;
+    color: #000000;
+}
+
+form.hnarac>fieldset .notlar {
+    margin: 8px;
+}
+
+form.hnarac>fieldset .embedlink {
+    float: right;
+}
+
+form.hnarac>fieldset>ol>li .iw1 {
+    width: 37px
+}
+
+form.hnarac>fieldset>ol>li .iw2 {
+    width: 40px
+}
+
+form.hnarac>fieldset>ol>li .iw3 {
+    width: 44px
+}
+
+form.hnarac>fieldset>ol>li .iw4 {
+    width: 48px
+}
+
+form.hnarac>fieldset>ol>li .iw5 {
+    width: 52px
+}
+
+form.hnarac>fieldset>ol>li .iw6 {
+    width: 56px
+}
+
+form.hnarac>fieldset>ol>li .iw7 {
+    width: 60px
+}
+
+form.hnarac>fieldset>ol>li .iw8 {
+    width: 64px
+}
+
+form.hnarac>fieldset>ol>li .iw9 {
+    width: 68px
+}
+
+form.hnarac>fieldset>ol>li .orn {
+    padding-left: 4px;
+}
+
+form.hnarac>fieldset>ol>li .neg {
+    color: #EF0000;
+    font-weight: bold;
+}
+
+
+/*-----------------------------4.sınıf taktir teşekkür hesaplama input boyutları------------------------------------------------*/
+
+input[name=sinav1] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav2] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav3] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav4] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav5] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav6] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav7] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav8] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav9] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav10] {
+    width: auto;
+    height: auto;
+}
+
+input[name=sinav11] {
+    width: auto;
+    height: auto;
+}
+
+input[name=txtharf] {
+    width: 240px;
+    height: 60px;
+}
+
+input[name=txtortalama] {
+    width: auto;
+    height: auto;
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+input[type=button] {
+    background-color: red;
+    color: #ffffff;
+    width: 120px;
+    height: 40px;
+    float: right;
+    border-radius: 6px;
+    border: white;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    background-color: rgb(153, 221, 204);
+    color: #000000;
+    width: 120px;
+    height: 40px;
+    float: left;
+    border-radius: 6px;
+    border: rgb(7, 7, 7);
+    cursor: pointer;
+}
+
+ol {
+    background-color: rgb(77, 75, 75);
+    color: #fff;
+}
