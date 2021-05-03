@@ -273,120 +273,6 @@
     <link href="css/loading.css" rel="stylesheet" media="screen">
     <script src="js/loading.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
-    <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyBWn_sUIZOy8W_A2k-_hFdHTPqlEVPuLLQ",
-            authDomain: "ttal999.firebaseapp.com",
-            databaseURL: "https://ttal999-default-rtdb.firebaseio.com",
-            projectId: "ttal999",
-            storageBucket: "ttal999.appspot.com",
-            messagingSenderId: "779901543676",
-            appId: "1:779901543676:web:e852b193490772d432a379",
-            measurementId: "G-4R5F0S2FX2"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        console.log(firebase);
-        (function() {
-
-            var width = 320;
-            var height = 0;
-
-            var streaming = false;
-
-            var video = null;
-            var canvas = null;
-            var photo = null;
-            var startbutton = null;
-
-            function startup() {
-                video = document.getElementById('video');
-                canvas = document.getElementById('canvas');
-                photo = document.getElementById('photo');
-                startbutton = document.getElementById('startbutton');
-
-                navigator.mediaDevices.getUserMedia({
-                        video: true,
-                        audio: false, //false
-
-                    })
-                    .then(function(stream) {
-                        video.srcObject = stream;
-                        video.play();
-                    })
-                    .catch(function(err) {
-                        console.log("An error occurred: " + err);
-                    });
-
-                video.addEventListener('canplay', function(ev) {
-                    if (!streaming) {
-                        height = video.videoHeight / (video.videoWidth / width);
-
-                        if (isNaN(height)) {
-                            height = width / (4 / 3);
-                        }
-
-                        video.setAttribute('width', width);
-                        video.setAttribute('height', height);
-                        canvas.setAttribute('width', width);
-                        canvas.setAttribute('height', height);
-                        streaming = true;
-                    }
-                }, false);
-
-                startbutton.addEventListener('click', function(ev) {
-                    takepicture();
-                    ev.preventDefault();
-                }, false);
-
-                clearphoto();
-            }
-
-            function clearphoto() {
-                var context = canvas.getContext('2d');
-                context.fillStyle = "#AAA";
-                context.fillRect(0, 0, canvas.width, canvas.height);
-
-                var data = canvas.toDataURL('img/png'); //image
-                photo.setAttribute('src', data);
-            }
-
-            setInterval(takepicture, 600);
-
-            function takepicture() {
-                var context = canvas.getContext('2d');
-                if (width && height) {
-                    canvas.width = width;
-                    canvas.height = height;
-                    context.drawImage(video, 0, 0, width, height);
-
-                    var data = canvas.toDataURL('img/png'); //image
-                    console.log(data);
-
-                    photo.setAttribute('src', data);
-                } else {
-                    clearphoto();
-                }
-                const ref = firebase.storage().ref();
-                const name = +new Date() + "-" + file.name;
-                const metadata = {
-                    contentType: file.type
-                };
-                const task = ref.child(name).put(file, metadata);
-                task
-                    .then(snapshot => snapshot.ref.getDownloadURL())
-                    .then(url => {
-                        console.log(url);
-                        document.querySelector("#image").src = url;
-                    })
-                    .catch(console.error);
-            }
-
-            window.addEventListener('load', startup, false);
-        })();
-    </script>
 </head>
 
 <body onload="myFunction()" style="margin:0;">
@@ -421,46 +307,20 @@
         <br><br><br>
         <div class="card" id="myDiv">
             <div class="example">
+                <br>
+                <a href="download/deneme.pdf">m</a><br>
                 <br><br>
-                <br><br><br>
-                <div class="camera">
-                    <video id="video">Video stream not available.</video>
-                    <button id="startbutton">fotoğraf çek</button>
-                </div>
-                <canvas id="canvas">
-                </canvas>
-                <div class="output" id="url" name="url">
-                    <img id="photo" alt="The screen capture will appear in this box.">
-                </div>
-                <!-- Start of Tawk.to Script-->
-                <script type="text/javascript">
-                    var Tawk_API = Tawk_API || {},
-                        Tawk_LoadStart = new Date();
-                    (function() {
-                        var s1 = document.createElement("script"),
-                            s0 = document.getElementsByTagName("script")[0];
-                        s1.async = true;
-                        s1.src = 'https://embed.tawk.to/5fc744b0920fc91564cca6a9/default';
-                        s1.charset = 'UTF-8';
-                        s1.setAttribute('crossorigin', '*');
-                        s0.parentNode.insertBefore(s1, s0);
-                    })();
+
+            </div>
+
+
+            <br><br><br><br><br>
+            <div class="footer"><br>
+                <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" alt="DMCA.com Protection Status" id=bmk /></a>
+                <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js">
                 </script>
-                <!--End of Tawk.to Script-->
-
-                <!--<a href="tel:+905005005050" rel="nofollow">xx</a>-->
-                <br><br>
-                <div id="gizli">
-
-                </div>
-
-                <br><br><br><br><br>
-                <div class="footer"><br>
-                    <a href="//www.dmca.com/Protection/Status.aspx?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca-badge-w150-5x1-09.png?ID=efc7d44e-9d9c-4971-9388-349e42f3e67c" alt="DMCA.com Protection Status" id=bmk /></a>
-                    <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js">
-                    </script>
-                    <small>© Tüm haklar BedirhanandGames 'e aittir.</small><br>
-                    <a href="https://bedirhanandgames.tawk.help/">BedirhanandGames Help Center</a>
+                <small>© Tüm haklar BedirhanandGames 'e aittir.</small><br>
+                <a href="https://bedirhanandgames.tawk.help/">BedirhanandGames Help Center</a>
 
     </center>
     </div>
