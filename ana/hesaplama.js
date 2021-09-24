@@ -2,18 +2,20 @@ function hesapla() {
     var not1, harfnot, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11;
     //parsefloat()
     s1 = document.getElementById('sinav1').value * 5; //matematik
-    s2 = document.getElementById('sinav2').value * 8; //turkce
-    s3 = document.getElementById('sinav3').value * 2; //ingilizce
-    s4 = document.getElementById('sinav4').value * 3; //fen
+    s2 = document.getElementById('sinav2').value * 6; //turkce
+    s3 = document.getElementById('sinav3').value * 3; //ingilizce
+    s4 = document.getElementById('sinav4').value * 4; //fen
     s5 = document.getElementById('sinav5').value * 3; //sosyal
     s6 = document.getElementById('sinav6').value * 2; //din
-    s7 = document.getElementById('sinav7').value * 1; //trafik
-    s8 = document.getElementById('sinav8').value * 2; //insan
+    s7 = document.getElementById('sinav7').value * 2; //bilisim
     s9 = document.getElementById('sinav9').value * 1; //resim
     s10 = document.getElementById('sinav10').value * 2; //beden 
     s11 = document.getElementById('sinav11').value * 1; //muzik 
+    s12 = document.getElementById('sinav12').value * 2; //secmeli
+    s13 = document.getElementById('sinav13').value * 2; //secmeli
+    s14 = document.getElementById('sinav14').value * 2; //secmeli
 
-    not1 = (s1 + s2 + s3 + s4 + s5 + s6 + s7 + s8 + s9 + s10 + s11) / 30.0;
+    not1 = (s1 + s2 + s3 + s4 + s5 + s6 + s7 + s9 + s10 + s11 + s12 + s13 + s14) / 35.0;
 
 
     if (document.getElementById('sinav2').value >= 00 && document.getElementById('sinav2').value < 55)
@@ -45,12 +47,7 @@ function hesapla() {
         document.getElementById('yüz').style.display = "block",
         setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (document.getElementById('sinav7').value >= 00 && document.getElementById('sinav7').value < 45) harfnot = 'Zayıf Ders olduğu için belge alamadınız', //trafik
-        document.getElementById('yüz').innerHTML = "Malesef Trafik 45 Altında olduğu için belge alamadınız!",
-        document.getElementById('yüz').style.display = "block",
-        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
-    else if (document.getElementById('sinav8').value >= 00 && document.getElementById('sinav8').value < 45)
-        harfnot = 'Zayıf Ders olduğu için belge alamadınız', //insan
-        document.getElementById('yüz').innerHTML = "Malesef İnsan Hakları 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').innerHTML = "Malesef Bilişim 45 Altında olduğu için belge alamadınız!",
         document.getElementById('yüz').style.display = "block",
         setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (document.getElementById('sinav9').value >= 00 && document.getElementById('sinav9').value < 45)
@@ -64,6 +61,18 @@ function hesapla() {
         setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
     else if (document.getElementById('sinav11').value >= 00 && document.getElementById('sinav11').value < 45) harfnot = 'Zayıf Ders olduğu için belge alamadınız',
         document.getElementById('yüz').innerHTML = "Malesef Müzik 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block", //müzik
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
+    else if (document.getElementById('sinav12').value >= 00 && document.getElementById('sinav12').value < 45) harfnot = 'Zayıf Ders olduğu için belge alamadınız',
+        document.getElementById('yüz').innerHTML = "Malesef 1.Seçmelin 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block", //müzik
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
+    else if (document.getElementById('sinav13').value >= 00 && document.getElementById('sinav13').value < 45) harfnot = 'Zayıf Ders olduğu için belge alamadınız',
+        document.getElementById('yüz').innerHTML = "Malesef 2.Seçmelin 45 Altında olduğu için belge alamadınız!",
+        document.getElementById('yüz').style.display = "block", //müzik
+        setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
+    else if (document.getElementById('sinav14').value >= 00 && document.getElementById('sinav14').value < 45) harfnot = 'Zayıf Ders olduğu için belge alamadınız',
+        document.getElementById('yüz').innerHTML = "Malesef 3.Seçmelin 45 Altında olduğu için belge alamadınız!",
         document.getElementById('yüz').style.display = "block", //müzik
         setTimeout("document.getElementById('yüz').style.display = 'none'", 7000);
 
@@ -93,7 +102,7 @@ function hesapla() {
 }
 
 function kontrol() {
-    var y, x, z, t, o, p, r, s, q, e, r;
+    var y, x, z, t, o, p, r, s, q, e, r, m, a, w;
 
     y = document.getElementById('sinav1').value;
     x = document.getElementById('sinav2').value;
@@ -102,10 +111,12 @@ function kontrol() {
     o = document.getElementById('sinav5').value;
     p = document.getElementById('sinav6').value;
     r = document.getElementById('sinav7').value;
-    s = document.getElementById('sinav8').value;
     q = document.getElementById('sinav9').value;
     e = document.getElementById('sinav10').value;
     r = document.getElementById('sinav11').value;
+    m = document.getElementById("sinav12").value;
+    a = document.getElementById("sinav13").value;
+    w = document.getElementById("sinav14").value;
     if (100 < y)
         document.getElementById('sinav1').value = 100;
     if (100 < x)
@@ -120,14 +131,18 @@ function kontrol() {
         document.getElementById('sinav6').value = 100;
     if (100 < r)
         document.getElementById('sinav7').value = 100;
-    if (100 < s)
-        document.getElementById('sinav8').value = 100;
     if (100 < q)
         document.getElementById('sinav9').value = 100;
     if (100 < e)
         document.getElementById('sinav10').value = 100;
     if (100 < r)
         document.getElementById('sinav11').value = 100;
+    if (100 < m)
+        document.getElementById('sinav12').value = 100;
+    if (100 < a)
+        document.getElementById('sinav13').value = 100;
+    if (100 < w)
+        document.getElementById('sinav14').value = 100;
 }
 var tarama;
 
